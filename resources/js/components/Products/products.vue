@@ -272,7 +272,6 @@ uploadImage(e){
    this.createImage(files[0]);
   }
    if (this.editmode==true) {
-     alert(this.createProduct.imagePath)
      this.img_upload.pop();
      this.img_upload.unshift({
          image: this.createProduct.imagePath

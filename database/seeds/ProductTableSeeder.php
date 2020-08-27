@@ -11,7 +11,7 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-      /*
+      
         \App\Product::truncate();
             //phones and tablets
         $product = new \App\Product([
@@ -652,7 +652,7 @@ $product = new \App\Product([
 'title' => 'Binary',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
-]);*/
+]);
 
 //$product->save();
 
