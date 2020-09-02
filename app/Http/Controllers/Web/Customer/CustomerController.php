@@ -16,6 +16,8 @@ use App\Adress;
 
 use App\AccountDeleteReasons;
 
+use Newsletter;
+
 class CustomerController extends Controller
 {
     /**
@@ -197,7 +199,9 @@ class CustomerController extends Controller
     public function newsletterSubscription(Request $request){
         //dd($request->type);
         //DB::table('users')->insert(['subscription' => $request->type, 'id' => 1]);
-        DB::table('users')->where('id', 1)->update(['subscription' => $request->type]);
+        DB::table('users')->wwhere('id', 1)->update(['subscription' => $request->type]);
+        $subscriber = Newsletter::subscribe(Auth::user()->email);
+        dd($subscriber);
      }
     
 }
