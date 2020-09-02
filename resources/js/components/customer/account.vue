@@ -43,27 +43,29 @@
           </div>
           <div class="card-body">
            <div class="form-check">
-             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-             <label class="form-check-label link-color" for="exampleRadios1">
+             <input v-on:change="manageSubscription('daily')" class="form-check-input" type="radio" name="subscription"  value="daily">
+             <label class="form-check-label link-color" for="daily">
                Daily NewsLetter
              </label>
            </div>
            <div class="form-check">
-             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-             <label class="form-check-label link-color" for="exampleRadios2">
-               Monthly Newsleter
+             <input v-on:change="manageSubscription('weekly')" class="form-check-input" type="radio" name="subscription"  value="weekly">
+             <label class="form-check-label link-color" for="weekly">
+               Weekly Newsleter
              </label>
            </div>
            <div class="form-check">
-             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-             <label class="form-check-label link-color" for="exampleRadios3">
-               Anual Newsletter
+             <input v-on:change="manageSubscription('monthly')" class="form-check-input" type="radio" name="subscription"  value="monthly">
+             <label class="form-check-label link-color" for="monthly">
+               Monthly Newsleter
              </label>
            </div>
           </div>
         </div>  
       </div>
   </div>
+   
+   <!--address book-->
   <div class="row mt-2 m-0 justify-content-center">
       <div  class="col-sm-12 ">
         <div  class="card customer-profile-bg-color">
@@ -135,6 +137,7 @@
         </div> 
       </div>
   </div>
+
        <!--Edit Modal -->
      <div  class="modal fade editModal" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
        <div class="modal-dialog" role="document">
@@ -389,7 +392,25 @@ export default {
                   window.location.assign('/');
                 }, 2500);
           
+    },
+    //Manage subscription
+    manageSubscription(value){
+    const subscription ={
+         type: value
     }
+      axios.post('subscribe',subscription)
+      .then((response)=>{
+        this.$swal({
+          position: 'top-end',
+          icon: 'success',
+          title: 'You have subscribed to our' + value,
+          showConfirmButton: false,
+          timer: 3000
+        })
+      })
+      .catch()
+    }
+
   },
   mounted() {
     this.getProfileDetails();
@@ -398,7 +419,7 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
     .customer-profile-bg{
        background-color: rgb(70,70,109);
        min-height: 100vh;

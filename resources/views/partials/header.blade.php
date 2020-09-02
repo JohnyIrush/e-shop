@@ -47,6 +47,5 @@
       </li>
     </ul>
   </div>
-  <load_progress></load_progress>
 </nav>
  </div>
