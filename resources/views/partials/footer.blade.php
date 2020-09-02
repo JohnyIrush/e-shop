@@ -6,7 +6,7 @@
             <nav class="navbar navbar-expand-md shadow-sm">
                 <div class="container">
                     <a class="navbar-brand link-color logo" to="/">
-                     <div class="logo-bg"><img src="Images/logo.png" class="img-fluid logo" alt="" srcset=""></div>
+                     <div class="logo-bg"><img src="/Images/e-shop.png" class="img-fluid logo" alt="" srcset=""></div>
                     </a>
                     <a  onclick="Displayprivacy()" class="nav-link link-color">Privacy Policy</a>
                     <a  onclick="DisplayTerms()" class="nav-link link-color">Terms and Conditions</a>
