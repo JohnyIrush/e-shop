@@ -56,6 +56,8 @@ Route::namespace('Web\Customer')->group(function(){
     Route::post('subscribe','CustomerController@newsletterSubscription')->name('subscribe'); //customer default addresses    
 });
 
+//changes test
+
 /**
  * Application Users
  *  management
