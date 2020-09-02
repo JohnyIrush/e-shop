@@ -22,7 +22,7 @@ class CreateAdressesTable extends Migration
             $table->string('City');
             $table->string('State');
             $table->string('Zip');
-            $table->smallInteger('default')->dafault(0);
+            $table->smallInteger('default')->nullable();
         });
     }
 
