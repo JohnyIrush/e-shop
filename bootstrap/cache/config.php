@@ -742,6 +742,20 @@
     'proxies' => NULL,
     'headers' => 30,
   ),
+  'newsletter' => 
+  array (
+    'driver' => 'api',
+    'apiKey' => 'fef623424a0e933e3f0a084e40dbdc6f-us17',
+    'defaultListName' => 'subscribers',
+    'lists' => 
+    array (
+      'subscribers' => 
+      array (
+        'id' => '5b52350eac',
+      ),
+    ),
+    'ssl' => true,
+  ),
   'tinker' => 
   array (
     'commands' => 

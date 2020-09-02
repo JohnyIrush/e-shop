@@ -200,7 +200,7 @@ class CustomerController extends Controller
         //dd($request->type);
         //DB::table('users')->insert(['subscription' => $request->type, 'id' => 1]);
         DB::table('users')->where('id', 1)->update(['subscription' => $request->type]);
-        $subscriber = Newsletter::subscribe(Auth::user()->email);
+        $subscriber =Newsletter::subscribe(Auth::user()->email, ['NAME'=>Auth::user()->name]);
         dd($subscriber);
      }
     
