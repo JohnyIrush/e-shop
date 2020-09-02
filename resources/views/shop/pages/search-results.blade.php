@@ -9,7 +9,7 @@
                 <h1 class="nav-link heading-color heading-style" >Categories </h1>
             </li>  
           @foreach ($categories as $category)
-           <li class="nav-item  text-center">
+           <li class="nav-item">
            <a class="nav-link link-color" href=" {{route('categoryproducts',['id'=>$category->id])}}"> <img class="category-img" src="{{asset('Images/' . $category->image)}}" alt="" srcset=""> {{$category->category}}  </a>
            </li>              
           @endforeach
