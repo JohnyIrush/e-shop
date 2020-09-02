@@ -15,158 +15,141 @@ class ProductTableSeeder extends Seeder
         \App\Product::truncate();
             //phones and tablets
         $product = new \App\Product([
-            'imagePath' => 'phones and tablets/1 (1).jpg',
-           'title' => 'Binary',
+            'imagePath' => '8Pad.jpg',
+           'title' => '8Pad',
            'description' => 'Lorem ipsum dolor sit amet consectetur',
            'price' => 10 
           ]);
           $product->save();
         $product = new \App\Product([
-             'imagePath' => 'phones and tablets/1 (2).jpg',
-             'title' => 'Microsoft-edge',
+             'imagePath' => 'Black Tablet.jpg',
+             'title' => 'Black Tablet',
              'description' => 'Lorem ipsum dolor sit amet consectetur',
              'price' => 6 
         ]);
         $product->save();
 
         $product = new \App\Product([
-            'imagePath' => 'phones and tablets/1 (3).jpg',
-            'title' => 'Avast',
+            'imagePath' => 'Huawei.jpg',
+            'title' => 'Huawei',
             'description' => 'Lorem ipsum dolor sit amet consectetur',
             'price' => 10 
        ]);
        $product->save();
 
        $product = new \App\Product([
-        'imagePath' => 'phones and tablets/1 (4).jpg',
-        'title' => 'Microsoft Windows 10',
+        'imagePath' => 'Nice phone.jpg',
+        'title' => 'Nice phone',
         'description' => 'Lorem ipsum dolor sit amet consectetur',
         'price' => 10 
        ]);
        $product->save();
        $product = new \App\Product([
-        'imagePath' => 'phones and tablets/1 (5).jpg',
-        'title' => 'cyber security',
+        'imagePath' => 'Nice Tab.jpg',
+        'title' => 'Nice Tab',
         'description' => 'Lorem ipsum dolor sit amet consectetur',
         'price' => 6 
    ]);
    $product->save();
 
    $product = new \App\Product([
-    'imagePath' => 'phones and tablets/1 (6).jpg',
-       'title' => 'Computer',
+    'imagePath' => 'Ocean Pad.jpg',
+       'title' => 'Ocean Pad',
        'description' => 'Lorem ipsum dolor sit amet consectetur',
        'price' => 10 
   ]);
   $product->save();
 
   $product = new \App\Product([
-    'imagePath' => 'phones and tablets/1 (7).jpg',
-   'title' => 'Binary',
+    'imagePath' => 'Orange black pad.jpg',
+   'title' => 'Orange black pad',
    'description' => 'Lorem ipsum dolor sit amet consectetur',
    'price' => 10 
   ]);
   $product->save();
 
   $product = new \App\Product([
-    'imagePath' => 'phones and tablets/1 (8).jpg',
-   'title' => 'Binary',
+    'imagePath' => 'realme.jpg',
+   'title' => 'realme',
    'description' => 'Lorem ipsum dolor sit amet consectetur',
    'price' => 10 
   ]);
-  $product->save();
-
-  $product = new \App\Product([
-    'imagePath' => 'phones and tablets/1 (9).jpg',
-   'title' => 'Binary',
-   'description' => 'Lorem ipsum dolor sit amet consectetur',
-   'price' => 10 
-  ]);
-  $product->save();
-
-  $product = new \App\Product([
-    'imagePath' => 'phones and tablets/1 (10).jpg',
-   'title' => 'Binary',
-   'description' => 'Lorem ipsum dolor sit amet consectetur',
-   'price' => 10 
-  ]);
-
   $product->save();
 
   //Electronics
   $product = new \App\Product([
-    'imagePath' => 'Electronics/1 (1).jpg',
-   'title' => 'Binary',
+    'imagePath' => 'Black sub-woofer.jpg',
+   'title' => 'Black sub-woofer',
    'description' => 'Lorem ipsum dolor sit amet consectetur',
    'price' => 10 
   ]);
   $product->save();
 $product = new \App\Product([
-     'imagePath' => 'Electronics/1 (2).jpg',
-     'title' => 'Microsoft-edge',
+     'imagePath' => 'Good stereo.jpg',
+     'title' => 'Good stereo',
      'description' => 'Lorem ipsum dolor sit amet consectetur',
      'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-    'imagePath' => 'Electronics/1 (3).jpg',
-    'title' => 'Avast',
+    'imagePath' => 'HIFIINT Tv.jpg',
+    'title' => 'HIFIINT Tv',
     'description' => 'Lorem ipsum dolor sit amet consectetur',
     'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Electronics/1 (4).jpg',
-'title' => 'Microsoft Windows 10',
+'imagePath' => 'Major stereo.jpg',
+'title' => 'Major stereo',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 $product = new \App\Product([
-'imagePath' => 'Electronics/1 (5).jpg',
-'title' => 'cyber security',
+'imagePath' => 'Nice stereo.jpg',
+'title' => 'Nice stereo',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Electronics/1 (6).jpg',
-'title' => 'Computer',
+'imagePath' => 'Nice T&G speaker.jpg',
+'title' => 'Nice T&G speaker',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Electronics/1 (7).jpg',
-'title' => 'Binary',
+'imagePath' => 'owlenze projector.jpg',
+'title' => 'owlenze projector',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Electronics/1 (8).jpg',
-'title' => 'Binary',
+'imagePath' => 'Poce headphones.jpg',
+'title' => 'Poce headphones',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Electronics/1 (9).jpg',
-'title' => 'Binary',
+'imagePath' => 'T&G speaker.jpg',
+'title' => 'T&G speaker',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Electronics/1 (10).jpg',
-'title' => 'Binary',
+'imagePath' => 'White sub-woofer.jpg',
+'title' => 'White sub-woofer',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
@@ -176,78 +159,78 @@ $product->save();
 
   //Computing
   $product = new \App\Product([
-    'imagePath' => 'Computing/1 (1).jpg',
-   'title' => 'Binary',
+    'imagePath' => 'Black Hp.jpg',
+   'title' => 'Black Hp',
    'description' => 'Lorem ipsum dolor sit amet consectetur',
    'price' => 10 
   ]);
   $product->save();
 $product = new \App\Product([
-     'imagePath' => 'Computing/1 (2).jpg',
-     'title' => 'Microsoft-edge',
+     'imagePath' => 'catrigde.jpg',
+     'title' => 'catrigde',
      'description' => 'Lorem ipsum dolor sit amet consectetur',
      'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-    'imagePath' => 'Computing/1 (3).jpg',
-    'title' => 'Avast',
+    'imagePath' => 'Eee Pc.jpg',
+    'title' => 'Eee Pc',
     'description' => 'Lorem ipsum dolor sit amet consectetur',
     'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Computing/1 (4).jpg',
-'title' => 'Microsoft Windows 10',
+'imagePath' => 'epson printer.jpg',
+'title' => 'epson printer',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 $product = new \App\Product([
-'imagePath' => 'Computing/1 (5).jpg',
-'title' => 'cyber security',
+'imagePath' => 'Hp Desktop.jpg',
+'title' => 'Hp Desktop',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Computing/1 (6).jpg',
-'title' => 'Computer',
+'imagePath' => 'HP INKS.jpg',
+'title' => 'HP INKS',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Computing/1 (7).jpg',
-'title' => 'Binary',
+'imagePath' => 'I 5 HP.jpg',
+'title' => 'I 5 HP',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Fashions/1 (8).jpg',
-'title' => 'Binary',
+'imagePath' => 'KINGSTON.jpg',
+'title' => 'KINGSTON',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Fashions/1 (9).jpg',
-'title' => 'Binary',
+'imagePath' => 'LENOVO LAPTOP.jpg',
+'title' => 'LENOVO LAPTOP',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Computing/1 (10).jpg',
-'title' => 'Binary',
+'imagePath' => 'Prebook 640.jpg',
+'title' => 'Prebook 640',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
@@ -257,78 +240,79 @@ $product->save();
 
   //Fashions
   $product = new \App\Product([
-    'imagePath' => 'Fashions/1 (1).jpg',
-   'title' => 'Binary',
+    'imagePath' => 'Trancend Hard disk.jpg',
+   'title' => 'Trancend Hard disk',
    'description' => 'Lorem ipsum dolor sit amet consectetur',
    'price' => 10 
   ]);
   $product->save();
 $product = new \App\Product([
-     'imagePath' => 'Fashions/1 (2).jpg',
-     'title' => 'Microsoft-edge',
+     'imagePath' => 'wireless adapter.jpg',
+     'title' => 'wireless adapter',
      'description' => 'Lorem ipsum dolor sit amet consectetur',
      'price' => 6 
 ]);
 $product->save();
 
+//fashion
 $product = new \App\Product([
-    'imagePath' => 'Fashions/1 (3).jpg',
-    'title' => 'Avast',
+    'imagePath' => 'Beauty Dress.png',
+    'title' => 'Beauty Dress',
     'description' => 'Lorem ipsum dolor sit amet consectetur',
     'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Fashions/1 (4).jpg',
-'title' => 'Microsoft Windows 10',
+'imagePath' => 'Golden watch.png',
+'title' => 'Golden watch',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 $product = new \App\Product([
-'imagePath' => 'Fashions/1 (5).jpg',
-'title' => 'cyber security',
+'imagePath' => 'handsome.jpg',
+'title' => 'handsome',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Fashions/1 (6).jpg',
-'title' => 'Computer',
+'imagePath' => 'Nice sneakers.jpg',
+'title' => 'Nice sneakers',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Fashions/1 (7).jpg',
-'title' => 'Binary',
+'imagePath' => 'Nice speks.png',
+'title' => 'Nice speks',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Fashions/1 (8).jpg',
-'title' => 'Binary',
+'imagePath' => 'Nice watch.png',
+'title' => 'Nice watch',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Fashions/1 (9).jpg',
-'title' => 'Binary',
+'imagePath' => 'silver watch.png',
+'title' => 'silver watch',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Fashions/1 (10).jpg',
-'title' => 'Binary',
+'imagePath' => 'Super neckless.png',
+'title' => 'Super neckless',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
@@ -337,326 +321,258 @@ $product->save();
 
 //Gaming
 $product = new \App\Product([
-    'imagePath' => 'Gaming/1 (1).jpg',
-   'title' => 'Binary',
+    'imagePath' => 'Black ps.jpg',
+   'title' => 'Black ps',
    'description' => 'Lorem ipsum dolor sit amet consectetur',
    'price' => 10 
   ]);
   $product->save();
 $product = new \App\Product([
-     'imagePath' => 'Gaming/1 (2).jpg',
-     'title' => 'Microsoft-edge',
+     'imagePath' => 'Brick game.jpg',
+     'title' => 'Brick game',
      'description' => 'Lorem ipsum dolor sit amet consectetur',
      'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-    'imagePath' => 'Gaming/1 (3).jpg',
-    'title' => 'Avast',
+    'imagePath' => 'Chaseboard.jpg',
+    'title' => 'Chaseboard',
     'description' => 'Lorem ipsum dolor sit amet consectetur',
     'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Gaming/1 (4).jpg',
-'title' => 'Microsoft Windows 10',
+'imagePath' => 'Game controls.jpg',
+'title' => 'Game controls',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 $product = new \App\Product([
-'imagePath' => 'Gaming/1 (5).jpg',
-'title' => 'cyber security',
+'imagePath' => 'Grand theft auto.jpg',
+'title' => 'Grand theft auto',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Gaming/1 (6).jpg',
-'title' => 'Computer',
+'imagePath' => 'Playstation 4.jpg',
+'title' => 'Playstation 4',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Gaming/1 (7).jpg',
-'title' => 'Binary',
+'imagePath' => 'Ps4 pad.jpg',
+'title' => 'Ps4 pad',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Gaming/1 (8).jpg',
-'title' => 'Binary',
+'imagePath' => 'spider game.jpg',
+'title' => 'spider game',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Gaming/1 (9).jpg',
-'title' => 'Binary',
+'imagePath' => 'uncharted game.jpg',
+'title' => 'uncharted game',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
-$product->save();
-
-$product = new \App\Product([
-'imagePath' => 'Gaming/1 (10).jpg',
-'title' => 'Binary',
-'description' => 'Lorem ipsum dolor sit amet consectetur',
-'price' => 10 
-]);
-
 $product->save();
 
 //Sporting Goods
 $product = new \App\Product([
-    'imagePath' => 'Sporting Goods/1 (1).jpg',
-   'title' => 'Binary',
+    'imagePath' => 'Ball.jpg',
+   'title' => 'Ball',
    'description' => 'Lorem ipsum dolor sit amet consectetur',
    'price' => 10 
   ]);
   $product->save();
-$product = new \App\Product([
-     'imagePath' => 'Sporting Goods/1 (2).jpg',
-     'title' => 'Microsoft-edge',
-     'description' => 'Lorem ipsum dolor sit amet consectetur',
-     'price' => 6 
-]);
-$product->save();
 
 $product = new \App\Product([
-    'imagePath' => 'Sporting Goods/1 (3).jpg',
-    'title' => 'Avast',
+    'imagePath' => 'Camera.jpg',
+    'title' => 'Camera',
     'description' => 'Lorem ipsum dolor sit amet consectetur',
     'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Sporting Goods/1 (4).jpg',
-'title' => 'Microsoft Windows 10',
+'imagePath' => 'Gloves.jpg',
+'title' => 'Gloves',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 $product = new \App\Product([
-'imagePath' => 'Sporting Goods/1 (5).jpg',
-'title' => 'cyber security',
+'imagePath' => 'Gym tools.jpg',
+'title' => 'Gym tools',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Sporting Goods/1 (6).jpg',
-'title' => 'Computer',
+'imagePath' => 'Nice sport shoe.jpg',
+'title' => 'Nice sport shoe',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Sporting Goods/1 (7).jpg',
-'title' => 'Binary',
+'imagePath' => 'sport pajamas.jpg',
+'title' => 'sport pajamas',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Sporting Goods/1 (8).jpg',
-'title' => 'Binary',
+'imagePath' => 'Sports ware.jpg',
+'title' => 'Sports ware',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
-$product->save();
-
-$product = new \App\Product([
-'imagePath' => 'Sporting Goods/1 (9).jpg',
-'title' => 'Binary',
-'description' => 'Lorem ipsum dolor sit amet consectetur',
-'price' => 10 
-]);
-$product->save();
-
-$product = new \App\Product([
-'imagePath' => 'Sporting Goods/1 (10).jpg',
-'title' => 'Binary',
-'description' => 'Lorem ipsum dolor sit amet consectetur',
-'price' => 10 
-]);
-
 $product->save();
 
 //Home and Office
 $product = new \App\Product([
-    'imagePath' => 'Home and Office/1 (1).jpg',
-   'title' => 'Binary',
+    'imagePath' => 'Cleaning brush.jpg',
+   'title' => 'Cleaning brush',
    'description' => 'Lorem ipsum dolor sit amet consectetur',
    'price' => 10 
   ]);
   $product->save();
 $product = new \App\Product([
-     'imagePath' => 'Home and Office/1 (2).jpg',
-     'title' => 'Microsoft-edge',
+     'imagePath' => 'Fasemaller mark pens.jpg',
+     'title' => 'Fasemaller mark pens',
      'description' => 'Lorem ipsum dolor sit amet consectetur',
      'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-    'imagePath' => 'Home and Office/1 (3).jpg',
-    'title' => 'Avast',
+    'imagePath' => 'Microscope.jpg',
+    'title' => 'Microscope',
     'description' => 'Lorem ipsum dolor sit amet consectetur',
     'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Home and Office/1 (4).jpg',
-'title' => 'Microsoft Windows 10',
+'imagePath' => 'Pen.jpg',
+'title' => 'Pen',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 $product = new \App\Product([
-'imagePath' => 'Home and Office/1 (5).jpg',
-'title' => 'cyber security',
+'imagePath' => 'Pottery tool set.jpg',
+'title' => 'Pottery tool set',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Home and Office/1 (6).jpg',
-'title' => 'Computer',
+'imagePath' => 'Ruling.jpg',
+'title' => 'Ruling',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Home and Office/1 (7).jpg',
-'title' => 'Binary',
+'imagePath' => 'shopping bag.jpg',
+'title' => 'shopping bag',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
-$product->save();
-
-$product = new \App\Product([
-'imagePath' => 'Home and Office/1 (8).jpg',
-'title' => 'Binary',
-'description' => 'Lorem ipsum dolor sit amet consectetur',
-'price' => 10 
-]);
-$product->save();
-
-$product = new \App\Product([
-'imagePath' => 'Home and Office/1 (9).jpg',
-'title' => 'Binary',
-'description' => 'Lorem ipsum dolor sit amet consectetur',
-'price' => 10 
-]);
-$product->save();
-
-$product = new \App\Product([
-'imagePath' => 'Home and Office/1 (10).jpg',
-'title' => 'Binary',
-'description' => 'Lorem ipsum dolor sit amet consectetur',
-'price' => 10 
-]);
-
 $product->save();
 
 
 //Garden outdoors
 $product = new \App\Product([
-    'imagePath' => 'Garden outdoors/1 (1).jpg',
-   'title' => 'Binary',
+    'imagePath' => 'Garden Decoration.jpg',
+   'title' => 'Garden Decoration',
    'description' => 'Lorem ipsum dolor sit amet consectetur',
    'price' => 10 
   ]);
   $product->save();
 $product = new \App\Product([
-     'imagePath' => 'Garden outdoors/1 (2).jpg',
-     'title' => 'Microsoft-edge',
+     'imagePath' => 'Garden light.jpg',
+     'title' => 'Garden light',
      'description' => 'Lorem ipsum dolor sit amet consectetur',
      'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-    'imagePath' => 'Garden outdoors/1 (3).jpg',
-    'title' => 'Avast',
+    'imagePath' => 'Nice garden.jpg',
+    'title' => 'Nice garden',
     'description' => 'Lorem ipsum dolor sit amet consectetur',
     'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Garden outdoors/1 (4).jpg',
-'title' => 'Microsoft Windows 10',
+'imagePath' => 'Nice secure light.jpg',
+'title' => 'Nice secure light',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 $product = new \App\Product([
-'imagePath' => 'Garden outdoors/1 (5).jpg',
-'title' => 'cyber security',
+'imagePath' => 'Power garden.jpg',
+'title' => 'Power garden',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 6 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Garden outdoors/1 (6).jpg',
-'title' => 'Computer',
+'imagePath' => 'Powerful torch.jpg',
+'title' => 'Powerful torch',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Garden outdoors/1 (7).jpg',
-'title' => 'Binary',
+'imagePath' => 'remonbest.jpg',
+'title' => 'remonbest',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Garden outdoors/1 (8).jpg',
-'title' => 'Binary',
+'imagePath' => 'Solar panel.jpg',
+'title' => 'Solar panel',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
 $product = new \App\Product([
-'imagePath' => 'Garden outdoors/1 (9).jpg',
-'title' => 'Binary',
+'imagePath' => 'Security light.jpg',
+'title' => 'Security light',
 'description' => 'Lorem ipsum dolor sit amet consectetur',
 'price' => 10 
 ]);
 $product->save();
 
-$product = new \App\Product([
-'imagePath' => 'Garden outdoors/1 (10).jpg',
-'title' => 'Binary',
-'description' => 'Lorem ipsum dolor sit amet consectetur',
-'price' => 10 
-]);
-
-//$product->save();
-
-//\App\Product::truncate();
 
     }
 
