@@ -53,7 +53,7 @@ Route::namespace('Web\Customer')->group(function(){
     Route::post('deleteaccount','CustomerController@destroy')->name('deleteaccount'); //customer default addresses
     Route::post('deleteaccountreasons','CustomerController@deleteAccountReasons')->name('deleteaccountreasons'); //customer default addresses  
     Route::get('getorders','CustomerController@getOrders')->name('getorders'); //customer default addresses 
-    Route::post('subscribe','CustomerController@newsletterSubscription')->name('subscribe'); //customer default addresses    
+    Route::post('subscribe','CustomerController@manageNewsletterSubscription')->name('subscribe'); //customer default addresses    
 });
 
 //changes test

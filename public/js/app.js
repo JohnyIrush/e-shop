@@ -2326,12 +2326,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['current'],
   data: function data() {
@@ -2662,13 +2656,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         type: value
       };
       axios.post('subscribe', subscription).then(function (response) {
-        _this7.$swal({
-          position: 'top-end',
-          icon: 'success',
-          title: 'You have subscribed to our' + value,
-          showConfirmButton: false,
-          timer: 3000
-        });
+        if (value == 'subscribe') {
+          _this7.$swal({
+            position: 'top-end',
+            icon: 'success',
+            title: 'You have subscribed to our Daily Newsletter',
+            showConfirmButton: false,
+            timer: 3000
+          });
+        } else {
+          _this7.$swal({
+            position: 'top-end',
+            icon: 'success',
+            title: 'You have unsubscribed to our Daily Newsletter',
+            showConfirmButton: false,
+            timer: 3000
+          });
+        }
       })["catch"]();
     }
   },
@@ -46397,7 +46401,7 @@ var render = function() {
                   },
                   on: {
                     change: function($event) {
-                      return _vm.manageSubscription("daily")
+                      return _vm.manageSubscription("subscribe")
                     }
                   }
                 }),
@@ -46422,7 +46426,7 @@ var render = function() {
                   },
                   on: {
                     change: function($event) {
-                      return _vm.manageSubscription("weekly")
+                      return _vm.manageSubscription("unsubscribed")
                     }
                   }
                 }),
@@ -46430,35 +46434,14 @@ var render = function() {
                 _c(
                   "label",
                   {
-                    staticClass: "form-check-label link-color",
+                    staticClass: "form-check-label text-danger",
                     attrs: { for: "weekly" }
                   },
-                  [_vm._v("\n              Weekly Newsleter\n            ")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-check" }, [
-                _c("input", {
-                  staticClass: "form-check-input",
-                  attrs: {
-                    type: "radio",
-                    name: "subscription",
-                    value: "monthly"
-                  },
-                  on: {
-                    change: function($event) {
-                      return _vm.manageSubscription("monthly")
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "label",
-                  {
-                    staticClass: "form-check-label link-color",
-                    attrs: { for: "monthly" }
-                  },
-                  [_vm._v("\n              Monthly Newsleter\n            ")]
+                  [
+                    _vm._v(
+                      "\n              Unsubscribe Daily Newsleter\n            "
+                    )
+                  ]
                 )
               ])
             ])

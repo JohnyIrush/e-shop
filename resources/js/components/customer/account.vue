@@ -43,21 +43,15 @@
           </div>
           <div class="card-body">
            <div class="form-check">
-             <input v-on:change="manageSubscription('daily')" class="form-check-input" type="radio" name="subscription"  value="daily">
+             <input v-on:change="manageSubscription('subscribe')" class="form-check-input" type="radio" name="subscription"  value="daily">
              <label class="form-check-label link-color" for="daily">
                Daily NewsLetter
              </label>
            </div>
            <div class="form-check">
-             <input v-on:change="manageSubscription('weekly')" class="form-check-input" type="radio" name="subscription"  value="weekly">
-             <label class="form-check-label link-color" for="weekly">
-               Weekly Newsleter
-             </label>
-           </div>
-           <div class="form-check">
-             <input v-on:change="manageSubscription('monthly')" class="form-check-input" type="radio" name="subscription"  value="monthly">
-             <label class="form-check-label link-color" for="monthly">
-               Monthly Newsleter
+             <input v-on:change="manageSubscription('unsubscribed')" class="form-check-input" type="radio" name="subscription"  value="weekly">
+             <label class="form-check-label text-danger" for="weekly">
+               Unsubscribe Daily Newsleter
              </label>
            </div>
           </div>
@@ -400,13 +394,23 @@ export default {
     }
       axios.post('subscribe',subscription)
       .then((response)=>{
+        if(value=='subscribe'){
         this.$swal({
           position: 'top-end',
           icon: 'success',
-          title: 'You have subscribed to our' + value,
+          title: 'You have subscribed to our Daily Newsletter',
           showConfirmButton: false,
           timer: 3000
         })
+        }else{
+        this.$swal({
+          position: 'top-end',
+          icon: 'success',
+          title: 'You have unsubscribed to our Daily Newsletter',
+          showConfirmButton: false,
+          timer: 3000
+        })
+        }
       })
       .catch()
     }

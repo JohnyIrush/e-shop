@@ -196,12 +196,13 @@ class CustomerController extends Controller
         
         
     }
-    public function newsletterSubscription(Request $request){
-        //dd($request->type);
-        //DB::table('users')->insert(['subscription' => $request->type, 'id' => 1]);
-        DB::table('users')->where('id', 1)->update(['subscription' => $request->type]);
-        $subscriber =Newsletter::subscribe(Auth::user()->email, ['NAME'=>Auth::user()->name]);
-        dd($subscriber);
+    public function manageNewsletterSubscription(Request $request){
+        if ($request->type=='subscribe') {
+            DB::table('users')->where('id', 1)->update(['subscription' => $request->type]);
+            Newsletter::subscribe(Auth::user()->email, ['NAME'=>Auth::user()->name]);
+        }else{
+            Newsletter::unsubscribe(Auth::user()->email);
+        }
      }
     
 }
