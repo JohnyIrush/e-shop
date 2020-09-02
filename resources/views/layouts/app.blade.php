@@ -39,7 +39,7 @@
           </div>
           @include('partials.footer') 
         </div>
-        <!--<autosignin></autosignin> -->           
+        <autosignin></autosignin>          
       </div>
     <script src="{{ asset('js/main.js') }}"></script>
     <!-- Scripts -->

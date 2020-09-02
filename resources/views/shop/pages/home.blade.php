@@ -36,8 +36,8 @@
             <hr class="bg-white display-1">
             <div class="row  justify-content-center ml-2">
                 @foreach($products as $data)
-                 <div class="col-sm-4 mb-1 mt-1 product-height text-center">
-                   <div class="card  Theme">
+                 <div id="product-bg" class="col-sm-4 mb-1 mt-1 product-height text-center">
+                   <div  class="card  Theme">
                    <div>
                     <a class="" href=" {{route('product',['id'=>$data->id])}} ">
                    <img src="{{ asset('Images/' . $data->imagePath) }} " class="img-fluid product-link img-thumbnail" alt="...">

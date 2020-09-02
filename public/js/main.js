@@ -1,9 +1,9 @@
 /**
  * toggles
  * sidebar
-*/
-function displaySidebar(){
-  $('#sidebar').modal('show');
+ */
+function displaySidebar() {
+    $('#sidebar').modal('show');
 }
 
 
@@ -11,51 +11,50 @@ function displaySidebar(){
 /**
  * Display Privacy
  * policy
-*/
-function Displayprivacy(){
-  $('#privacy').modal('show');
+ */
+function Displayprivacy() {
+    $('#privacy').modal('show');
 }
 
 /**
  * Display Privacy
  * policy
-*/
-function DisplayTerms(){
-  $('#Terms').modal('show');
+ */
+function DisplayTerms() {
+    $('#Terms').modal('show');
 }
 
 
 /**
  * Create Product 
  * Categories
-*/
+ */
 
-function createCategory(){
-  $('#createcategory').modal('show');
+function createCategory() {
+    $('#createcategory').modal('show');
 }
 
-function editCategory(category){
-  $('#editcategory').modal('show');
-  try {
-    document.getElementById('category').value = category.category;
-    //document.getElementById('categoryimage').value = category.image;
-   
-  } catch (error) {
-    console.log(error);
-  }
+function editCategory(category) {
+    $('#editcategory').modal('show');
+    try {
+        document.getElementById('category').value = category.category;
+        //document.getElementById('categoryimage').value = category.image;
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
 //Query if Buyer wants to view cart or continue shopping
 
-function shopOrCheckout(id){
-  try {
-    xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://127.0.0.1:8000/add-to-cart/" + id, true);
-    xhttp.send();
-    $('#shop-check').modal('show');
-  } catch (error) {
-    console.log(error);
-  }
+function shopOrCheckout(id) {
+    try {
+        xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "http://127.0.0.1:8000/add-to-cart/" + id, true);
+        xhttp.send();
+        $('#shop-check').modal('show');
+    } catch (error) {
+        console.log(error);
+    }
 }
-

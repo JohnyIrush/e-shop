@@ -20,7 +20,9 @@ export default {
              showConfirmButton: false,
              timer: 10000
            }) 
-           window.location.reload();
+           setTimeout(()=>{
+             window.location.reload();
+           },10000);
         })
           .catch(()=>{
             this.$swal({
@@ -37,8 +39,9 @@ export default {
         }
     },
     mounted() {
-        this.autoSignIn();
+        //this.autoSignIn();
         
     },
 }
 </script>
+

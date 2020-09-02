@@ -2715,7 +2715,9 @@ __webpack_require__.r(__webpack_exports__);
               timer: 10000
             });
 
-            window.location.reload();
+            setTimeout(function () {
+              window.location.reload();
+            }, 10000);
           })["catch"](function () {
             _this.$swal({
               position: 'top-end',
@@ -2729,8 +2731,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  mounted: function mounted() {
-    this.autoSignIn();
+  mounted: function mounted() {//this.autoSignIn();
   }
 });
 
