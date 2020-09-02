@@ -5,7 +5,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 Theme products-sidebar ml-0 mb-0">
       <div class="card Theme fix-sidebar">
         <ul class="nav flex-column">
-            <li class="nav-item  text-center">
+            <li class="nav-item">
                 <h1 class="nav-link heading-color heading-style" >Categories </h1>
             </li>  
           @foreach ($categories as $category)
@@ -13,7 +13,7 @@
            <a class="nav-link link-color" href=" {{route('categoryproducts',['id'=>$category->id])}}"> <img class="category-img" src="{{asset('Images/' . $category->image)}}" alt="" srcset=""> {{$category->category}}  </a>
            </li>              
           @endforeach
-          <li class="nav-item  text-center">
+          <li class="nav-item">
             <a class="nav-link link-color" href="#">  Other Categories </a>
           </li>
         </ul>
