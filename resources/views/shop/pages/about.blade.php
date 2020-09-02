@@ -6,7 +6,7 @@
           <div class="row justify-content-center">
            <div class="col-sm-12">
              <div class="img-carousel-height">
-               <img src="Images/imprint.jpg" class="d-block img-height w-100" alt="...">
+               <img src="Images/roses.png" class="d-block img-height w-100" alt="...">
              </div>        
            </div>          
           </div>
