@@ -49,11 +49,12 @@ Route::namespace('Web\Customer')->group(function(){
     Route::get('getprofiledetails','CustomerController@profileDetails')->name('getprofiledetails');
     Route::get('getadresses','CustomerController@address')->name('getadresses'); //customer edit account 
     Route::post('editaddress/{id}','CustomerController@updateAddress')->name('editaddress'); //Update customer addresses
+    Route::post('editaccountdetails','CustomerController@updateDetails')->name('editaccountdetails'); //Update customer addresses
     Route::get('defaultadress','CustomerController@defaultAddress')->name('defaultadress'); //customer default addresses 
     Route::post('deleteaccount','CustomerController@destroy')->name('deleteaccount'); //customer default addresses
     Route::post('deleteaccountreasons','CustomerController@deleteAccountReasons')->name('deleteaccountreasons'); //customer default addresses  
     Route::get('getorders','CustomerController@getOrders')->name('getorders'); //customer default addresses 
-    Route::post('subscribe','CustomerController@manageNewsletterSubscription')->name('subscribe'); //customer default addresses    
+    Route::post('subscribe','CustomerController@manageNewsletterSubscription')->name('subscribe'); //customer newsletter subscription        
 });
 
 //changes test
@@ -96,6 +97,7 @@ Route::namespace('Products\Purchase')->group(function(){
     Route::post('/paypalpayment','PurchaseController@makePaypalPayment')->name('paypalpayment');
     Route::get('/pay','PurchaseController@paymentPage')->name('pay'); //payment page
     Route::post('/address','PurchaseController@address')->name('address'); //order adress
+    Route::get('getdefaultadress','PurchaseController@getDefaultAdress')->name('getdefaultadress'); //customer default address
 });
 
 /**

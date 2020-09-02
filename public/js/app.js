@@ -2530,10 +2530,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                if (data["default"] == 0) {
-                  data["default"] += 1;
+                if (data["default"] == null || data["default"] == -1) {
+                  data["default"] = 1;
                 } else {
-                  data["default"] -= 1;
+                  data["default"] = -1;
                 }
 
                 _this4.addressEditData = data;
@@ -4796,6 +4796,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../App/spinner */ "./resources/js/components/App/spinner.vue");
 
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -4968,7 +4970,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       totalPrice: ''
     };
   },
-  methods: {
+  methods: _defineProperty({
     /**
      * Get Buyer details
     */
@@ -5247,7 +5249,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         timer: 1500
       });
     }
-  },
+  }, "getDefaultAdress", function getDefaultAdress() {
+    var _this8 = this;
+
+    try {
+      axios.get('getdefaultadress').then(function (response) {
+        if (response.data != -1) {
+          _this8.customerAddress = response.data;
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }),
   mounted: function mounted() {
     this.getProfileDetails();
     this.getSelectedProducts();
@@ -5258,6 +5272,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     if (this.getAdressBarDisplayState() == 0) {
       window.location.reload();
     }
+
+    this.getDefaultAdress();
   }
 });
 

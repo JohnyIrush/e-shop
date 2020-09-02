@@ -334,7 +334,21 @@ components:{
       showConfirmButton: false,
       timer: 1500
     })
- }
+ },
+ //get the default address
+   getDefaultAdress(){
+     try{
+        axios.get('getdefaultadress')
+       .then((response)=>{
+         if(response.data!=-1){
+           this.customerAddress = response.data;
+         }
+       })
+     }
+     catch(error){
+      console.log(error);
+     }
+   }
   },
   mounted() {
     this.getProfileDetails();
@@ -345,7 +359,7 @@ components:{
     if (this.getAdressBarDisplayState() == 0) {
       window.location.reload();
     }
-   
+   this.getDefaultAdress();
   },
 }
 </script>

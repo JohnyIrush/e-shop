@@ -103,7 +103,7 @@ class CustomerController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function updateDetails(Request $request)
     {
         //dd($request);
         $this->validate($request,[

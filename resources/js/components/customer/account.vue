@@ -323,11 +323,10 @@ export default {
      },
      //make address default
      async makeAdressDefault(data){
-         
-         if (data.default==0) {
-           data.default += 1;
+         if (data.default==null || data.default==-1) {
+           data.default = 1;
          }else{
-           data.default -= 1;
+           data.default =  -1;
          }
        
        this.addressEditData = data;

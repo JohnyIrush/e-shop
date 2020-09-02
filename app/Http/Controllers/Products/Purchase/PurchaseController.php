@@ -111,25 +111,23 @@ class PurchaseController extends Controller
              'State' => 'required',
              'Zip' => 'required'
           ]);
-      /*
-          $adress = Adress::firstOrCreate([
+
+          $adress = Adress::firstOrNew([
+            'user_id' => 3,
             'Address' => $request->Address,
             'Address_2' => $request->Address_2,
             'City' => $request->City,
             'State' => $request->State,
             'Zip' => $request->Zip,
-            'user_id' => Auth::user()->id,
-         ],
-         [
-            'Address' => $request->address,
-            'Address_2' => $request->address2,
-            'City' => $request->city,
-            'State' => $request->state,
-            'Zip' => $request->zip,
-            'user_id' => Auth::user()->id,
-         ]
-     );*/
-         
+           ],
+     );
+     dd($adress);
+
+     /*
+     $flight = App\Flight::updateOrCreate(
+        ['departure' => 'Oakland', 'destination' => 'San Diego'],
+        ['price' => 99, 'discounted' => 1]
+    );
           $adress = new Adress();
           $adress->Address = $request->Address;
           $adress->Address_2 = $request->Address_2;
@@ -138,7 +136,7 @@ class PurchaseController extends Controller
           $adress->Zip = $request->Zip;
           $adress->user_id = Auth::user()->id;
           //$adress->user()->save(User::find(Auth::user()->id));
-          $adress->save();
+          $adress->save(); */
 
     }
 
@@ -167,5 +165,14 @@ class PurchaseController extends Controller
         Mail::to(Auth::user()->email)->send(new SuccessfulPurchaseEmail());
               
       }       
+        //get Default adress if exists
+        public function getDefaultAdress(){
+          $address = DB::table('adresses')->where('default', 1)->first();
+          if ($address) {
+            return response()->json($address,200);
+          }else{
+            return response()->json([-1],200);
+          }
+        }
     }
 
