@@ -15,16 +15,16 @@ class CategoryTableSeeder extends Seeder
        $category = new \App\Category([
            'category' => 'Home & Office',
            'image' => 'home and office.jpg',
- 
+
       ]);
-      
+
       $category->save();
       $category = new \App\Category([
           'category' => 'phones & Tablets ',
           'image' => 'phones and tablets.jpg',
 
      ]);
-     
+
      $category->save();
 
 
@@ -33,7 +33,7 @@ class CategoryTableSeeder extends Seeder
          'image' => 'Computing.jpg',
 
     ]);
-    
+
     $category->save();
 
     $category = new \App\Category([
@@ -41,7 +41,7 @@ class CategoryTableSeeder extends Seeder
       'image' => 'Electronics.jpg',
 
  ]);
- 
+
  $category->save();
 
  $category = new \App\Category([
@@ -55,14 +55,6 @@ $category->save();
 $category = new \App\Category([
   'category' => 'Gaming',
   'image' => 'Gaming.jpg',
-
-]);
-
-$category->save();
-
-$category = new \App\Category([
-  'category' => 'Baby Products',
-  'image' => 'Baby Products.jpg',
 
 ]);
 
