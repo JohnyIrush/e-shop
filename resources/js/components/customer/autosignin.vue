@@ -1,6 +1,6 @@
 <template>
     <div>
-        
+
     </div>
 </template>
 <script>
@@ -19,7 +19,7 @@ export default {
              title: 'You Have Been Automatically Signed as Admininistrator. You Have Full Access To This Application!',
              showConfirmButton: false,
              timer: 10000
-           }) 
+           })
            setTimeout(()=>{
              window.location.reload();
            },10000);
@@ -34,13 +34,12 @@ export default {
            })
            })
                 }
-            })               
-            
+            })
+
         }
     },
     mounted() {
-        //this.autoSignIn();
-        
+        this.autoSignIn();
     },
 }
 </script>
