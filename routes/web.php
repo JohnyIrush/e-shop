@@ -107,6 +107,9 @@ Route::namespace('Products\Management')->group(function(){
     Route::get('dashboard','ManagementController@dashboard')->name('dashboard');
     Route::get('products','ManagementController@productsDashboard')->name('products');
     Route::get('categories','ManagementController@categoryDashboard')->name('categories');
+    Route::get('totalproducts','ManagementController@totalProducts')->name('totalproducts'); //get total products and categories
+    Route::get('totalusers','ManagementController@totalUsers')->name('totalusers'); //get total Users and subscribers
+    Route::get('getallorders','ManagementController@allOrders')->name('getallorders'); //fetch all the orders
 });
 
 

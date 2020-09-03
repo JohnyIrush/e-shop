@@ -34,7 +34,7 @@
                                       </p>
                                   </li>
                                   <li class="nav-item mt-3">
-                                    <p class="nav-link text-primary label-number"> 100 </p>
+                                    <p class="nav-link text-primary label-number"> {{ totalUsers }} </p>
                                   </li>
                                 </ul>
                               </div>
@@ -57,7 +57,7 @@
                                        </p>
                                    </li>
                                    <li class="nav-item mt-3">
-                                     <p class="nav-link text-light label-number"> 100 </p>
+                                     <p class="nav-link text-light label-number"> {{ totalSubscribers }} </p>
                                    </li>
                                  </ul>
                                </div>
@@ -86,7 +86,7 @@
                                       </p>
                                   </li>
                                   <li class="nav-item mt-3">
-                                    <p class="nav-link text-primary label-number"> 100 </p>
+                                    <p class="nav-link text-primary label-number">{{ totalProducts }} </p>
                                   </li>
                                 </ul>
                               </div>
@@ -109,7 +109,7 @@
                                        </p>
                                    </li>
                                    <li class="nav-item mt-3">
-                                     <p class="nav-link text-light label-number"> 100 </p>
+                                     <p class="nav-link text-light label-number"> {{ totalCategories }} </p>
                                    </li>
                                  </ul>
                                </div>
@@ -153,29 +153,26 @@
                          <table class="table table-hover table-dark">
                            <thead>
                              <tr>
-                               <th scope="col">#</th>
-                               <th scope="col">First</th>
-                               <th scope="col">Last</th>
-                               <th scope="col">Handle</th>
+                               <th class="heading-color" scope="col"> <h4>Order Id</h4> </th>
+                               <th class="heading-color" scope="col"> <h4>Order Date</h4> </th>
+                               <th class="heading-color" scope="col"> <h4>Buyer Id</h4> </th>
+                               <th class="heading-color" scope="col"> <h4>Adress Id</h4> </th>
+                               <th class="heading-color" scope="col"> <h4>Payment Id</h4> </th>
+                               <th class="heading-color" scope="col"> <h4>Actions</h4> </th>
                              </tr>
                            </thead>
                            <tbody>
-                             <tr>
-                               <th scope="row">1</th>
-                               <td>Mark</td>
-                               <td>Otto</td>
-                               <td>@mdo</td>
-                             </tr>
-                             <tr>
-                               <th scope="row">2</th>
-                               <td>Jacob</td>
-                               <td>Thornton</td>
-                               <td>@fat</td>
-                             </tr>
-                             <tr>
-                               <th scope="row">3</th>
-                               <td colspan="2">Larry the Bird</td>
-                               <td>@twitter</td>
+                             <tr class="text-primary" v-for="(order, index) in allOrders" :key="index">
+                               <th scope="row"> {{order.id}} </th>
+                               <td> {{order.created_at}} </td>
+                               <td> {{order.user_id}} </td>
+                               <td> {{order.address_id}} </td>
+                               <td> {{order.payment_id}} </td>
+                               <td class="col-sm-12">
+                                <button class="btn btn-primary">Buyer Details</button>
+                                 <hr class="bg-white">
+                                <button class="btn btn-warning text-dark">Order Details</button>
+                               </td>
                              </tr>
                            </tbody>
                          </table>
@@ -201,9 +198,48 @@
     </div>
 </template>
 
+
 <script>
 export default {
-
+     data() {
+         return {
+             totalProducts: 0,
+             totalCategories: 0,
+             totalUsers: 0,
+             totalSubscribers: 0,
+             allOrders: []
+         }
+     },
+     methods: {
+         //fetch total number products in the stock
+          getTotalProducts(){
+              axios.get('totalproducts')
+              .then((response)=>{
+               this.totalProducts =  response.data.totalProducts;
+               this.totalCategories =  response.data.totalCategories ;
+              })
+          },
+         //fetch total number categories of products
+          getTotalUsers(){
+             axios.get('totalusers')
+             .then((response)=>{
+                 console.log(response);
+               this.totalUsers =  response.data.totalUsers;
+               this.totalSubscribers =  response.data.totalSubcribers;
+             })
+          },
+          getOrders(){
+              axios.get('getallorders')
+              .then((response)=>{
+                  this.allOrders = response.data;
+              })
+          }
+     },
+     mounted() {
+         this.getTotalProducts();
+         this.getTotalUsers();
+         this.getOrders();
+     },
 }
 </script>
 

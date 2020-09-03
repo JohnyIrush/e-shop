@@ -2121,9 +2121,50 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      totalProducts: 0,
+      totalCategories: 0,
+      totalUsers: 0,
+      totalSubscribers: 0,
+      allOrders: []
+    };
+  },
+  methods: {
+    //fetch total number products in the stock
+    getTotalProducts: function getTotalProducts() {
+      var _this = this;
+
+      axios.get('totalproducts').then(function (response) {
+        _this.totalProducts = response.data.totalProducts;
+        _this.totalCategories = response.data.totalCategories;
+      });
+    },
+    //fetch total number categories of products
+    getTotalUsers: function getTotalUsers() {
+      var _this2 = this;
+
+      axios.get('totalusers').then(function (response) {
+        console.log(response);
+        _this2.totalUsers = response.data.totalUsers;
+        _this2.totalSubscribers = response.data.totalSubcribers;
+      });
+    },
+    getOrders: function getOrders() {
+      var _this3 = this;
+
+      axios.get('getallorders').then(function (response) {
+        _this3.allOrders = response.data;
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getTotalProducts();
+    this.getTotalUsers();
+    this.getOrders();
+  }
+});
 
 /***/ }),
 
@@ -46286,744 +46327,405 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "Theme-two", attrs: { id: "admin-dashboard" } },
-      [
-        _c("div", { staticClass: "col mt-3" }, [
-          _c("div", { staticClass: "row justify-content-center mt-1" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
-              _c("div", { staticClass: "card Theme" }, [
-                _c(
-                  "h5",
-                  {
-                    staticClass:
-                      "card-header heading-color heading-style text-center"
-                  },
-                  [_vm._v("Buyers and Products")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "card Theme" }, [
-                      _c("div", { staticClass: "card-header p-2" }, [
-                        _c("ul", { staticClass: "nav nav-pills" }, [
-                          _c("li", { staticClass: "nav-item mr-5" }, [
+  return _c(
+    "div",
+    { staticClass: "Theme-two", attrs: { id: "admin-dashboard" } },
+    [
+      _c("div", { staticClass: "col mt-3" }, [
+        _c("div", { staticClass: "row justify-content-center mt-1" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "card Theme" }, [
+              _c(
+                "h5",
+                {
+                  staticClass:
+                    "card-header heading-color heading-style text-center"
+                },
+                [_vm._v("Buyers and Products")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("div", { staticClass: "card Theme" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "tab-content" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "tab-pane active show",
+                            attrs: { id: "users" }
+                          },
+                          [
                             _c(
-                              "button",
+                              "div",
                               {
-                                staticClass:
-                                  "btn nav-link  link-color  active show",
-                                attrs: { href: "#users", "data-toggle": "tab" }
+                                staticClass: "row justify-content-center Theme"
                               },
                               [
-                                _c("i", { staticClass: "fas fa-users    " }),
-                                _vm._v(" Users ")
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
+                                  },
+                                  [
+                                    _vm._m(1),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "card Theme text-center   offset-sm-2",
+                                        attrs: { id: "total-Users" }
+                                      },
+                                      [
+                                        _c(
+                                          "ul",
+                                          {
+                                            staticClass: "nav flex-column mt-4"
+                                          },
+                                          [
+                                            _vm._m(2),
+                                            _vm._v(" "),
+                                            _c(
+                                              "li",
+                                              { staticClass: "nav-item mt-3" },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass:
+                                                      "nav-link text-primary label-number"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      " " +
+                                                        _vm._s(_vm.totalUsers) +
+                                                        " "
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(3)
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
+                                  },
+                                  [
+                                    _vm._m(4),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "card Theme text-center   offset-sm-2",
+                                        attrs: { id: "total-Subscribers" }
+                                      },
+                                      [
+                                        _c(
+                                          "ul",
+                                          {
+                                            staticClass: "nav flex-column mt-4"
+                                          },
+                                          [
+                                            _vm._m(5),
+                                            _vm._v(" "),
+                                            _c(
+                                              "li",
+                                              { staticClass: "nav-item mt-3" },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass:
+                                                      "nav-link text-light label-number"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      " " +
+                                                        _vm._s(
+                                                          _vm.totalSubscribers
+                                                        ) +
+                                                        " "
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(6)
+                                  ]
+                                )
                               ]
                             )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "nav-item" }, [
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "tab-pane ",
+                            attrs: { id: "products" }
+                          },
+                          [
                             _c(
-                              "button",
+                              "div",
                               {
-                                staticClass: "btn nav-link link-color ",
-                                attrs: {
-                                  href: "#products",
-                                  "data-toggle": "tab"
-                                }
+                                staticClass: "row justify-content-center Theme"
                               },
                               [
-                                _c("i", {
-                                  staticClass: "fab fa-product-hunt fa-1x",
-                                  attrs: { "aria-hidden": "true" }
-                                }),
-                                _vm._v(" Products ")
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
+                                  },
+                                  [
+                                    _vm._m(7),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "card Theme text-center   offset-sm-2",
+                                        attrs: { id: "total-products" }
+                                      },
+                                      [
+                                        _c(
+                                          "ul",
+                                          {
+                                            staticClass: "nav flex-column mt-4"
+                                          },
+                                          [
+                                            _vm._m(8),
+                                            _vm._v(" "),
+                                            _c(
+                                              "li",
+                                              { staticClass: "nav-item mt-3" },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass:
+                                                      "nav-link text-primary label-number"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(
+                                                        _vm.totalProducts
+                                                      ) + " "
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(9)
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
+                                  },
+                                  [
+                                    _vm._m(10),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "card Theme text-center   offset-sm-2",
+                                        attrs: { id: "total-categories" }
+                                      },
+                                      [
+                                        _c(
+                                          "ul",
+                                          {
+                                            staticClass: "nav flex-column mt-4"
+                                          },
+                                          [
+                                            _vm._m(11),
+                                            _vm._v(" "),
+                                            _c(
+                                              "li",
+                                              { staticClass: "nav-item mt-3" },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass:
+                                                      "nav-link text-light label-number"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      " " +
+                                                        _vm._s(
+                                                          _vm.totalCategories
+                                                        ) +
+                                                        " "
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(12)
+                                  ]
+                                )
                               ]
                             )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("div", { staticClass: "tab-content" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane active show",
-                              attrs: { id: "users" }
-                            },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "row justify-content-center Theme"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
-                                    },
-                                    [
-                                      _c("div", { staticClass: "card-title" }, [
-                                        _c(
-                                          "p",
-                                          {
-                                            staticClass:
-                                              "nav-link heading-style heading-color"
-                                          },
-                                          [_vm._v("Users")]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "card Theme text-center   offset-sm-2",
-                                          attrs: { id: "total-Users" }
-                                        },
-                                        [
-                                          _c(
-                                            "ul",
-                                            {
-                                              staticClass:
-                                                "nav flex-column mt-4"
-                                            },
-                                            [
-                                              _c(
-                                                "li",
-                                                {
-                                                  staticClass: "nav-item mt-3"
-                                                },
-                                                [
-                                                  _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "nav-link active"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "span",
-                                                        {
-                                                          staticStyle: {
-                                                            color: "Dodgerblue"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "fas fa-users  fa-4x  "
-                                                          })
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "li",
-                                                {
-                                                  staticClass: "nav-item mt-3"
-                                                },
-                                                [
-                                                  _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "nav-link text-primary label-number"
-                                                    },
-                                                    [_vm._v(" 100 ")]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        { staticClass: "nav flex-column mt-4" },
-                                        [
-                                          _c(
-                                            "li",
-                                            { staticClass: "nav-item  mt-3" },
-                                            [
-                                              _c(
-                                                "a",
-                                                {
-                                                  staticClass:
-                                                    "btn  btn-success text-white",
-                                                  attrs: {
-                                                    href:
-                                                      "http://127.0.0.1:8000/admin/users",
-                                                    type: "button"
-                                                  }
-                                                },
-                                                [_vm._v(" Manage users")]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
-                                    },
-                                    [
-                                      _c("div", { staticClass: "card-title" }, [
-                                        _c(
-                                          "p",
-                                          {
-                                            staticClass:
-                                              "nav-link heading-style heading-color"
-                                          },
-                                          [_vm._v("Subscribres")]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "card Theme text-center   offset-sm-2",
-                                          attrs: { id: "total-Subscribers" }
-                                        },
-                                        [
-                                          _c(
-                                            "ul",
-                                            {
-                                              staticClass:
-                                                "nav flex-column mt-4"
-                                            },
-                                            [
-                                              _c(
-                                                "li",
-                                                {
-                                                  staticClass: "nav-item mt-3"
-                                                },
-                                                [
-                                                  _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "nav-link active"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "span",
-                                                        {
-                                                          staticStyle: {
-                                                            color:
-                                                              "Mediumslateblue"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "fas fa-newspaper fa-4x"
-                                                          })
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "li",
-                                                {
-                                                  staticClass: "nav-item mt-3"
-                                                },
-                                                [
-                                                  _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "nav-link text-light label-number"
-                                                    },
-                                                    [_vm._v(" 100 ")]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        { staticClass: "nav flex-column mt-4" },
-                                        [
-                                          _c(
-                                            "li",
-                                            { staticClass: "nav-item  mt-3" },
-                                            [
-                                              _c(
-                                                "a",
-                                                {
-                                                  staticClass:
-                                                    "btn  btn-success text-white",
-                                                  attrs: {
-                                                    href:
-                                                      "http://127.0.0.1:8000/admin/users",
-                                                    type: "button"
-                                                  }
-                                                },
-                                                [_vm._v(" Manage subscribers")]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane ",
-                              attrs: { id: "products" }
-                            },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "row justify-content-center Theme"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
-                                    },
-                                    [
-                                      _c("div", { staticClass: "card-title" }, [
-                                        _c(
-                                          "p",
-                                          {
-                                            staticClass:
-                                              "nav-link heading-style heading-color"
-                                          },
-                                          [_vm._v("Products")]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "card Theme text-center   offset-sm-2",
-                                          attrs: { id: "total-products" }
-                                        },
-                                        [
-                                          _c(
-                                            "ul",
-                                            {
-                                              staticClass:
-                                                "nav flex-column mt-4"
-                                            },
-                                            [
-                                              _c(
-                                                "li",
-                                                {
-                                                  staticClass: "nav-item mt-3"
-                                                },
-                                                [
-                                                  _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "nav-link active"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "span",
-                                                        {
-                                                          staticStyle: {
-                                                            color: "Dodgerblue"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "fab fa-product-hunt fa-4x "
-                                                          })
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "li",
-                                                {
-                                                  staticClass: "nav-item mt-3"
-                                                },
-                                                [
-                                                  _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "nav-link text-primary label-number"
-                                                    },
-                                                    [_vm._v(" 100 ")]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        { staticClass: "nav flex-column mt-4" },
-                                        [
-                                          _c(
-                                            "li",
-                                            { staticClass: "nav-item  mt-3" },
-                                            [
-                                              _c(
-                                                "a",
-                                                {
-                                                  staticClass:
-                                                    "btn  btn-success text-white",
-                                                  attrs: {
-                                                    href:
-                                                      "http://127.0.0.1:8000/products",
-                                                    type: "button"
-                                                  }
-                                                },
-                                                [_vm._v(" Manage Products")]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
-                                    },
-                                    [
-                                      _c("div", { staticClass: "card-title" }, [
-                                        _c(
-                                          "p",
-                                          {
-                                            staticClass:
-                                              "nav-link heading-style heading-color"
-                                          },
-                                          [_vm._v("Categories")]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "card Theme text-center   offset-sm-2",
-                                          attrs: { id: "total-categories" }
-                                        },
-                                        [
-                                          _c(
-                                            "ul",
-                                            {
-                                              staticClass:
-                                                "nav flex-column mt-4"
-                                            },
-                                            [
-                                              _c(
-                                                "li",
-                                                {
-                                                  staticClass: "nav-item mt-3"
-                                                },
-                                                [
-                                                  _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "nav-link active"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "span",
-                                                        {
-                                                          staticStyle: {
-                                                            color: "tomato"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "fas fa-network-wired fa-4x"
-                                                          })
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "li",
-                                                {
-                                                  staticClass: "nav-item mt-3"
-                                                },
-                                                [
-                                                  _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "nav-link text-light label-number"
-                                                    },
-                                                    [_vm._v(" 100 ")]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        { staticClass: "nav flex-column mt-4" },
-                                        [
-                                          _c(
-                                            "li",
-                                            { staticClass: "nav-item  mt-3" },
-                                            [
-                                              _c(
-                                                "a",
-                                                {
-                                                  staticClass:
-                                                    "btn  btn-success text-white",
-                                                  attrs: {
-                                                    href:
-                                                      "http://127.0.0.1:8000/categories",
-                                                    type: "button"
-                                                  }
-                                                },
-                                                [_vm._v("Manage Categories")]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            ]
-                          )
-                        ])
+                          ]
+                        )
                       ])
                     ])
                   ])
                 ])
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row justify-content-center mt-1" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
-              _c("div", { staticClass: "card Theme" }, [
-                _c(
-                  "h5",
-                  {
-                    staticClass:
-                      "card-header heading-color heading-style text-center"
-                  },
-                  [_vm._v("Sales and Money")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "card Theme" }, [
-                      _c("div", { staticClass: "card-header p-2" }, [
-                        _c("ul", { staticClass: "nav nav-pills" }, [
-                          _c("li", { staticClass: "nav-item mr-5" }, [
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row justify-content-center mt-1" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "card Theme" }, [
+              _c(
+                "h5",
+                {
+                  staticClass:
+                    "card-header heading-color heading-style text-center"
+                },
+                [_vm._v("Sales and Money")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("div", { staticClass: "card Theme" }, [
+                    _vm._m(13),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "tab-content" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "tab-pane active show",
+                            attrs: { id: "sales" }
+                          },
+                          [
                             _c(
-                              "a",
+                              "div",
                               {
-                                staticClass: "nav-link link-color active show",
-                                attrs: { href: "#sales", "data-toggle": "tab" }
+                                staticClass:
+                                  "flex-center position-ref full-height"
                               },
                               [
-                                _c("i", { staticClass: "fab fa-salesforce" }),
-                                _vm._v(" Sales ")
+                                _c("div", { staticClass: "col-sm-12" }, [
+                                  _c(
+                                    "table",
+                                    {
+                                      staticClass:
+                                        "table table-hover table-dark"
+                                    },
+                                    [
+                                      _vm._m(14),
+                                      _vm._v(" "),
+                                      _c(
+                                        "tbody",
+                                        _vm._l(_vm.allOrders, function(
+                                          order,
+                                          index
+                                        ) {
+                                          return _c(
+                                            "tr",
+                                            {
+                                              key: index,
+                                              staticClass: "text-primary"
+                                            },
+                                            [
+                                              _c(
+                                                "th",
+                                                { attrs: { scope: "row" } },
+                                                [
+                                                  _vm._v(
+                                                    " " + _vm._s(order.id) + " "
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(
+                                                  " " +
+                                                    _vm._s(order.created_at) +
+                                                    " "
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(
+                                                  " " +
+                                                    _vm._s(order.user_id) +
+                                                    " "
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(
+                                                  " " +
+                                                    _vm._s(order.address_id) +
+                                                    " "
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(
+                                                  " " +
+                                                    _vm._s(order.payment_id) +
+                                                    " "
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _vm._m(15, true)
+                                            ]
+                                          )
+                                        }),
+                                        0
+                                      )
+                                    ]
+                                  )
+                                ])
                               ]
                             )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "nav-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link link-color",
-                                attrs: { href: "#money", "data-toggle": "tab" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "fas fa-money-bill-wave"
-                                }),
-                                _vm._v("Money")
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("div", { staticClass: "tab-content" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane active show",
-                              attrs: { id: "sales" }
-                            },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "flex-center position-ref full-height"
-                                },
-                                [
-                                  _c("div", { staticClass: "col-sm-12" }, [
-                                    _c(
-                                      "table",
-                                      {
-                                        staticClass:
-                                          "table table-hover table-dark"
-                                      },
-                                      [
-                                        _c("thead", [
-                                          _c("tr", [
-                                            _c(
-                                              "th",
-                                              { attrs: { scope: "col" } },
-                                              [_vm._v("#")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "th",
-                                              { attrs: { scope: "col" } },
-                                              [_vm._v("First")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "th",
-                                              { attrs: { scope: "col" } },
-                                              [_vm._v("Last")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "th",
-                                              { attrs: { scope: "col" } },
-                                              [_vm._v("Handle")]
-                                            )
-                                          ])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("tbody", [
-                                          _c("tr", [
-                                            _c(
-                                              "th",
-                                              { attrs: { scope: "row" } },
-                                              [_vm._v("1")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("td", [_vm._v("Mark")]),
-                                            _vm._v(" "),
-                                            _c("td", [_vm._v("Otto")]),
-                                            _vm._v(" "),
-                                            _c("td", [_vm._v("@mdo")])
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("tr", [
-                                            _c(
-                                              "th",
-                                              { attrs: { scope: "row" } },
-                                              [_vm._v("2")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("td", [_vm._v("Jacob")]),
-                                            _vm._v(" "),
-                                            _c("td", [_vm._v("Thornton")]),
-                                            _vm._v(" "),
-                                            _c("td", [_vm._v("@fat")])
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("tr", [
-                                            _c(
-                                              "th",
-                                              { attrs: { scope: "row" } },
-                                              [_vm._v("3")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "td",
-                                              { attrs: { colspan: "2" } },
-                                              [_vm._v("Larry the Bird")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("td", [_vm._v("@twitter")])
-                                          ])
-                                        ])
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane ",
-                              attrs: { id: "money" }
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "row justify-content-start" },
-                                [_c("div", { staticClass: "col-sm-12" })]
-                              )
-                            ]
-                          )
-                        ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm._m(16)
                       ])
                     ])
                   ])
@@ -47032,8 +46734,293 @@ var staticRenderFns = [
             ])
           ])
         ])
-      ]
-    )
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header p-2" }, [
+      _c("ul", { staticClass: "nav nav-pills" }, [
+        _c("li", { staticClass: "nav-item mr-5" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn nav-link  link-color  active show",
+              attrs: { href: "#users", "data-toggle": "tab" }
+            },
+            [_c("i", { staticClass: "fas fa-users    " }), _vm._v(" Users ")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn nav-link link-color ",
+              attrs: { href: "#products", "data-toggle": "tab" }
+            },
+            [
+              _c("i", {
+                staticClass: "fab fa-product-hunt fa-1x",
+                attrs: { "aria-hidden": "true" }
+              }),
+              _vm._v(" Products ")
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-title" }, [
+      _c("p", { staticClass: "nav-link heading-style heading-color" }, [
+        _vm._v("Users")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item mt-3" }, [
+      _c("p", { staticClass: "nav-link active" }, [
+        _c("span", { staticStyle: { color: "Dodgerblue" } }, [
+          _c("i", { staticClass: "fas fa-users  fa-4x  " })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "nav flex-column mt-4" }, [
+      _c("li", { staticClass: "nav-item  mt-3" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn  btn-success text-white",
+            attrs: { href: "http://127.0.0.1:8000/admin/users", type: "button" }
+          },
+          [_vm._v(" Manage users")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-title" }, [
+      _c("p", { staticClass: "nav-link heading-style heading-color" }, [
+        _vm._v("Subscribres")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item mt-3" }, [
+      _c("p", { staticClass: "nav-link active" }, [
+        _c("span", { staticStyle: { color: "Mediumslateblue" } }, [
+          _c("i", { staticClass: "fas fa-newspaper fa-4x" })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "nav flex-column mt-4" }, [
+      _c("li", { staticClass: "nav-item  mt-3" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn  btn-success text-white",
+            attrs: { href: "http://127.0.0.1:8000/admin/users", type: "button" }
+          },
+          [_vm._v(" Manage subscribers")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-title" }, [
+      _c("p", { staticClass: "nav-link heading-style heading-color" }, [
+        _vm._v("Products")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item mt-3" }, [
+      _c("p", { staticClass: "nav-link active" }, [
+        _c("span", { staticStyle: { color: "Dodgerblue" } }, [
+          _c("i", { staticClass: "fab fa-product-hunt fa-4x " })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "nav flex-column mt-4" }, [
+      _c("li", { staticClass: "nav-item  mt-3" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn  btn-success text-white",
+            attrs: { href: "http://127.0.0.1:8000/products", type: "button" }
+          },
+          [_vm._v(" Manage Products")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-title" }, [
+      _c("p", { staticClass: "nav-link heading-style heading-color" }, [
+        _vm._v("Categories")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item mt-3" }, [
+      _c("p", { staticClass: "nav-link active" }, [
+        _c("span", { staticStyle: { color: "tomato" } }, [
+          _c("i", { staticClass: "fas fa-network-wired fa-4x" })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "nav flex-column mt-4" }, [
+      _c("li", { staticClass: "nav-item  mt-3" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn  btn-success text-white",
+            attrs: { href: "http://127.0.0.1:8000/categories", type: "button" }
+          },
+          [_vm._v("Manage Categories")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header p-2" }, [
+      _c("ul", { staticClass: "nav nav-pills" }, [
+        _c("li", { staticClass: "nav-item mr-5" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link link-color active show",
+              attrs: { href: "#sales", "data-toggle": "tab" }
+            },
+            [_c("i", { staticClass: "fab fa-salesforce" }), _vm._v(" Sales ")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link link-color",
+              attrs: { href: "#money", "data-toggle": "tab" }
+            },
+            [
+              _c("i", { staticClass: "fas fa-money-bill-wave" }),
+              _vm._v("Money")
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "heading-color", attrs: { scope: "col" } }, [
+          _c("h4", [_vm._v("Order Id")])
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "heading-color", attrs: { scope: "col" } }, [
+          _c("h4", [_vm._v("Order Date")])
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "heading-color", attrs: { scope: "col" } }, [
+          _c("h4", [_vm._v("Buyer Id")])
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "heading-color", attrs: { scope: "col" } }, [
+          _c("h4", [_vm._v("Adress Id")])
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "heading-color", attrs: { scope: "col" } }, [
+          _c("h4", [_vm._v("Payment Id")])
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "heading-color", attrs: { scope: "col" } }, [
+          _c("h4", [_vm._v("Actions")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "col-sm-12" }, [
+      _c("button", { staticClass: "btn btn-primary" }, [
+        _vm._v("Buyer Details")
+      ]),
+      _vm._v(" "),
+      _c("hr", { staticClass: "bg-white" }),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-warning text-dark" }, [
+        _vm._v("Order Details")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "tab-pane ", attrs: { id: "money" } }, [
+      _c("div", { staticClass: "row justify-content-start" }, [
+        _c("div", { staticClass: "col-sm-12" })
+      ])
+    ])
   }
 ]
 render._withStripped = true
