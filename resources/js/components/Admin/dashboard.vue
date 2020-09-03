@@ -139,21 +139,51 @@
                 <div class="card Theme">
                    <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                          <li class="nav-item mr-5"><a href="#paypal" class="nav-link heading-color link-color payment-method-link-color active show" data-toggle="tab">Pay With <i class="fab fa-paypal" aria-hidden="true"></i>yPal </a></li>
-                          <li class="nav-item"><a href="#stripe" class="nav-link heading-color link-color payment-method-link-color " data-toggle="tab">Pay With Stripe</a></li>
+                          <li class="nav-item mr-5"><a href="#sales" class="nav-link link-color active show" data-toggle="tab"> <i class="fab fa-salesforce"></i> Sales </a></li>
+                          <li class="nav-item"><a href="#money" class="nav-link link-color" data-toggle="tab"><i class="fas fa-money-bill-wave"></i>Money</a></li>
                         </ul>
                    </div>
                    <!-- /.card-header -->
                    <div class="card-body">
                      <div class="tab-content">
-                       <!-- Paypal Tab -->
-                       <div class="tab-pane active show" id="paypal">
+                       <!-- sales Tab -->
+                       <div class="tab-pane active show" id="sales">
                       <div class="flex-center position-ref full-height">
-                            <div id="pay-pal"></div>
+                        <div class="col-sm-12">
+                         <table class="table table-hover table-dark">
+                           <thead>
+                             <tr>
+                               <th scope="col">#</th>
+                               <th scope="col">First</th>
+                               <th scope="col">Last</th>
+                               <th scope="col">Handle</th>
+                             </tr>
+                           </thead>
+                           <tbody>
+                             <tr>
+                               <th scope="row">1</th>
+                               <td>Mark</td>
+                               <td>Otto</td>
+                               <td>@mdo</td>
+                             </tr>
+                             <tr>
+                               <th scope="row">2</th>
+                               <td>Jacob</td>
+                               <td>Thornton</td>
+                               <td>@fat</td>
+                             </tr>
+                             <tr>
+                               <th scope="row">3</th>
+                               <td colspan="2">Larry the Bird</td>
+                               <td>@twitter</td>
+                             </tr>
+                           </tbody>
+                         </table>
+                        </div>
                       </div>
                        </div>
-                       <!-- Sripe Tab -->
-                       <div class="tab-pane " id="stripe">
+                       <!--money Tab -->
+                       <div class="tab-pane " id="money">
                          <div class='row justify-content-start'>
                            <div class='col-sm-12'>
                            </div>

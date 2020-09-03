@@ -2093,6 +2093,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -46846,17 +46876,12 @@ var staticRenderFns = [
                             _c(
                               "a",
                               {
-                                staticClass:
-                                  "nav-link heading-color link-color payment-method-link-color active show",
-                                attrs: { href: "#paypal", "data-toggle": "tab" }
+                                staticClass: "nav-link link-color active show",
+                                attrs: { href: "#sales", "data-toggle": "tab" }
                               },
                               [
-                                _vm._v("Pay With "),
-                                _c("i", {
-                                  staticClass: "fab fa-paypal",
-                                  attrs: { "aria-hidden": "true" }
-                                }),
-                                _vm._v("yPal ")
+                                _c("i", { staticClass: "fab fa-salesforce" }),
+                                _vm._v(" Sales ")
                               ]
                             )
                           ]),
@@ -46865,11 +46890,15 @@ var staticRenderFns = [
                             _c(
                               "a",
                               {
-                                staticClass:
-                                  "nav-link heading-color link-color payment-method-link-color ",
-                                attrs: { href: "#stripe", "data-toggle": "tab" }
+                                staticClass: "nav-link link-color",
+                                attrs: { href: "#money", "data-toggle": "tab" }
                               },
-                              [_vm._v("Pay With Stripe")]
+                              [
+                                _c("i", {
+                                  staticClass: "fas fa-money-bill-wave"
+                                }),
+                                _vm._v("Money")
+                              ]
                             )
                           ])
                         ])
@@ -46881,7 +46910,7 @@ var staticRenderFns = [
                             "div",
                             {
                               staticClass: "tab-pane active show",
-                              attrs: { id: "paypal" }
+                              attrs: { id: "sales" }
                             },
                             [
                               _c(
@@ -46890,7 +46919,92 @@ var staticRenderFns = [
                                   staticClass:
                                     "flex-center position-ref full-height"
                                 },
-                                [_c("div", { attrs: { id: "pay-pal" } })]
+                                [
+                                  _c("div", { staticClass: "col-sm-12" }, [
+                                    _c(
+                                      "table",
+                                      {
+                                        staticClass:
+                                          "table table-hover table-dark"
+                                      },
+                                      [
+                                        _c("thead", [
+                                          _c("tr", [
+                                            _c(
+                                              "th",
+                                              { attrs: { scope: "col" } },
+                                              [_vm._v("#")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              { attrs: { scope: "col" } },
+                                              [_vm._v("First")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              { attrs: { scope: "col" } },
+                                              [_vm._v("Last")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              { attrs: { scope: "col" } },
+                                              [_vm._v("Handle")]
+                                            )
+                                          ])
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("tbody", [
+                                          _c("tr", [
+                                            _c(
+                                              "th",
+                                              { attrs: { scope: "row" } },
+                                              [_vm._v("1")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("td", [_vm._v("Mark")]),
+                                            _vm._v(" "),
+                                            _c("td", [_vm._v("Otto")]),
+                                            _vm._v(" "),
+                                            _c("td", [_vm._v("@mdo")])
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("tr", [
+                                            _c(
+                                              "th",
+                                              { attrs: { scope: "row" } },
+                                              [_vm._v("2")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("td", [_vm._v("Jacob")]),
+                                            _vm._v(" "),
+                                            _c("td", [_vm._v("Thornton")]),
+                                            _vm._v(" "),
+                                            _c("td", [_vm._v("@fat")])
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("tr", [
+                                            _c(
+                                              "th",
+                                              { attrs: { scope: "row" } },
+                                              [_vm._v("3")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { attrs: { colspan: "2" } },
+                                              [_vm._v("Larry the Bird")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("td", [_vm._v("@twitter")])
+                                          ])
+                                        ])
+                                      ]
+                                    )
+                                  ])
+                                ]
                               )
                             ]
                           ),
@@ -46899,7 +47013,7 @@ var staticRenderFns = [
                             "div",
                             {
                               staticClass: "tab-pane ",
-                              attrs: { id: "stripe" }
+                              attrs: { id: "money" }
                             },
                             [
                               _c(
