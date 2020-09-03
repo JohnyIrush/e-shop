@@ -118,7 +118,7 @@
                             </div>
                         </div>
                        </div>
-                     </div>                       
+                     </div>
                    </div>
                  </div>
                </div>
@@ -131,7 +131,7 @@
     <div class="modal-content bg-success">
       <div class="modal-body bg-success">
         <div class="alert" role="alert">
-         <p class=" pay-success-text text-white">Your payment was completed successfully</p> 
+         <p class=" pay-success-text text-white">Your payment was completed successfully</p>
          </div>
       </div>
     </div>
@@ -165,7 +165,7 @@ components:{
         yearExpiry: ''
       },
       totalPrice: ''
-    
+
     }
   },
   methods: {
@@ -180,7 +180,7 @@ components:{
       } catch (error) {
         console.log(error);
       }
-        
+
     },
     //get Selected Products info
     async getSelectedProducts(){
@@ -191,7 +191,7 @@ components:{
            } catch (error) {
                console.log(error);
            }
-        
+
     },
     //save Customer address
      saveCustomerAdress(){
@@ -208,10 +208,10 @@ components:{
                }).then((result) => {
                   this.saveAdress(result);
                })
-               
+
            } catch (error) {
                console.log(error);
-           } 
+           }
           //Hide Adress Form if Buyer adress is saved
     },
     //save customer adress
@@ -278,7 +278,7 @@ components:{
         const res = await this.callApi('get','defaultadress');
         this.customerAddress = res.data;
      },
-     
+
  //control payment
  managePayment(){
    try {
@@ -367,7 +367,7 @@ components:{
 <style>
     .payment-page{
         min-height: 90vh;
-        
+
     }
     .payment-method-link-color{
         font-size: 20px;

@@ -169,9 +169,9 @@
                                <td> {{order.address_id}} </td>
                                <td> {{order.payment_id}} </td>
                                <td class="col-sm-12">
-                                <button class="btn btn-primary">Buyer Details</button>
+                                <button @click="viewBuyerDetails(order.user_id)" class="btn btn-primary">Buyer Details</button>
                                  <hr class="bg-white">
-                                <button class="btn btn-warning text-dark">Order Details</button>
+                                <button @click="viewOderDetails()" class="btn btn-warning text-dark">Order Details</button>
                                </td>
                              </tr>
                            </tbody>
@@ -195,6 +195,106 @@
        </div>
      </div>
     </div>
+    <!--User Details Modal-->
+     <div class="modal fade" id="buyer-details" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+       <div class="modal-dialog">
+         <div class="modal-content Theme">
+           <div class="modal-header">
+             <h5 class="modal-title heading-color heading-style" id="staticBackdropLabel">Buyer Details</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span class="text-danger" aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div  class="modal-body">
+             <h4 class="heading-color">Name:</h4> <p class="link-color">{{ buyerDetails.name }}</p>
+             <h4 class="heading-color">Email:</h4> <p class="link-color">{{ buyerDetails.email }} </p>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
+    <!--Order Details-->
+     <div class="modal  fade" id="order-details" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered cart-products-width">
+         <div class="modal-content Theme cart-products-width">
+           <div class="modal-header">
+             <h5 class="modal-title heading-color heading-style" id="staticBackdropLabel">Order Details</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span class="text-danger" aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div  class="modal-body">
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  cart-items" >
+              <div class="card-header Theme">
+                <h1 class="heading-color heading-style">Ordered Products<span class="badge ml-3 badge-secondary"> {{cartProducts.totalQty}} </span></h1>
+              </div>
+            <div class="card Theme-light shadow-lg p-3 mb-5 rounded" v-for="(cartProduct, index) in cartProducts.items" :key="index">
+              <div class="card Theme-light-2 cart-bg-color">
+                  <div class="row justify-content-center p-3">
+                     <div class="col-sm-3 Theme shadow-sm m-1  mb-5  rounded">
+                       <ul class="nav flex-column">
+                         <li class="nav-item">
+                            <h5 class="heading-color" > {{cartProduct.item.title}} </h5>
+                         </li>
+                         <li class="nav-item">
+                           <img :src="'Images/' + cartProduct.item.imagePath " class="img-fluid cart-image-size" alt="" srcset="">
+                         </li>
+                       </ul>
+                     </div>
+                     <div class="col-sm-3  Theme m-0 shadow-sm m-1  mb-5  rounded">
+                       <ul class="nav flex-column">
+                         <li class="nav-item">
+                            <h5 class="heading-color" >Description</h5>
+                         </li>
+                         <li class="nav-item">
+                           <p class="text-white">{{cartProduct.item.description}}</p>
+                         </li>
+                       </ul>
+                     </div>
+                     <div class="col-sm-3 Theme m-0 shadow-sm m-1 cart-qty-height mb-5  rounded">
+                       <ul class="nav flex-column">
+                         <li class="nav-item">
+                            <h5 class="heading-color" >Quantity</h5>
+                         </li>
+                       </ul>
+                     </div>
+                     <div class="col-sm-2 Theme">
+                       <div class="row content-justify-center">
+                         <div  class="col-sm-12 m-0 cart-qty-height shadow-sm   mb-5 rounded">
+                           <ul class="nav flex-column">
+                             <li class="nav-item">
+                                <h5 class="heading-color" > Price </h5>
+                             </li>
+                             <li class="nav-item">
+                                 <p class="text-white"> <sup> <i class="fas fa-dollar-sign    "></i> </sup> {{cartProduct.item.price}} </p>
+                             </li>
+                           </ul>
+                         </div>
+                         <div  class="col-sm-12 Theme m-0 cart-qty-height shadow-sm   mb-5 rounded">
+                           <ul class="nav flex-column">
+                             <li class="nav-item">
+                                <h5 class="heading-color" > Subtotal </h5>
+                             </li>
+                             <li class="nav-item">
+                                 <p class="text-white"> <sup> <i class="fas fa-dollar-sign    "></i> </sup> {{cartProduct.price}} </p>
+                             </li>
+                           </ul>
+                         </div>
+                       </div>
+                     </div>
+                  </div>
+              </div>
+            </div>
+           </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
     </div>
 </template>
 
@@ -207,7 +307,10 @@ export default {
              totalCategories: 0,
              totalUsers: 0,
              totalSubscribers: 0,
-             allOrders: []
+             allOrders: [],
+             buyerDetails: {
+             },
+            cartProducts: []
          }
      },
      methods: {
@@ -233,12 +336,37 @@ export default {
               .then((response)=>{
                   this.allOrders = response.data;
               })
-          }
+          },
+          viewBuyerDetails(id){
+               this.getBuyerDetails(id);
+          },
+          getBuyerDetails(id){
+              var ref = this;
+              axios.get('getbuyerdetails/' + id)
+              .then((response)=>{
+                 ref.buyerDetails = response.data;
+              });
+              $('#buyer-details').modal('show');
+      },
+      //get Products added to the cart
+      async getCartProducts(){
+           try {
+               const res = await this.callApi('get','getcartproducts');
+               this.cartProducts = res.data;
+               console.log(this.cartProducts.totalQty);
+           } catch (error) {
+               console.log(this.cartProducts );
+           }
+      },
+      viewOderDetails(){
+          $('#order-details').modal('show');
+      }
      },
      mounted() {
          this.getTotalProducts();
          this.getTotalUsers();
          this.getOrders();
+         this.getCartProducts();
      },
 }
 </script>
@@ -274,4 +402,35 @@ export default {
     height: 200px;
     background-color: pink;
 }
+
+    .cart-height{
+        min-height: 50vh;
+    }
+    .cart-image-size{
+        width: 150px;
+        height: 150px;
+    }
+    .cart-bg-color{
+        background-color: rgb(70,70,109);
+    }
+    .cart-qty-height{
+        height: 100px;
+    }
+    .cart-order-summary{
+        float: left;
+        right: 0;
+    }
+    .cart-items{
+        left: 0;
+    }
+    .Theme-light{
+      background-color: rgb(78, 78, 126);
+    }
+    .Theme-light-2{
+      background-color: rgb(71, 71, 138);
+    }
+    .cart-products-width{
+        width: 800px;
+        left: 10px;
+    }
 </style>

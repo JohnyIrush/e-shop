@@ -52,4 +52,9 @@ class ManagementController extends Controller
         $orders = Order::all();
         return response()->json($orders,200);
     }
+
+    //get buyer details
+    public function getBuyerDetails($id){
+       return response()->json(User::find($id),200);
+    }
 }

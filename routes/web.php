@@ -110,6 +110,7 @@ Route::namespace('Products\Management')->group(function(){
     Route::get('totalproducts','ManagementController@totalProducts')->name('totalproducts'); //get total products and categories
     Route::get('totalusers','ManagementController@totalUsers')->name('totalusers'); //get total Users and subscribers
     Route::get('getallorders','ManagementController@allOrders')->name('getallorders'); //fetch all the orders
+    Route::get('getbuyerdetails/{id}','ManagementController@getBuyerDetails')->name('getbuyerdetails'); //get buyer details
 });
 
 
