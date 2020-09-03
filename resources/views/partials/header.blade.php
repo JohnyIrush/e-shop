@@ -1,3 +1,4 @@
+ <!--<loading></loading>-->
 <div class="card Theme header-fixed">
 <nav class="navbar navbar-expand-lg navbar-height">
   @can('access-sitemenu')
@@ -11,7 +12,7 @@
   <div  class="collapse mr-1 justify-content-end navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link link-color" href="{{route('cart')}}"> 
+        <a class="nav-link link-color" href="{{route('cart')}}">
         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
          <span class="badge badge-danger ">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
         </a>
@@ -23,7 +24,7 @@
          @guest
          User Account
          @else
-         {{ Auth::user()->name }} <span class="caret"></span> 
+         {{ Auth::user()->name }} <span class="caret"></span>
          @endguest
         </a>
         <div class="dropdown-menu Theme" aria-labelledby="navbarDropdown">

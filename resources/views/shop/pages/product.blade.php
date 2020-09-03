@@ -4,19 +4,19 @@
     <div class="row mt-3">
         <div class="col-sm-9">
             <div class="card Theme">
-                <div class="card-header"><h5 class="heading-color">{{$product->title}}</h5></div> 
+                <div class="card-header"><h5 class="heading-color">{{$product->title}}</h5></div>
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-xs-5  col-sm-5">
                             <img src=" {{ asset('Images/' . $product->imagePath) }}" alt="" class="img-fluid img-thumbnail" srcset="">
                         </div>
                         <div class="col-xs-5  col-sm-5">
-                              <p class="card-text mb-5 text-white">{{$product->description}}</p> 
+                              <p class="card-text mb-5 text-white">{{$product->description}}</p>
                               <hr class="bg-white">
                               <h2 class="text-white"> <sup><i class="fas fa-dollar-sign    "></i> </sup> {{$product->price}} </h2>
                               <div class="row">
                                 <div class="col-sm-12 mt-5">
-                                    <a href="{{route('add-to-cart',['id'=>$product->id])}}" class="btn-lg btn-warning text-secondary"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</a>
+                                    <button onclick="shopOrCheckout({{$product->id}})"  class="btn btn-success text-secondary mt-1 mb-1"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -34,12 +34,13 @@
                         {{$otherproduct->title}}
                      </div>
                  <a class="nav-link link-color" href=" {{route('product',['id'=>$otherproduct->id])}}"> <img class="product-sidebar-img-size" src="{{asset('Images/' . $otherproduct->imagePath)}}" alt="" srcset="">   </a>
-                 </li>              
+                 </li>
                 @endforeach
               </ul>
             </div>
           </div>
     </div>
 </div>
+<shoporcheckout></shoporcheckout>
 <carrier></carrier>
 @endsection

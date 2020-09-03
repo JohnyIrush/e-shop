@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Role;
 
+use GetStream\StreamChat\Client as StreamClient;
+
 class RegisterController extends Controller
 {
     /*
@@ -66,14 +68,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // create the user to Stream Chat
+       /**
+        * $client = new StreamClient(
+        * getenv("STREAM_API_KEY"),
+        * getenv("STREAM_API_SECRET"),
+        * null,
+        * null,
+        * 9 // timeout
+        *);
+       */
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
         $role = Role::select('id')->where('name','admin')->first();
         $user->roles()->attach($role);
         return $user;
+       /**
+        * Streamchart integration
+        *$client->updateUser($user);
+        *return User::create([
+        *    'name' => $data['name'],
+        *    'email' => $data['email'],
+        *    'password' => Hash::make($data['password']),
+        *]);
+        */
+
+
     }
 }

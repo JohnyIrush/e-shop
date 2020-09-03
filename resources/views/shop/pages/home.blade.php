@@ -3,7 +3,7 @@
  <!-- Categories -->
   <div onload="showAccOverView()" id="shop-home" class="row justify-content-center">
     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-3 Theme products-sidebar ml-0 mb-0">
-      <div class="card Theme"> 
+      <div class="card Theme">
         <ul class="nav flex-column">
           <li class="nav-item ">
             <h1 class="nav-link heading-color heading-style" >Categories </h1>
@@ -11,7 +11,7 @@
           @foreach ($categories as $category)
            <li class="nav-item">
            <a class="nav-link link-color" href=" {{route('categoryproducts',['id'=>$category->id])}}"> <img class="category-img" src="{{asset('Images/' . $category->image)}}" alt="" srcset=""> {{$category->category}}  </a>
-           </li>              
+           </li>
           @endforeach
           <li class="nav-item">
             <a class="nav-link link-color" href="#">  Other Categories </a>
@@ -19,7 +19,7 @@
         </ul>
       </div>
     </div>
-   
+
      <!--Products-->
      <div class="col-xs-12 col-sm-9 mt-2 col-md-12 col-lg-9">
       <div class="row content-justify-center mt-1 ">
@@ -44,8 +44,8 @@
                     </a>
                     <h3 class="text-white"> {{$data->title}} </h3>
                     <p class="text-white"> {{$data->description}} </p>
-                   <div> 
-                     <h3 class="price text-white"> <sup> <i class="fas fa-dollar-sign    "></i> </sup> {{$data->price}} </h3> 
+                   <div>
+                     <h3 class="price text-white"> <sup> <i class="fas fa-dollar-sign    "></i> </sup> {{$data->price}} </h3>
                    <div class="col-sm-12 mt-1 mb-1">
                        <button onclick="shopOrCheckout({{$data->id}})"  class="btn btn-success text-secondary mt-1 mb-1"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
                    </div>
@@ -55,7 +55,7 @@
                  </div>
                 @endforeach
             </div>
-          </div>       
+          </div>
           @endif
           @if (sizeof($products)==0)
           <div class="col-xs-12  col-sm-12 col-md-12">
@@ -74,11 +74,12 @@
                 <li class="page-item">{{$products->links()}}</li>
               </ul>
             </nav>
-          </div>            
+          </div>
         @endif
       </div>
     </div>
     <carrier></carrier>
     <shoporcheckout></shoporcheckout>
+    <!-- implement in future <stream-chat :autheduser="{{ Auth::user() }}"></stream-chat>-->
   </div>
 @endsection

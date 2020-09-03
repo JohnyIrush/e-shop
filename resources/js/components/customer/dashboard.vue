@@ -27,17 +27,17 @@
                     </li>
                     <li class="nav-item m-1 mr-3 col-sm-12 Theme text-danger">
                       <button @click="deleteAccount()" class="nav-link btn sidebar-link text-danger" > <i class="fa fa-trash" aria-hidden="true"></i> Delete Account</button>
-                    </li> 
+                    </li>
                   </div>
                   </ul>
               </div>
           </div>
           <div  class="col-sm-9 p-1">
               <account v-show="acc_overview==1"></account>
-              <router-view v-show="acc_overview!=1" ></router-view> 
+              <router-view v-show="acc_overview!=1" ></router-view>
           </div>
        </div>
-     </div>        
+     </div>
     </div>
 
      <!-- Delete Account Reasons -->
@@ -107,18 +107,18 @@ export default {
         State: '',
         Zip: '',
         default:'',
-        
+
       },
       acc_overview: false,
       deleteAccountReasons:{
-           Reason1: 'I dont get What I Want', 
+           Reason1: 'I dont get What I Want',
            Reason2: 'e-shop app is slow',
            Reason3: 'It is difficult to use e-shop Application',
            Reason4: 'Poor Services',
            Reason5: 'I dont Have A reason',
       },
       saveDeleteAccountReasons:{
-           Reason1: 0, 
+           Reason1: 0,
            Reason2: 0,
            Reason3: 0,
            Reason4: 0,
@@ -134,7 +134,7 @@ export default {
         console.log(this.profileDetails);
       } catch (error) {
         console.log(error);
-      }   
+      }
     },
     launchEditModal(mode,data){
       if(mode=='editAcount'){
@@ -195,13 +195,13 @@ export default {
      },
      //make address default
      async makeAdressDefault(data){
-         
+
          if (data.default==0) {
            data.default += 1;
          }else{
            data.default -= 1;
          }
-       
+
        this.addressEditData = data;
           const res = await this.callApi('post','editaddress/' + this.addressEditData.id ,this.addressEditData);
           if (res.status==200) {
@@ -229,7 +229,7 @@ export default {
            confirmButtonText: 'Yes, delete it!'
          }).then((result) => {
            if (result.value) {
-             
+
              $('#delete-reasons').modal('show');
            }
          });
@@ -256,13 +256,13 @@ export default {
                this.removeAccount();
                 setTimeout(() => {
                   window.location.assign('/');
-                }, 2500);  
+                }, 2500);
     },
 
   },
   mounted() {
     this.getProfileDetails();
-    this.getAdresses();   
+    this.getAdresses();
     this.acc_overview = this.$global.showAccountOverview();
   },
 }
@@ -286,7 +286,7 @@ export default {
     }
     .customer-profile-bg-color{
        background-color: rgb(70,70,109);
-    }  
+    }
     .leave-reasons{
       font-size: 26px;
     }

@@ -16984,3 +16984,100 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+/* [...] */
+
+input[type="text"] {
+  padding: 10px 8px;
+  margin-top: 10px;
+  border-radius: 2px;
+  border: 1px solid darkgray;
+  font-size: 16px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.inputs {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.chat-message {
+  width: 80%;
+  margin-top: 4px;
+  padding: 6px;
+  text-align: left;
+  word-wrap: break-word;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.from-admin {
+  background: #96b2b7;
+  color: #272525;
+  float: left;
+}
+
+.from-client {
+  background: #300d4f;
+  color: white;
+  float: right;
+}
+
+.input-container {
+  margin: 0px 0px;
+}
+
+.chat-input {
+  width: 99%;
+  margin-bottom: 0px;
+}
+
+.user-messages {
+  overflow-y: scroll;
+  height: 300px;
+}
+
+.user-box {
+  width: 350px;
+  position: relative;
+  bottom: 0;
+  margin: auto 10px 0px;
+}
+
+.users-box {
+  width: 300px;
+  margin: auto 25px auto auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.active-chats {
+  margin-right: 330px;
+  position: relative;
+}
+
+.stream-chat {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.users {
+  overflow-y: scroll;
+  height: 320px;
+  padding: 0px;
+}
+
+.user {
+  padding: 10px;
+  margin: 10px 0px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.user:hover {
+  background: #f5f4f4;
+}
+

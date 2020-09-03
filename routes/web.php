@@ -55,6 +55,8 @@ Route::namespace('Web\Customer')->group(function(){
     Route::post('deleteaccountreasons','CustomerController@deleteAccountReasons')->name('deleteaccountreasons'); //customer default addresses
     Route::get('getorders','CustomerController@getOrders')->name('getorders'); //customer default addresses
     Route::post('subscribe','CustomerController@manageNewsletterSubscription')->name('subscribe'); //customer newsletter subscription
+    Route::post('generate-token', 'CustomerInstantCommunicationController@getnerateToken')->name('generate-token'); //generate chartapp token
+    Route::get('get-users', 'CustomerInstantCommunicationController@getUsers')->name('get-users'); //get all the users in the app
 });
 
 //changes test

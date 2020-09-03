@@ -22,6 +22,12 @@ Vue.component('load_progress', require('./components/App/load-progress.vue').def
 //Admin Dashboard
 Vue.component('admindashboard', require('./components/Admin/dashboard.vue').default); //Admin Dashboard
 
+//chart app components
+Vue.component('users-component', require('./components/chartapp/UsersComponent.vue').default);
+Vue.component('message-component', require('./components/chartapp/MessagesComponent.vue').default);
+Vue.component('active-chats-component', require('./components/chartapp/ActiveChatsComponent.vue').default);
+Vue.component('stream-chat', require('./components/chartapp/StreamChat.vue').default);
+
 //Imports
 
 import common from './common/common.js'; //common js
@@ -59,6 +65,7 @@ const router = new VueRouter({
     routes,
 });
 
+
 //Event bus
 var Event = new Vue();
 window.Event = Event;
@@ -81,6 +88,8 @@ const options = {
 
 Vue.use(VueProgressBar, options)
 
+//chart app event bus
+Vue.prototype.EventBus = new Vue();
 
 const app = new Vue({
     router,
