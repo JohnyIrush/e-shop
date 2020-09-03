@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Auth\password;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\Password; 
+use Illuminate\Support\Facades\Password;
+
+use Illuminate\Support\Facades\Hash;
 
 class ForgotPasswordController extends Controller
 {
@@ -26,8 +28,9 @@ class ForgotPasswordController extends Controller
             'password' => 'required|string|confirmed'
         ]);
 
+       /// dd($credentials);
         $reset_password_status = Password::reset($credentials, function ($user, $password) {
-            $user->password = $password;
+            $user->password = Hash::make($password);
             $user->save();
         });
 

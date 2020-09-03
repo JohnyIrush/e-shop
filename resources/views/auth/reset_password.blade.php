@@ -62,7 +62,7 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height Theme-two">
-<form class="form-container Theme" action="{{route('password-reset')}}" method="POST">
+<form class="form-container Theme" action="{{route('password-reset')}}" method="get">
         <h2 class="heading-color heading-style" >Forgot Password?</h2>
 
         <input  name="email" placeholder="Enter email" value="{{request()->get('email')}}">

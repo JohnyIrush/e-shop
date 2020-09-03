@@ -137,7 +137,7 @@ Route::namespace('Social')->group(function(){
 //forgot password reset
 Route::namespace('Auth\password')->group(function(){
     //Route::post('/resetpassword','ForgotPasswordController@forgot')->name('resetpassword');
-    Route::post('password-reset', 'ForgotPasswordController@reset')->name('password-reset');
+    Route::get('password-reset', 'ForgotPasswordController@reset')->name('password-reset');
 });
 
 Route::view('forgot_password', 'auth.reset_password')->name('password.reset');

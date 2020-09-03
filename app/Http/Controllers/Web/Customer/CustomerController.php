@@ -120,7 +120,7 @@ class CustomerController extends Controller
             ]);
             $user->password = Hash::make($request->password);
         }
-        
+
         $user->update();
     }
 
@@ -167,7 +167,7 @@ class CustomerController extends Controller
     }
 
     public function deleteAccountReasons(Request $request){
-        
+
         $reasons = new AccountDeleteReasons();
         $reasons->I_dont_get_What_I_Want = $request->Reason1;
         $reasons->e_shop_app_is_slow = $request->Reason2;
@@ -181,28 +181,31 @@ class CustomerController extends Controller
     //get customer orders
 
     public function getOrders(){
-          
+
         /*$orders = DB::table('orders')
                       ->where('user_id',Auth::user()->id)
                       ->get();*/
-        
+
         $orders = Auth::user()->orders;
         $orders->transform(function($order,$key){
            $order->order =  unserialize($order->order);
            return $order;
-        }); 
+        });
 
         return response()->json($orders,200);
-        
-        
+
+
     }
     public function manageNewsletterSubscription(Request $request){
+        //dd($request->type);
         if ($request->type=='subscribe') {
-            DB::table('users')->where('id', 1)->update(['subscription' => $request->type]);
-            Newsletter::subscribe(Auth::user()->email, ['NAME'=>Auth::user()->name]);
+            DB::table('users')->where('id',Auth::user()->id )->update(['subscription' => $request->type]);
+            $subscribe = Newsletter::subscribe(Auth::user()->email, ['NAME'=>Auth::user()->name]);
+            dd($subscribe);
         }else{
-            Newsletter::unsubscribe(Auth::user()->email);
+           $test = Newsletter::unsubscribe(Auth::user()->email);
+            dd($test);
         }
      }
-    
+
 }
