@@ -16,9 +16,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
  -->
 
+   <!--Fontawesome-->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" > 
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" >
 </head>
 <body>
     @include('partials.header')
@@ -39,7 +42,7 @@
                        </div>
                 </div>
                 <div class="col-xs app-height col-sm col-md col-lg Theme-color-one pl-0">
-                    @yield('content')  
+                    @yield('content')
                 </div>
             </div>
         @can('access-sitemenu')
@@ -48,9 +51,9 @@
         @include('partials.editcategory')
         @include('partials.createcategory')
         @include('partials.privacypolicy')
-        @include('partials.terms')           
+        @include('partials.terms')
     </div>
-    @include('partials.footer') 
+    @include('partials.footer')
 <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

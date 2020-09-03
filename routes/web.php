@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Auth routes
+
 Auth::routes();
 
 
 /**
- * Control Front end 
- * public pages 
- * 
+ * Control Front end
+ * public pages
+ *
 */
 Route::namespace('Web')->group(function(){
     Route::get('/shop','WebController@products')->name('shop');
@@ -34,7 +34,7 @@ Route::namespace('Web')->group(function(){
     Route::get('/categoryproducts/{id}','WebController@productsBycategory')->name('categoryproducts');
     Route::get('/product/{id}','WebController@product')->name('product');
     Route::get('autosignin','WebController@AutoSignIn'); //signed in User Automatically as admin
-    Route::get('/checkifsignedIn','WebController@checkIfSignedIn'); //check if user is signed in 
+    Route::get('/checkifsignedIn','WebController@checkIfSignedIn'); //check if user is signed in
 
 });
 
@@ -47,14 +47,14 @@ Route::namespace('Web\Customer')->group(function(){
     Route::get('profile','CustomerController@profile')->name('profile');
     Route::get('profilelogout','CustomerController@logout')->name('profilelogout');
     Route::get('getprofiledetails','CustomerController@profileDetails')->name('getprofiledetails');
-    Route::get('getadresses','CustomerController@address')->name('getadresses'); //customer edit account 
+    Route::get('getadresses','CustomerController@address')->name('getadresses'); //customer edit account
     Route::post('editaddress/{id}','CustomerController@updateAddress')->name('editaddress'); //Update customer addresses
     Route::post('editaccountdetails','CustomerController@updateDetails')->name('editaccountdetails'); //Update customer addresses
-    Route::get('defaultadress','CustomerController@defaultAddress')->name('defaultadress'); //customer default addresses 
+    Route::get('defaultadress','CustomerController@defaultAddress')->name('defaultadress'); //customer default addresses
     Route::post('deleteaccount','CustomerController@destroy')->name('deleteaccount'); //customer default addresses
-    Route::post('deleteaccountreasons','CustomerController@deleteAccountReasons')->name('deleteaccountreasons'); //customer default addresses  
-    Route::get('getorders','CustomerController@getOrders')->name('getorders'); //customer default addresses 
-    Route::post('subscribe','CustomerController@manageNewsletterSubscription')->name('subscribe'); //customer newsletter subscription        
+    Route::post('deleteaccountreasons','CustomerController@deleteAccountReasons')->name('deleteaccountreasons'); //customer default addresses
+    Route::get('getorders','CustomerController@getOrders')->name('getorders'); //customer default addresses
+    Route::post('subscribe','CustomerController@manageNewsletterSubscription')->name('subscribe'); //customer newsletter subscription
 });
 
 //changes test
@@ -68,8 +68,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 });
 
 /**
- * Handle Business 
- * Products 
+ * Handle Business
+ * Products
 */
 Route::namespace('Products')->group(function(){
     Route::get('/getproducts','ProductsController@index'); //fetch products for consumption by vuejs
@@ -111,7 +111,7 @@ Route::namespace('Products\Management')->group(function(){
 
 
 /**
- * Handle Sign Customers with 
+ * Handle Sign Customers with
  * social media accounts
 */
 Route::namespace('Social')->group(function(){

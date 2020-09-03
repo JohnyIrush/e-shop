@@ -1911,6 +1911,192 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Admin/dashboard.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/App/Load-control.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/App/Load-control.vue?vue&type=script&lang=js& ***!
@@ -9769,6 +9955,25 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 // module
 exports.push([module.i, "@-webkit-keyframes fadeOut{from{opacity:1}to{opacity:0}}@keyframes fadeOut{from{opacity:1}to{opacity:0}}.fadeOut{-webkit-animation-name:fadeOut;animation-name:fadeOut}@-webkit-keyframes fadeInDown{from{opacity:0;transform:translate3d(0, -100%, 0)}to{opacity:1;transform:none}}@keyframes fadeInDown{from{opacity:0;transform:translate3d(0, -100%, 0)}to{opacity:1;transform:none}}.fadeInDown{-webkit-animation-name:fadeInDown;animation-name:fadeInDown}@-webkit-keyframes fadeInUp{from{opacity:0;transform:translate3d(0, 100%, 0)}to{opacity:1;transform:none}}@keyframes fadeInUp{from{opacity:0;transform:translate3d(0, 100%, 0)}to{opacity:1;transform:none}}.fadeInUp{-webkit-animation-name:fadeInUp;animation-name:fadeInUp}.fade-enter-active,.fade-leave-active{transition:opacity 150ms ease-out}.fade-enter,.fade-leave-to{opacity:0}.v-notices{position:fixed;display:flex;top:0;bottom:0;left:0;right:0;padding:2em;overflow:hidden;z-index:1052;pointer-events:none}.v-notices .v-toast{display:inline-flex;align-items:center;-webkit-animation-duration:150ms;animation-duration:150ms;margin:.5em 0;box-shadow:0 1px 4px rgba(0,0,0,.12),0 0 6px rgba(0,0,0,.04);border-radius:.25em;pointer-events:auto;opacity:.92;color:#fff;min-height:3em;cursor:pointer}.v-notices .v-toast .v-toast-text{margin:0;padding:.5em 1em;word-break:break-word}.v-notices .v-toast .v-toast-icon{display:none}.v-notices .v-toast-success{background-color:#28a745}.v-notices .v-toast-info{background-color:#17a2b8}.v-notices .v-toast-warning{background-color:#ffc107}.v-notices .v-toast-error{background-color:#dc3545}.v-notices .v-toast-default{background-color:#343a40}.v-notices .v-toast.is-top,.v-notices .v-toast.is-bottom{align-self:center}.v-notices .v-toast.is-top-right,.v-notices .v-toast.is-bottom-right{align-self:flex-end}.v-notices .v-toast.is-top-left,.v-notices .v-toast.is-bottom-left{align-self:flex-start}.v-notices.is-top{flex-direction:column}.v-notices.is-bottom{flex-direction:column-reverse}.v-notices.is-custom-parent{position:absolute}@media screen and (max-width: 768px){.v-notices{padding:0;position:fixed !important}}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Admin/dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#admin-dashboard[data-v-2d7a1e39]{\n    min-height: 80vh;\n}\n#total-Users[data-v-2d7a1e39]{\n    width: 200px;\n    height: 200px;\n    border-radius: 50%;\n    background-color: crimson;\n}\n.label-number[data-v-2d7a1e39]{\n  font-size: 32px;\n  font-weight: 800;\n  font-family: algerian;\n}\n#total-Subscribers[data-v-2d7a1e39]{\n    width: 200px;\n    height: 200px;\n    border-radius: 50%;\n    background-color: green;\n}\n#total-products[data-v-2d7a1e39]{\n    width: 200px;\n    height: 200px;\n    background-color: coral;\n}\n#total-categories[data-v-2d7a1e39]{\n    width: 200px;\n    height: 200px;\n    background-color: pink;\n}\n", ""]);
 
 // exports
 
@@ -41902,6 +42107,36 @@ try {
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Admin/dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/App/loading.vue?vue&type=style&index=0&id=7ce48b33&scoped=true&lang=css&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/App/loading.vue?vue&type=style&index=0&id=7ce48b33&scoped=true&lang=css& ***!
@@ -46006,10 +46241,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&":
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39& ***!
-  \******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -46021,9 +46256,672 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "Theme-two", attrs: { id: "admin-dashboard" } },
+      [
+        _c("div", { staticClass: "col mt-3" }, [
+          _c("div", { staticClass: "row justify-content-center mt-1" }, [
+            _c("div", { staticClass: "col-sm-12" }, [
+              _c("div", { staticClass: "card Theme" }, [
+                _c(
+                  "h5",
+                  {
+                    staticClass:
+                      "card-header heading-color heading-style text-center"
+                  },
+                  [_vm._v("Buyers and Products")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "card Theme" }, [
+                      _c("div", { staticClass: "card-header p-2" }, [
+                        _c("ul", { staticClass: "nav nav-pills" }, [
+                          _c("li", { staticClass: "nav-item mr-5" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "btn nav-link  link-color  active show",
+                                attrs: { href: "#users", "data-toggle": "tab" }
+                              },
+                              [
+                                _c("i", { staticClass: "fas fa-users    " }),
+                                _vm._v(" Users ")
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "nav-item" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn nav-link link-color ",
+                                attrs: {
+                                  href: "#products",
+                                  "data-toggle": "tab"
+                                }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "fab fa-product-hunt fa-1x",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" Products ")
+                              ]
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("div", { staticClass: "tab-content" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "tab-pane active show",
+                              attrs: { id: "users" }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "row justify-content-center Theme"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
+                                    },
+                                    [
+                                      _c("div", { staticClass: "card-title" }, [
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "nav-link heading-style heading-color"
+                                          },
+                                          [_vm._v("Users")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "card Theme text-center   offset-sm-2",
+                                          attrs: { id: "total-Users" }
+                                        },
+                                        [
+                                          _c(
+                                            "ul",
+                                            {
+                                              staticClass:
+                                                "nav flex-column mt-4"
+                                            },
+                                            [
+                                              _c(
+                                                "li",
+                                                {
+                                                  staticClass: "nav-item mt-3"
+                                                },
+                                                [
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass:
+                                                        "nav-link active"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticStyle: {
+                                                            color: "Dodgerblue"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fas fa-users  fa-4x  "
+                                                          })
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "li",
+                                                {
+                                                  staticClass: "nav-item mt-3"
+                                                },
+                                                [
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass:
+                                                        "nav-link text-primary label-number"
+                                                    },
+                                                    [_vm._v(" 100 ")]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "ul",
+                                        { staticClass: "nav flex-column mt-4" },
+                                        [
+                                          _c(
+                                            "li",
+                                            { staticClass: "nav-item  mt-3" },
+                                            [
+                                              _c(
+                                                "a",
+                                                {
+                                                  staticClass:
+                                                    "btn  btn-success text-white",
+                                                  attrs: {
+                                                    href:
+                                                      "http://127.0.0.1:8000/admin/users",
+                                                    type: "button"
+                                                  }
+                                                },
+                                                [_vm._v(" Manage users")]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
+                                    },
+                                    [
+                                      _c("div", { staticClass: "card-title" }, [
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "nav-link heading-style heading-color"
+                                          },
+                                          [_vm._v("Subscribres")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "card Theme text-center   offset-sm-2",
+                                          attrs: { id: "total-Subscribers" }
+                                        },
+                                        [
+                                          _c(
+                                            "ul",
+                                            {
+                                              staticClass:
+                                                "nav flex-column mt-4"
+                                            },
+                                            [
+                                              _c(
+                                                "li",
+                                                {
+                                                  staticClass: "nav-item mt-3"
+                                                },
+                                                [
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass:
+                                                        "nav-link active"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticStyle: {
+                                                            color:
+                                                              "Mediumslateblue"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fas fa-newspaper fa-4x"
+                                                          })
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "li",
+                                                {
+                                                  staticClass: "nav-item mt-3"
+                                                },
+                                                [
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass:
+                                                        "nav-link text-light label-number"
+                                                    },
+                                                    [_vm._v(" 100 ")]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "ul",
+                                        { staticClass: "nav flex-column mt-4" },
+                                        [
+                                          _c(
+                                            "li",
+                                            { staticClass: "nav-item  mt-3" },
+                                            [
+                                              _c(
+                                                "a",
+                                                {
+                                                  staticClass:
+                                                    "btn  btn-success text-white",
+                                                  attrs: {
+                                                    href:
+                                                      "http://127.0.0.1:8000/admin/users",
+                                                    type: "button"
+                                                  }
+                                                },
+                                                [_vm._v(" Manage subscribers")]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "tab-pane ",
+                              attrs: { id: "products" }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "row justify-content-center Theme"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
+                                    },
+                                    [
+                                      _c("div", { staticClass: "card-title" }, [
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "nav-link heading-style heading-color"
+                                          },
+                                          [_vm._v("Products")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "card Theme text-center   offset-sm-2",
+                                          attrs: { id: "total-products" }
+                                        },
+                                        [
+                                          _c(
+                                            "ul",
+                                            {
+                                              staticClass:
+                                                "nav flex-column mt-4"
+                                            },
+                                            [
+                                              _c(
+                                                "li",
+                                                {
+                                                  staticClass: "nav-item mt-3"
+                                                },
+                                                [
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass:
+                                                        "nav-link active"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticStyle: {
+                                                            color: "Dodgerblue"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fab fa-product-hunt fa-4x "
+                                                          })
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "li",
+                                                {
+                                                  staticClass: "nav-item mt-3"
+                                                },
+                                                [
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass:
+                                                        "nav-link text-primary label-number"
+                                                    },
+                                                    [_vm._v(" 100 ")]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "ul",
+                                        { staticClass: "nav flex-column mt-4" },
+                                        [
+                                          _c(
+                                            "li",
+                                            { staticClass: "nav-item  mt-3" },
+                                            [
+                                              _c(
+                                                "a",
+                                                {
+                                                  staticClass:
+                                                    "btn  btn-success text-white",
+                                                  attrs: {
+                                                    href:
+                                                      "http://127.0.0.1:8000/products",
+                                                    type: "button"
+                                                  }
+                                                },
+                                                [_vm._v(" Manage Products")]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "col-xs-12 text-center col-sm-6 col-md-4 col-lg-4 shadow p-1 mt-3 mb-5 rounded"
+                                    },
+                                    [
+                                      _c("div", { staticClass: "card-title" }, [
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "nav-link heading-style heading-color"
+                                          },
+                                          [_vm._v("Categories")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "card Theme text-center   offset-sm-2",
+                                          attrs: { id: "total-categories" }
+                                        },
+                                        [
+                                          _c(
+                                            "ul",
+                                            {
+                                              staticClass:
+                                                "nav flex-column mt-4"
+                                            },
+                                            [
+                                              _c(
+                                                "li",
+                                                {
+                                                  staticClass: "nav-item mt-3"
+                                                },
+                                                [
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass:
+                                                        "nav-link active"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticStyle: {
+                                                            color: "tomato"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fas fa-network-wired fa-4x"
+                                                          })
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "li",
+                                                {
+                                                  staticClass: "nav-item mt-3"
+                                                },
+                                                [
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass:
+                                                        "nav-link text-light label-number"
+                                                    },
+                                                    [_vm._v(" 100 ")]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "ul",
+                                        { staticClass: "nav flex-column mt-4" },
+                                        [
+                                          _c(
+                                            "li",
+                                            { staticClass: "nav-item  mt-3" },
+                                            [
+                                              _c(
+                                                "a",
+                                                {
+                                                  staticClass:
+                                                    "btn  btn-success text-white",
+                                                  attrs: {
+                                                    href:
+                                                      "http://127.0.0.1:8000/categories",
+                                                    type: "button"
+                                                  }
+                                                },
+                                                [_vm._v("Manage Categories")]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row justify-content-center mt-1" }, [
+            _c("div", { staticClass: "col-sm-12" }, [
+              _c("div", { staticClass: "card Theme" }, [
+                _c(
+                  "h5",
+                  {
+                    staticClass:
+                      "card-header heading-color heading-style text-center"
+                  },
+                  [_vm._v("Sales and Money")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "card Theme" }, [
+                      _c("div", { staticClass: "card-header p-2" }, [
+                        _c("ul", { staticClass: "nav nav-pills" }, [
+                          _c("li", { staticClass: "nav-item mr-5" }, [
+                            _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "nav-link heading-color link-color payment-method-link-color active show",
+                                attrs: { href: "#paypal", "data-toggle": "tab" }
+                              },
+                              [
+                                _vm._v("Pay With "),
+                                _c("i", {
+                                  staticClass: "fab fa-paypal",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v("yPal ")
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "nav-item" }, [
+                            _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "nav-link heading-color link-color payment-method-link-color ",
+                                attrs: { href: "#stripe", "data-toggle": "tab" }
+                              },
+                              [_vm._v("Pay With Stripe")]
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("div", { staticClass: "tab-content" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "tab-pane active show",
+                              attrs: { id: "paypal" }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "flex-center position-ref full-height"
+                                },
+                                [_c("div", { attrs: { id: "pay-pal" } })]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "tab-pane ",
+                              attrs: { id: "stripe" }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "row justify-content-start" },
+                                [_c("div", { staticClass: "col-sm-12" })]
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -68206,11 +69104,11 @@ Vue.component('cart', __webpack_require__(/*! ./components/purchase/cart.vue */ 
 
 Vue.component('dashboard', __webpack_require__(/*! ./components/customer/dashboard.vue */ "./resources/js/components/customer/dashboard.vue")["default"]); //customer profile
 
-Vue.component('credit', __webpack_require__(/*! ./components/customer/credit.vue */ "./resources/js/components/customer/credit.vue")["default"]); //customer credits profile 
+Vue.component('credit', __webpack_require__(/*! ./components/customer/credit.vue */ "./resources/js/components/customer/credit.vue")["default"]); //customer credits profile
 
-Vue.component('payment', __webpack_require__(/*! ./components/purchase/payment.vue */ "./resources/js/components/purchase/payment.vue")["default"]); //payment page 
+Vue.component('payment', __webpack_require__(/*! ./components/purchase/payment.vue */ "./resources/js/components/purchase/payment.vue")["default"]); //payment page
 
-Vue.component('account', __webpack_require__(/*! ./components/customer/account.vue */ "./resources/js/components/customer/account.vue")["default"]); //payment page 
+Vue.component('account', __webpack_require__(/*! ./components/customer/account.vue */ "./resources/js/components/customer/account.vue")["default"]); //payment page
 
 Vue.component('admin-dashboard', __webpack_require__(/*! ./components/Admin/dashboard.vue */ "./resources/js/components/Admin/dashboard.vue")["default"]); //Admin Dashboard
 
@@ -68224,9 +69122,12 @@ Vue.component('load-control', __webpack_require__(/*! ./components/App/Load-cont
 
 Vue.component('shoporcheckout', __webpack_require__(/*! ./components/purchase/shoporcheckout.vue */ "./resources/js/components/purchase/shoporcheckout.vue")["default"]); //Shop or checkout
 
-Vue.component('autosignin', __webpack_require__(/*! ./components/customer/autosignin.vue */ "./resources/js/components/customer/autosignin.vue")["default"]); //payment page 
+Vue.component('autosignin', __webpack_require__(/*! ./components/customer/autosignin.vue */ "./resources/js/components/customer/autosignin.vue")["default"]); //payment page
 
 Vue.component('load_progress', __webpack_require__(/*! ./components/App/load-progress.vue */ "./resources/js/components/App/load-progress.vue")["default"]); //Loading Component
+//Admin Dashboard
+
+Vue.component('admindashboard', __webpack_require__(/*! ./components/Admin/dashboard.vue */ "./resources/js/components/Admin/dashboard.vue")["default"]); //Admin Dashboard
 //Imports
 
  //common js
@@ -68381,21 +69282,25 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _dashboard_vue_vue_type_template_id_2d7a1e39___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard.vue?vue&type=template&id=2d7a1e39& */ "./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _dashboard_vue_vue_type_template_id_2d7a1e39_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard.vue?vue&type=template&id=2d7a1e39&scoped=true& */ "./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&scoped=true&");
+/* harmony import */ var _dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard.vue?vue&type=script&lang=js& */ "./resources/js/components/Admin/dashboard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _dashboard_vue_vue_type_style_index_0_id_2d7a1e39_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css& */ "./resources/js/components/Admin/dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _dashboard_vue_vue_type_template_id_2d7a1e39___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _dashboard_vue_vue_type_template_id_2d7a1e39___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _dashboard_vue_vue_type_template_id_2d7a1e39_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _dashboard_vue_vue_type_template_id_2d7a1e39_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "2d7a1e39",
   null
   
 )
@@ -68407,19 +69312,49 @@ component.options.__file = "resources/js/components/Admin/dashboard.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39& ***!
-  \************************************************************************************/
+/***/ "./resources/js/components/Admin/dashboard.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Admin/dashboard.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./dashboard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/components/Admin/dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css& ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_style_index_0_id_2d7a1e39_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=style&index=0&id=2d7a1e39&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_style_index_0_id_2d7a1e39_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_style_index_0_id_2d7a1e39_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_style_index_0_id_2d7a1e39_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_style_index_0_id_2d7a1e39_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_style_index_0_id_2d7a1e39_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&scoped=true&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&scoped=true& ***!
+  \************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_template_id_2d7a1e39___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./dashboard.vue?vue&type=template&id=2d7a1e39& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_template_id_2d7a1e39___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_template_id_2d7a1e39_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./dashboard.vue?vue&type=template&id=2d7a1e39&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Admin/dashboard.vue?vue&type=template&id=2d7a1e39&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_template_id_2d7a1e39_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_template_id_2d7a1e39___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_dashboard_vue_vue_type_template_id_2d7a1e39_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
