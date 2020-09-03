@@ -40,12 +40,12 @@ class PurchaseController extends Controller
         $this->middleware('auth');
     }
     /**
-     * Buyer adds product 
+     * Buyer adds product
      * to cart
     */
     public function addtocart(Request $request,$id){
         $product = Product::find($id);
-        $oldCart = Session::has('cart') ? Session::get('cart') : null; 
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->add($product,$product->id);
         $request->session()->put('cart',$cart);
@@ -56,8 +56,8 @@ class PurchaseController extends Controller
      * into the cart
     */
     public function reduceProductByOne($id){
-        $oldCart = Session::has('cart') ? Session::get('cart') : null; 
-        $cart = new Cart($oldCart); 
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
         $cart->reduceByOne($id);
         Session::put('cart',$cart);
     }
@@ -65,12 +65,12 @@ class PurchaseController extends Controller
       * remove added product
      */
     public function removeItem($id){
-        $oldCart = Session::has('cart') ? Session::get('cart') : null; 
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
-        $cart->removeItem($id); 
-        //dd($cart); 
+        $cart->removeItem($id);
+        //dd($cart);
         if ($cart) {
-         Session::put('cart',$cart);    
+         Session::put('cart',$cart);
         }else{
             Session::forget('cart');
         }
@@ -84,7 +84,7 @@ class PurchaseController extends Controller
         }else{
             return redirect()->route('shop');
         }
-       
+
     }
 
     public function checkout(){
@@ -151,7 +151,7 @@ class PurchaseController extends Controller
             $order->address_id = 1;
             $order->user_id = Auth::user()->id;
             $order->payment_id = $request->id;
-            
+
             Auth::user()->orders()->save($order);
 
         } catch(Exception $e){
@@ -161,10 +161,10 @@ class PurchaseController extends Controller
 
         Session::forget('cart');
         //return redirect()->route('/')->with('success','Checkout Was successfull');
-         
+
         Mail::to(Auth::user()->email)->send(new SuccessfulPurchaseEmail());
-              
-      }       
+
+      }
         //get Default adress if exists
         public function getDefaultAdress(){
           $address = DB::table('adresses')->where('default', 1)->first();

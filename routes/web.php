@@ -111,6 +111,7 @@ Route::namespace('Products\Management')->group(function(){
     Route::get('totalusers','ManagementController@totalUsers')->name('totalusers'); //get total Users and subscribers
     Route::get('getallorders','ManagementController@allOrders')->name('getallorders'); //fetch all the orders
     Route::get('getbuyerdetails/{id}','ManagementController@getBuyerDetails')->name('getbuyerdetails'); //get buyer details
+    Route::get('getorderitems/{id}','ManagementController@getOrderItems')->name('getorderitems'); //get order items
 });
 
 

@@ -1920,14 +1920,16 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2238,7 +2240,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       totalSubscribers: 0,
       allOrders: [],
       buyerDetails: {},
-      cartProducts: []
+      cartProducts: [],
+      items: []
     };
   },
   methods: {
@@ -2278,41 +2281,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
       $('#buyer-details').modal('show');
     },
-    //get Products added to the cart
-    getCartProducts: function getCartProducts() {
+    //fetch order items
+    viewOderDetails: function viewOderDetails(id) {
       var _this4 = this;
 
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var res;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.prev = 0;
-                _context.next = 3;
-                return _this4.callApi('get', 'getcartproducts');
-
-              case 3:
-                res = _context.sent;
-                _this4.cartProducts = res.data;
-                console.log(_this4.cartProducts.totalQty);
-                _context.next = 11;
-                break;
-
-              case 8:
-                _context.prev = 8;
-                _context.t0 = _context["catch"](0);
-                console.log(_this4.cartProducts);
-
-              case 11:
-              case "end":
-                return _context.stop();
-            }
+      try {
+        this.items = [];
+        axios.get('getorderitems/' + id).then(function (response) {
+          for (var index = 0; index < response.data.length; index++) {
+            _this4.items.push(response.data[index].order.items);
           }
-        }, _callee, null, [[0, 8]]);
-      }))();
-    },
-    viewOderDetails: function viewOderDetails() {
+        });
+      } catch (error) {
+        console.log(error);
+      }
+
       $('#order-details').modal('show');
     }
   },
@@ -2320,7 +2303,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.getTotalProducts();
     this.getTotalUsers();
     this.getOrders();
-    this.getCartProducts();
   }
 });
 
@@ -46904,7 +46886,9 @@ var render = function() {
                                                         click: function(
                                                           $event
                                                         ) {
-                                                          return _vm.viewOderDetails()
+                                                          return _vm.viewOderDetails(
+                                                            order.id
+                                                          )
                                                         }
                                                       }
                                                     },
@@ -47001,282 +46985,348 @@ var render = function() {
                 [
                   _vm._m(18),
                   _vm._v(" "),
-                  _c("div", { staticClass: "modal-body" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "col-xs-12 col-sm-12 col-md-12 col-lg-12  cart-items"
-                      },
-                      [
-                        _c("div", { staticClass: "card-header Theme" }, [
-                          _c(
-                            "h1",
-                            { staticClass: "heading-color heading-style" },
-                            [
-                              _vm._v("Ordered Products"),
-                              _c(
-                                "span",
-                                { staticClass: "badge ml-3 badge-secondary" },
-                                [
-                                  _vm._v(
-                                    " " +
-                                      _vm._s(_vm.cartProducts.totalQty) +
-                                      " "
-                                  )
-                                ]
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _vm._l(_vm.cartProducts.items, function(
-                          cartProduct,
-                          index
-                        ) {
-                          return _c(
-                            "div",
-                            {
-                              key: index,
-                              staticClass:
-                                "card Theme-light shadow-lg p-3 mb-5 rounded"
-                            },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "card Theme-light-2 cart-bg-color"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "row justify-content-center p-3"
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "col-sm-3 Theme shadow-sm m-1  mb-5  rounded"
-                                        },
-                                        [
-                                          _c(
-                                            "ul",
-                                            { staticClass: "nav flex-column" },
-                                            [
-                                              _c(
-                                                "li",
-                                                { staticClass: "nav-item" },
-                                                [
-                                                  _c(
-                                                    "h5",
-                                                    {
-                                                      staticClass:
-                                                        "heading-color"
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        " " +
-                                                          _vm._s(
-                                                            cartProduct.item
-                                                              .title
-                                                          ) +
-                                                          " "
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "li",
-                                                { staticClass: "nav-item" },
-                                                [
-                                                  _c("img", {
-                                                    staticClass:
-                                                      "img-fluid cart-image-size",
-                                                    attrs: {
-                                                      src:
-                                                        "Images/" +
-                                                        cartProduct.item
-                                                          .imagePath,
-                                                      alt: "",
-                                                      srcset: ""
-                                                    }
-                                                  })
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "col-sm-3  Theme m-0 shadow-sm m-1  mb-5  rounded"
-                                        },
-                                        [
-                                          _c(
-                                            "ul",
-                                            { staticClass: "nav flex-column" },
-                                            [
-                                              _vm._m(19, true),
-                                              _vm._v(" "),
-                                              _c(
-                                                "li",
-                                                { staticClass: "nav-item" },
-                                                [
-                                                  _c(
-                                                    "p",
-                                                    {
-                                                      staticClass: "text-white"
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        _vm._s(
-                                                          cartProduct.item
-                                                            .description
+                  _c(
+                    "div",
+                    { staticClass: "modal-body" },
+                    _vm._l(_vm.items, function(order, indexo) {
+                      return _c(
+                        "div",
+                        {
+                          key: indexo,
+                          staticClass:
+                            "col-xs-12 col-sm-12 col-md-12 col-lg-12  cart-items"
+                        },
+                        [
+                          _vm._m(19, true),
+                          _vm._v(" "),
+                          _vm._l(order, function(product, indexp) {
+                            return _c(
+                              "div",
+                              {
+                                key: indexp,
+                                staticClass:
+                                  "card Theme-light shadow-lg p-3 mb-5 rounded"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "card Theme-light-2 cart-bg-color"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "row justify-content-center p-3"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "col-sm-3 Theme shadow-sm m-1  mb-5  rounded"
+                                          },
+                                          [
+                                            _c(
+                                              "ul",
+                                              {
+                                                staticClass: "nav flex-column"
+                                              },
+                                              [
+                                                _c(
+                                                  "li",
+                                                  { staticClass: "nav-item" },
+                                                  [
+                                                    _c(
+                                                      "h5",
+                                                      {
+                                                        staticClass:
+                                                          "heading-color"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          " " +
+                                                            _vm._s(
+                                                              product.item.title
+                                                            ) +
+                                                            " "
                                                         )
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _vm._m(20, true),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "col-sm-2 Theme" },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "row content-justify-center"
-                                            },
-                                            [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "col-sm-12 m-0 cart-qty-height shadow-sm   mb-5 rounded"
-                                                },
-                                                [
-                                                  _c(
-                                                    "ul",
-                                                    {
+                                                      ]
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "li",
+                                                  { staticClass: "nav-item" },
+                                                  [
+                                                    _c("img", {
                                                       staticClass:
-                                                        "nav flex-column"
-                                                    },
-                                                    [
-                                                      _vm._m(21, true),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "li",
-                                                        {
-                                                          staticClass:
-                                                            "nav-item"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "p",
-                                                            {
-                                                              staticClass:
-                                                                "text-white"
-                                                            },
-                                                            [
-                                                              _vm._m(22, true),
-                                                              _vm._v(
-                                                                " " +
-                                                                  _vm._s(
-                                                                    cartProduct
-                                                                      .item
-                                                                      .price
-                                                                  ) +
-                                                                  " "
-                                                              )
-                                                            ]
+                                                        "img-fluid cart-image-size",
+                                                      attrs: {
+                                                        src:
+                                                          "Images/" +
+                                                          product.item
+                                                            .imagePath,
+                                                        alt: "",
+                                                        srcset: ""
+                                                      }
+                                                    })
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "col-sm-3  Theme m-0 shadow-sm m-1  mb-5  rounded"
+                                          },
+                                          [
+                                            _c(
+                                              "ul",
+                                              {
+                                                staticClass: "nav flex-column"
+                                              },
+                                              [
+                                                _vm._m(20, true),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "li",
+                                                  { staticClass: "nav-item" },
+                                                  [
+                                                    _c(
+                                                      "p",
+                                                      {
+                                                        staticClass:
+                                                          "text-white"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            product.item
+                                                              .description
                                                           )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "col-sm-12 Theme m-0 cart-qty-height shadow-sm   mb-5 rounded"
-                                                },
-                                                [
-                                                  _c(
-                                                    "ul",
-                                                    {
-                                                      staticClass:
-                                                        "nav flex-column"
-                                                    },
-                                                    [
-                                                      _vm._m(23, true),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "li",
-                                                        {
-                                                          staticClass:
-                                                            "nav-item"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "p",
-                                                            {
-                                                              staticClass:
-                                                                "text-white"
-                                                            },
-                                                            [
-                                                              _vm._m(24, true),
-                                                              _vm._v(
-                                                                " " +
-                                                                  _vm._s(
-                                                                    cartProduct.price
-                                                                  ) +
-                                                                  " "
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            ]
-                          )
-                        })
-                      ],
-                      2
-                    )
-                  ]),
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "col-sm-3 Theme m-0 shadow-sm m-1 cart-qty-height mb-5  rounded"
+                                          },
+                                          [
+                                            _c(
+                                              "ul",
+                                              {
+                                                staticClass: "nav flex-column"
+                                              },
+                                              [
+                                                _vm._m(21, true),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "li",
+                                                  { staticClass: "nav-item" },
+                                                  [
+                                                    _c(
+                                                      "p",
+                                                      {
+                                                        staticClass:
+                                                          "text-white"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          "  " +
+                                                            _vm._s(
+                                                              product.qty
+                                                            ) +
+                                                            " "
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "col-sm-2 Theme" },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "row content-justify-center"
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "col-sm-12 m-0 cart-qty-height shadow-sm   mb-5 rounded"
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "ul",
+                                                      {
+                                                        staticClass:
+                                                          "nav flex-column"
+                                                      },
+                                                      [
+                                                        _vm._m(22, true),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "li",
+                                                          {
+                                                            staticClass:
+                                                              "nav-item"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "p",
+                                                              {
+                                                                staticClass:
+                                                                  "text-white"
+                                                              },
+                                                              [
+                                                                _vm._m(
+                                                                  23,
+                                                                  true
+                                                                ),
+                                                                _vm._v(
+                                                                  " " +
+                                                                    _vm._s(
+                                                                      product
+                                                                        .item
+                                                                        .price
+                                                                    ) +
+                                                                    " "
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "col-sm-12 Theme m-0 cart-qty-height shadow-sm   mb-5 rounded"
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "ul",
+                                                      {
+                                                        staticClass:
+                                                          "nav flex-column"
+                                                      },
+                                                      [
+                                                        _vm._m(24, true),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "li",
+                                                          {
+                                                            staticClass:
+                                                              "nav-item"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "p",
+                                                              {
+                                                                staticClass:
+                                                                  "text-white"
+                                                              },
+                                                              [
+                                                                _vm._m(
+                                                                  25,
+                                                                  true
+                                                                ),
+                                                                _vm._v(
+                                                                  " " +
+                                                                    _vm._s(
+                                                                      product.price
+                                                                    ) +
+                                                                    " "
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "col-sm-12" },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "card Theme"
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "h1",
+                                                          {
+                                                            staticClass:
+                                                              "heading-color heading-style"
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "\n                         " +
+                                                                _vm._s(
+                                                                  product.totalPrice
+                                                                ) +
+                                                                "\n                        "
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    }),
+                    0
+                  ),
                   _vm._v(" "),
-                  _vm._m(25)
+                  _vm._m(26)
                 ]
               )
             ]
@@ -47641,6 +47691,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header Theme" }, [
+      _c("h1", { staticClass: "heading-color heading-style" }, [
+        _vm._v("Ordered Products")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
       _c("h5", { staticClass: "heading-color" }, [_vm._v("Description")])
     ])
@@ -47649,20 +47709,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "col-sm-3 Theme m-0 shadow-sm m-1 cart-qty-height mb-5  rounded"
-      },
-      [
-        _c("ul", { staticClass: "nav flex-column" }, [
-          _c("li", { staticClass: "nav-item" }, [
-            _c("h5", { staticClass: "heading-color" }, [_vm._v("Quantity")])
-          ])
-        ])
-      ]
-    )
+    return _c("li", { staticClass: "nav-item" }, [
+      _c("h5", { staticClass: "heading-color" }, [_vm._v("Quantity")])
+    ])
   },
   function() {
     var _vm = this

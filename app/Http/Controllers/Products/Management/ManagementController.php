@@ -57,4 +57,18 @@ class ManagementController extends Controller
     public function getBuyerDetails($id){
        return response()->json(User::find($id),200);
     }
+    //get order items
+    public function getOrderItems($id){
+        /*$orders = DB::table('orders')
+                      ->where('user_id',Auth::user()->id)
+                      ->get();*/
+
+        $orders = Order::where('id',$id)->get();
+        $orders->transform(function($order,$key){
+           $order->order =  unserialize($order->order);
+           return $order;
+        });
+
+        return response()->json($orders,200);
+    }
 }

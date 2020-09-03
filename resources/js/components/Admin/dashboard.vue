@@ -171,7 +171,7 @@
                                <td class="col-sm-12">
                                 <button @click="viewBuyerDetails(order.user_id)" class="btn btn-primary">Buyer Details</button>
                                  <hr class="bg-white">
-                                <button @click="viewOderDetails()" class="btn btn-warning text-dark">Order Details</button>
+                                <button @click="viewOderDetails(order.id)" class="btn btn-warning text-dark">Order Details</button>
                                </td>
                              </tr>
                            </tbody>
@@ -226,20 +226,20 @@
              </button>
            </div>
            <div  class="modal-body">
-           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  cart-items" >
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  cart-items" v-for="(order, indexo) in items" :key="indexo" >
               <div class="card-header Theme">
-                <h1 class="heading-color heading-style">Ordered Products<span class="badge ml-3 badge-secondary"> {{cartProducts.totalQty}} </span></h1>
+                <h1 class="heading-color heading-style">Ordered Products</h1>
               </div>
-            <div class="card Theme-light shadow-lg p-3 mb-5 rounded" v-for="(cartProduct, index) in cartProducts.items" :key="index">
+            <div class="card Theme-light shadow-lg p-3 mb-5 rounded" v-for="(product, indexp) in order" :key="indexp">
               <div class="card Theme-light-2 cart-bg-color">
                   <div class="row justify-content-center p-3">
                      <div class="col-sm-3 Theme shadow-sm m-1  mb-5  rounded">
                        <ul class="nav flex-column">
                          <li class="nav-item">
-                            <h5 class="heading-color" > {{cartProduct.item.title}} </h5>
+                            <h5 class="heading-color" > {{product.item.title}} </h5>
                          </li>
                          <li class="nav-item">
-                           <img :src="'Images/' + cartProduct.item.imagePath " class="img-fluid cart-image-size" alt="" srcset="">
+                           <img :src="'Images/' + product.item.imagePath " class="img-fluid cart-image-size" alt="" srcset="">
                          </li>
                        </ul>
                      </div>
@@ -249,7 +249,7 @@
                             <h5 class="heading-color" >Description</h5>
                          </li>
                          <li class="nav-item">
-                           <p class="text-white">{{cartProduct.item.description}}</p>
+                           <p class="text-white">{{product.item.description}}</p>
                          </li>
                        </ul>
                      </div>
@@ -258,6 +258,9 @@
                          <li class="nav-item">
                             <h5 class="heading-color" >Quantity</h5>
                          </li>
+                        <li class="nav-item">
+                            <p class="text-white">  {{product.qty}} </p>
+                        </li>
                        </ul>
                      </div>
                      <div class="col-sm-2 Theme">
@@ -268,7 +271,7 @@
                                 <h5 class="heading-color" > Price </h5>
                              </li>
                              <li class="nav-item">
-                                 <p class="text-white"> <sup> <i class="fas fa-dollar-sign    "></i> </sup> {{cartProduct.item.price}} </p>
+                                 <p class="text-white"> <sup> <i class="fas fa-dollar-sign    "></i> </sup> {{product.item.price}} </p>
                              </li>
                            </ul>
                          </div>
@@ -278,9 +281,16 @@
                                 <h5 class="heading-color" > Subtotal </h5>
                              </li>
                              <li class="nav-item">
-                                 <p class="text-white"> <sup> <i class="fas fa-dollar-sign    "></i> </sup> {{cartProduct.price}} </p>
+                                 <p class="text-white"> <sup> <i class="fas fa-dollar-sign    "></i> </sup> {{product.price}} </p>
                              </li>
                            </ul>
+                         </div>
+                         <div class="col-sm-12">
+                          <div class="card Theme">
+                            <h1 class="heading-color heading-style">
+                             {{ product.totalPrice }}
+                            </h1>
+                          </div>
                          </div>
                        </div>
                      </div>
@@ -310,7 +320,8 @@ export default {
              allOrders: [],
              buyerDetails: {
              },
-            cartProducts: []
+            cartProducts: [],
+            items: [],
          }
      },
      methods: {
@@ -348,25 +359,26 @@ export default {
               });
               $('#buyer-details').modal('show');
       },
-      //get Products added to the cart
-      async getCartProducts(){
-           try {
-               const res = await this.callApi('get','getcartproducts');
-               this.cartProducts = res.data;
-               console.log(this.cartProducts.totalQty);
-           } catch (error) {
-               console.log(this.cartProducts );
-           }
-      },
-      viewOderDetails(){
-          $('#order-details').modal('show');
+      //fetch order items
+      viewOderDetails(id){
+      try {
+            this.items = [];
+            axios.get('getorderitems/' + id)
+            .then((response)=>{
+            for (let index = 0; index < response.data.length; index++) {
+               this.items.push(response.data[index].order.items);
+            }
+            });
+          } catch (error) {
+            console.log(error)
+          }
+        $('#order-details').modal('show');
       }
      },
      mounted() {
          this.getTotalProducts();
          this.getTotalUsers();
          this.getOrders();
-         this.getCartProducts();
      },
 }
 </script>
