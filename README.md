@@ -1,4 +1,4 @@
-# Project Title
+# e-shop
 
 e-shop is an e-commerce web application that sells goods online. Buyers have to create an account to buy products with e-shop. This application has major features such as user authentication with social media accounts such as GitHub, Linkedin, and Pinterest; User Authorization with different roles such as Admin, Author, and user; Goods online payment with methods such as Paypal and Stripe. Customer newsletter subscription with MailChimp. This application has an Administrator dashboard through which all applications' resources are managed; Products Dashboard where only the administrator or author can manage products (create, edit or delete products); Users Dashboard where only the administrator can manage users(delete users, assign roles to users).
 
