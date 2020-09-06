@@ -7,7 +7,7 @@
   <a class="navbar-brand link-color" href="/shop"> <i class="fa fa-home" aria-hidden="true"></i> e-shop</a>
   <a href="{{route('about')}}" class="nav-link ml-2 link-color">About Us</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"> <i class="fa text-white fa-list" aria-hidden="true"></i> </span>
   </button>
   <div  class="collapse mr-1 justify-content-end navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ">
