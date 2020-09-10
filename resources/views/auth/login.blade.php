@@ -79,9 +79,9 @@
                       <a href=" {{route('github')}} " type="button" class="btn mr-1 btn-lg btn-secondary col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-github    "></i> Sign in With Github </a>
                       <a href=" {{route('google')}} " type="button" class="btn mt-1  btn-lg btn-primary col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-google    "></i> Sign in With Google </a>
                 </div>
-                <div class="row justify-content-center m-1 mt-1">      
+                <div class="row justify-content-center m-1 mt-1">
                       <a href=" {{route('linkedin')}} " type="button" class="btn mr-1  btn-lg btn-danger col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-linkedin    "></i> Sign in With Linkedin </a>
-                      <a href=" {{route('pinterest')}} " type="button" class="btn mt-1 btn-lg btn-success col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-pinterest    "></i> Sign in With Pinterest </a>
+                      <a href=" {{route('pinterest')}} " type="button" class="btn mt-1 btn-lg btn-success col-xs col-sm col-md-5 col-lg-5" disabled> <i class="fab fa-pinterest    "></i> Sign in With Pinterest </a>
                 </div>
                 </div>
             </div>

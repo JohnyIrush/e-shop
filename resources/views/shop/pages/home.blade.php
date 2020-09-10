@@ -80,6 +80,5 @@
     </div>
     <carrier></carrier>
     <shoporcheckout></shoporcheckout>
-    <!-- implement in future <stream-chat :autheduser="{{ Auth::user() }}"></stream-chat>-->
   </div>
 @endsection

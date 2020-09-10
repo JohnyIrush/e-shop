@@ -87,7 +87,7 @@
                     </div>
                     <div class="row justify-content-center mt-2">
                       <a href=" {{route('linkedin')}} " type="button" class="btn mr-1 col-sm col-xs col-lg-5 col-md-5 btn-lg btn-danger"> <i class="fab fa-linkedin    "></i> Sign up With Linkedin </a>
-                      <a href=" {{route('pinterest')}} " type="button" class="btn col-sm col-xs col-lg-5 col-md-5 btn-lg btn-success"> <i class="fab fa-pinterest    "></i> Sign up With Pinterest </a>
+                      <button  href=" {{route('pinterest')}} " type="button" class="btn col-sm col-xs col-lg-5 col-md-5 btn-lg btn-success" disabled> <i class="fab fa-pinterest    "></i> Sign up With Pinterest </button>
                     </div>
                 </div>
             </div>

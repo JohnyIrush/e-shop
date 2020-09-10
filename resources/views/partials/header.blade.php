@@ -5,10 +5,12 @@
     <button class="btn-primary mr-5 ml-3" onclick="displaySidebar()" type="button" class="mr-3"> <i class="fa fa-list" aria-hidden="true"></i> App Menu  </button>
   @endcan
   <a class="navbar-brand link-color" href="/shop"> <i class="fa fa-home" aria-hidden="true"></i> e-shop</a>
-  <a href="{{route('about')}}" class="nav-link ml-2 link-color">About Us</a>
+  <a href="{{route('about')}}" class="nav-link ml-2 link-color"> About Us </a>
+  <a class="navbar-brand link-color" href="/help"> <span><i class="fas fa-users    "></i> <i class="fa fa-question" aria-hidden="true"></i> </span> Help&Support</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"> <i class="fa text-white fa-list" aria-hidden="true"></i> </span>
   </button>
+  <a href="{{route('/')}}" class="nav-link ml-2 link-color"> <logo_load></logo_load> </a>
   <div  class="collapse mr-1 justify-content-end navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ">
       <li class="nav-item">

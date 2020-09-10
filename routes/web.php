@@ -35,7 +35,7 @@ Route::namespace('Web')->group(function(){
     Route::get('/product/{id}','WebController@product')->name('product');
     Route::get('autosignin','WebController@AutoSignIn'); //signed in User Automatically as admin
     Route::get('/checkifsignedIn','WebController@checkIfSignedIn'); //check if user is signed in
-
+    Route::get('/help','WebController@help')->name('help'); //Help and support on how to get started
 });
 
 
@@ -151,6 +151,8 @@ Route::namespace('Emails')->group(function(){
 });
 
 
-
+Route::get('learnjq',function(){
+return view('shop.pages.jquery');
+});
 
 

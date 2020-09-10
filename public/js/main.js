@@ -26,7 +26,7 @@ function DisplayTerms() {
 
 
 /**
- * Create Product 
+ * Create Product
  * Categories
  */
 
@@ -51,7 +51,7 @@ function editCategory(category) {
 function shopOrCheckout(id) {
     try {
         xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "http://127.0.0.1:8000/add-to-cart/" + id, true);
+        xhttp.open("GET", "/add-to-cart/" + id, true);
         xhttp.send();
         $('#shop-check').modal('show');
     } catch (error) {

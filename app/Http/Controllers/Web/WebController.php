@@ -29,7 +29,7 @@ class WebController extends Controller
         ->inRandomOrder()
         ->get();
         return view('shop.pages.home')->with(['products'=>$products,'categories'=>$categories,'otherproducts'=>$otherproducts]);
-        
+
     }
 
     public function about()
@@ -37,10 +37,20 @@ class WebController extends Controller
         return view('shop.pages.about');
     }
 
+    /**
+     * Help and support
+     * show user how to
+     *  get started with
+     * e-shop
+    */
 
+    public function help()
+    {
+        return view('shop.pages.help');
+    }
 
     /**
-     * Selected products 
+     * Selected products
      * cart
      */
     public function getCartProducts()
@@ -49,7 +59,7 @@ class WebController extends Controller
         $cart = new Cart($oldCart);
         return response()->json($cart,200);
    }
- 
+
       //show cart
 
     public function cart()
@@ -61,7 +71,7 @@ class WebController extends Controller
          }
      }
 
-    
+
     //search Products
     public function searchedProducts(Request $request){
         //dd($request);
@@ -77,7 +87,7 @@ class WebController extends Controller
        // dd($products);
         return view('shop.pages.search-results')->with(['products'=>$products,'categories'=>$categories,'otherproducts'=>$otherproducts]);
     }
- 
+
     public function pageNotFound(){
         return view('shop.pages.pagenotfound');
     }
@@ -101,9 +111,9 @@ class WebController extends Controller
          $otherproducts = DB::table('products')
             ->where('category_id',$product->category_id)
             ->inRandomOrder()
-            ->limit(6) 
+            ->limit(6)
             ->get();
-         
+
          return view('shop.pages.product')->with(['product'=>$product,'otherproducts'=>$otherproducts]);
     }
 
