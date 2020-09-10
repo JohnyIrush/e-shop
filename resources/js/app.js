@@ -18,8 +18,6 @@ Vue.component('load-control', require('./components/App/Load-control.vue').defau
 Vue.component('shoporcheckout', require('./components/purchase/shoporcheckout.vue').default); //Shop or checkout
 Vue.component('autosignin', require('./components/customer/autosignin.vue').default); //payment page
 Vue.component('logo_load', require('./components/App/logo_load.vue').default); //Inner Logo Component
-Vue.component('get-started-page', require('./components/App/get-started-page.vue').default); //User help and support on how to get started with e-shop header
-Vue.component('get-started-wizard', require('./components/App/get-started-wizard.vue').default); //User help and support on how to get started with e-shop body
 Vue.component('learn-jq', require('./components/App/learn-jq.vue').default); //learn jq
 //Admin Dashboard
 Vue.component('admindashboard', require('./components/Admin/dashboard.vue').default); //Admin Dashboard
