@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:pFaQ39veYqcRzt12q7pLdC6F3PPI0FHKh8Y0uZAqO/0=',
+    'key' => 'base64:Pi0crx4Pbzasi5XoArJOKEkXxR++x/yqFWGLJ+mL5AA=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -38,10 +38,11 @@
       21 => 'Illuminate\\View\\ViewServiceProvider',
       22 => 'Intervention\\Image\\ImageServiceProvider',
       23 => 'Srmklive\\PayPal\\Providers\\PayPalServiceProvider',
-      24 => 'App\\Providers\\AppServiceProvider',
-      25 => 'App\\Providers\\AuthServiceProvider',
-      26 => 'App\\Providers\\EventServiceProvider',
-      27 => 'App\\Providers\\RouteServiceProvider',
+      24 => 'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider',
+      25 => 'App\\Providers\\AppServiceProvider',
+      26 => 'App\\Providers\\AuthServiceProvider',
+      27 => 'App\\Providers\\EventServiceProvider',
+      28 => 'App\\Providers\\RouteServiceProvider',
     ),
     'aliases' => 
     array (
@@ -82,6 +83,7 @@
       'Validator' => 'Illuminate\\Support\\Facades\\Validator',
       'View' => 'Illuminate\\Support\\Facades\\View',
       'Image' => 'Intervention\\Image\\Facades\\Image',
+      'NoCaptcha' => 'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha',
     ),
   ),
   'auth' => 
@@ -180,7 +182,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\storage\\framework/cache/data',
+        'path' => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -269,7 +271,7 @@
         'port' => '3306',
         'database' => 'e-shop',
         'username' => 'root',
-        'password' => 'password',
+        'password' => 'softwarescares',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -289,7 +291,7 @@
         'port' => '3306',
         'database' => 'e-shop',
         'username' => 'root',
-        'password' => 'password',
+        'password' => 'softwarescares',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -304,7 +306,7 @@
         'port' => '3306',
         'database' => 'e-shop',
         'username' => 'root',
-        'password' => 'password',
+        'password' => 'softwarescares',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -346,12 +348,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\storage\\app',
+        'root' => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\storage\\app/public',
+        'root' => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -368,7 +370,7 @@
     ),
     'links' => 
     array (
-      'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\public\\storage' => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\storage\\app/public',
+      'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\public\\storage' => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -406,13 +408,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\storage\\logs/laravel.log',
+        'path' => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\storage\\logs/laravel.log',
+        'path' => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -462,7 +464,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\storage\\logs/laravel.log',
+        'path' => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -519,7 +521,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\resources\\views/vendor/mail',
+        0 => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -648,7 +650,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\storage\\framework/sessions',
+    'files' => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -668,9 +670,60 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\resources\\views',
+      0 => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\resources\\views',
     ),
-    'compiled' => 'C:\\Bitnami\\wampstack-7.4.9-0\\frameworks\\Business\\e-shop\\storage\\framework\\views',
+    'compiled' => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop\\storage\\framework\\views',
+  ),
+  'ide-helper' => 
+  array (
+    'filename' => '_ide_helper',
+    'format' => 'php',
+    'meta_filename' => '.phpstorm.meta.php',
+    'include_fluent' => false,
+    'include_factory_builders' => false,
+    'write_model_magic_where' => true,
+    'write_model_relation_count_properties' => true,
+    'write_eloquent_model_mixins' => false,
+    'include_helpers' => false,
+    'helper_files' => 
+    array (
+      0 => 'C:\\Bitnami\\wampstack-7.4.6-1\\frameworks\\e-shop/vendor/laravel/framework/src/Illuminate/Support/helpers.php',
+    ),
+    'model_locations' => 
+    array (
+      0 => 'app',
+    ),
+    'ignored_models' => 
+    array (
+    ),
+    'extra' => 
+    array (
+      'Eloquent' => 
+      array (
+        0 => 'Illuminate\\Database\\Eloquent\\Builder',
+        1 => 'Illuminate\\Database\\Query\\Builder',
+      ),
+      'Session' => 
+      array (
+        0 => 'Illuminate\\Session\\Store',
+      ),
+    ),
+    'magic' => 
+    array (
+    ),
+    'interfaces' => 
+    array (
+    ),
+    'custom_db_types' => 
+    array (
+    ),
+    'model_camel_case_properties' => false,
+    'type_overrides' => 
+    array (
+      'integer' => 'int',
+      'boolean' => 'bool',
+    ),
+    'include_class_docblocks' => false,
   ),
   'flare' => 
   array (
@@ -735,6 +788,15 @@
     array (
       'id' => '',
       'secret' => '',
+    ),
+  ),
+  'captcha' => 
+  array (
+    'secret' => '6LdGAeEZAAAAABFO-wSJFeF2XkrlLPG6Pv6NKbfk',
+    'sitekey' => '6LdGAeEZAAAAAKDo71xRJqELyTDuWh2asE_JOapB',
+    'options' => 
+    array (
+      'timeout' => 30,
     ),
   ),
   'trustedproxy' => 

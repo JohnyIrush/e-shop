@@ -1,6 +1,11 @@
 <template>
-<div class="modal main fade" id="load-app" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal main fade" id="loader" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="main m-0" >
+         <div class="row ">
+             <div class="col-12 logo-pos-center">
+                 <img id="e-shop-logo" src="/Images/e-shop.png" class="img-fluid" alt="" srcset="">
+             </div>
+         </div>
          <div class="load-circle"></div>
          <ul>
             <li>E</li>
@@ -16,15 +21,57 @@
 
 <script>
 export default {
+    data() {
+        return {
+            loaded: localStorage.getItem("loaded") ? localStorage.getItem("loaded") : 0,
+        }
+    },
+    methods: {
+        hideLoader(){
+            $("#loader").hide();
+            $('#loader').modal('hide');
+        }
+    },
     mounted() {
-        $('#load-app').modal('show');
+        /**
+         * Check if the application
+         * is loading for the first time
+         * 
+        */
+        if (this.loaded==0) {
+        $('#loader').modal('show');
+            /**
+             *Hide Loading annimation
+             *after five seconds
+            */
+           setTimeout(() => {
+               //set loaded to true/1
+               localStorage.setItem("loaded", 1);
+               this.hideLoader();
+               //reset loaded after 1 hour
+               setTimeout(() => {
+                   localStorage.setItem("loaded", 0);
+               }, 3600000);
+           }, 10000);
+        }
     },
 }
 </script>
 
 <style scoped>
+/*center logo*/
+.logo-pos-center{
+    position: absolute;
+    top: calc(25% - 24px);
+    left: calc(50% - 66px);
+}
+/*e-shop logo*/
+#e-shop-logo{
+   height: 100px;
+   width: 100px;
+}
    .main{
-        background-color:#242323 ;
+        background-color:rgba(0, 0, 0, 0.4);
         margin: 0px;
         padding: 0px;
         height: 100vh;

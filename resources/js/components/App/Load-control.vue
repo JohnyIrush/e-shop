@@ -5,8 +5,23 @@
 </template>
 <script>
 export default {
+    data() {
+        return {
+            loaded: null,
+        }
+    },
+    methods: {
+        /**
+         * Trigger Application 
+         * loading annimation
+        */
+        triggerLoading(){
+ 
+        }
+    },
     mounted() {
-        alert('crl...');
+        //loaded=false
+        //loaded=true
     },
 }
 </script>

@@ -66,15 +66,30 @@
                         </div>
                     </form>
                     <hr class="bg-white">
-                    <p class="heading-color mt-1 text-center">Do you have ann Account ? <a href="{{route('register')}}" class="link-color">Sign Up Instead</a> </p>
+                    <p class="heading-color  text-center">Do you have an Account ? <a href="{{route('register')}}" class="link-color">Sign Up Instead</a> </p>
                 </div>
                 <hr class="bg-white">
-                <div class="form-group">
+                <div class="form-group ">
                     <div class="col-sm-12 text-center">
-                        <h4 class="text-white ">Or</h4>
+                        <h4 class="text-white ">Or Signin With</h4>
                     </div>
                 </div>
                 <hr class="bg-white">
+                <div class="row justify-content-around">
+                   <div class="col-3">
+                       <a href="{{route('github')}}" class=""><i class="fab fa-github fa-3x "></i></a>
+                   </div>
+                   <div class="col-3">
+                    <a href="{{route('google')}}" class=""><i class="fab fa-google fa-3x "></i></a>
+                   </div>
+                   <div class="col-3">
+                       <a href="{{route('linkedin')}}" class=""><i class="fab fa-linkedin fa-3x "></i></a>
+                   </div>
+                  <div class="col-3">
+                      <a href="{{route('pinterest')}}" class=""><i class="fab fa-pinterest fa-3x "></i></a>
+                  </div>
+                </div>
+                <!--
                 <div class="row justify-content-center m-1 mt-1">
                       <a href=" {{route('github')}} " type="button" class="btn mr-1 btn-lg btn-secondary col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-github    "></i> Sign in With Github </a>
                       <a href=" {{route('google')}} " type="button" class="btn mt-1  btn-lg btn-primary col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-google    "></i> Sign in With Google </a>
@@ -83,6 +98,7 @@
                       <a href=" {{route('linkedin')}} " type="button" class="btn mr-1  btn-lg btn-danger col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-linkedin    "></i> Sign in With Linkedin </a>
                       <a href=" {{route('pinterest')}} " type="button" class="btn mt-1 btn-lg btn-success col-xs col-sm col-md-5 col-lg-5" disabled> <i class="fab fa-pinterest    "></i> Sign in With Pinterest </a>
                 </div>
+                 -->
                 </div>
             </div>
         </div>

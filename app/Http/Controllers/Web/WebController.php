@@ -133,4 +133,8 @@ class WebController extends Controller
        }
   }
 
+  public function captcha(){
+   return view('shop.pages.captcha');
+}
+
 }

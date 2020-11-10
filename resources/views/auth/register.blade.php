@@ -77,10 +77,25 @@
                     <hr class="bg-white">
                     <div class="form-group mt-2">
                         <div class="col-sm-12 text-center">
-                            <h4 class="text-white ">Or</h4>
+                            <h4 class="text-white ">Or Signin With</h4>
                         </div>
                     </div>
                     <hr class="bg-white">
+                    <div class="row justify-content-around">
+                        <div class="col-3">
+                            <a href="{{route('github')}}" class=""><i class="fab fa-github fa-3x "></i></a>
+                        </div>
+                        <div class="col-3">
+                         <a href="{{route('google')}}" class=""><i class="fab fa-google fa-3x "></i></a>
+                        </div>
+                        <div class="col-3">
+                            <a href="{{route('linkedin')}}" class=""><i class="fab fa-linkedin fa-3x "></i></a>
+                        </div>
+                       <div class="col-3">
+                           <a href="{{route('pinterest')}}" class=""><i class="fab fa-pinterest fa-3x "></i></a>
+                       </div>
+                     </div>
+                    <!--
                     <div class="row justify-content-center mt-2">
                       <a href=" {{route('github')}} " type="button" class="btn mr-1 col-sm col-xs col-lg-5 col-md-5 btn-lg btn-secondary"> <i class="fab fa-github    "></i> Sign up With Github </a>
                       <a href=" {{route('google')}} " type="button" class="btn btn-lg col-sm col-xs col-lg-5 col-md-5 btn-primary"> <i class="fab fa-google    "></i> Sign up With Google </a>
@@ -89,6 +104,7 @@
                       <a href=" {{route('linkedin')}} " type="button" class="btn mr-1 col-sm col-xs col-lg-5 col-md-5 btn-lg btn-danger"> <i class="fab fa-linkedin    "></i> Sign up With Linkedin </a>
                       <button  href=" {{route('pinterest')}} " type="button" class="btn col-sm col-xs col-lg-5 col-md-5 btn-lg btn-success" disabled> <i class="fab fa-pinterest    "></i> Sign up With Pinterest </button>
                     </div>
+                     -->
                 </div>
             </div>
         </div>

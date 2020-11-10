@@ -2323,8 +2323,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    alert('crl...');
+  data: function data() {
+    return {
+      loaded: null
+    };
+  },
+  methods: {
+    /**
+     * Trigger Application 
+     * loading annimation
+    */
+    triggerLoading: function triggerLoading() {}
+  },
+  mounted: function mounted() {//loaded=false
+    //loaded=true
   }
 });
 
@@ -2457,9 +2469,50 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      loaded: localStorage.getItem("loaded") ? localStorage.getItem("loaded") : 0
+    };
+  },
+  methods: {
+    hideLoader: function hideLoader() {
+      $("#loader").hide();
+      $('#loader').modal('hide');
+    }
+  },
   mounted: function mounted() {
-    $('#load-app').modal('show');
+    var _this = this;
+
+    /**
+     * Check if the application
+     * is loading for the first time
+     * 
+    */
+    if (this.loaded == 0) {
+      $('#loader').modal('show');
+      /**
+       *Hide Loading annimation
+       *after five seconds
+      */
+
+      setTimeout(function () {
+        //set loaded to true/1
+        localStorage.setItem("loaded", 1);
+
+        _this.hideLoader(); //reset loaded after 1 hour
+
+
+        setTimeout(function () {
+          localStorage.setItem("loaded", 0);
+        }, 3600000);
+      }, 10000);
+    }
   }
 });
 
@@ -10239,7 +10292,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#admin-dashboard[data-v-2d7a1e39]{\n    min-height: 80vh;\n}\n#total-Users[data-v-2d7a1e39]{\n    width: 200px;\n    height: 200px;\n    border-radius: 50%;\n    background-color: crimson;\n}\n.label-number[data-v-2d7a1e39]{\n  font-size: 32px;\n  font-weight: 800;\n  font-family: algerian;\n}\n#total-Subscribers[data-v-2d7a1e39]{\n    width: 200px;\n    height: 200px;\n    border-radius: 50%;\n    background-color: green;\n}\n#total-products[data-v-2d7a1e39]{\n    width: 200px;\n    height: 200px;\n    background-color: coral;\n}\n#total-categories[data-v-2d7a1e39]{\n    width: 200px;\n    height: 200px;\n    background-color: pink;\n}\n.cart-height[data-v-2d7a1e39]{\n        min-height: 50vh;\n}\n.cart-image-size[data-v-2d7a1e39]{\n        width: 150px;\n        height: 150px;\n}\n.cart-bg-color[data-v-2d7a1e39]{\n        background-color: rgb(70,70,109);\n}\n.cart-qty-height[data-v-2d7a1e39]{\n        height: 100px;\n}\n.cart-order-summary[data-v-2d7a1e39]{\n        float: left;\n        right: 0;\n}\n.cart-items[data-v-2d7a1e39]{\n        left: 0;\n}\n.Theme-light[data-v-2d7a1e39]{\n      background-color: rgb(78, 78, 126);\n}\n.Theme-light-2[data-v-2d7a1e39]{\n      background-color: rgb(71, 71, 138);\n}\n.cart-products-width[data-v-2d7a1e39]{\n        width: 800px;\n        left: 10px;\n}\n", ""]);
+exports.push([module.i, "\n#admin-dashboard[data-v-2d7a1e39]{\r\n    min-height: 80vh;\n}\n#total-Users[data-v-2d7a1e39]{\r\n    width: 200px;\r\n    height: 200px;\r\n    border-radius: 50%;\r\n    background-color: crimson;\n}\n.label-number[data-v-2d7a1e39]{\r\n  font-size: 32px;\r\n  font-weight: 800;\r\n  font-family: algerian;\n}\n#total-Subscribers[data-v-2d7a1e39]{\r\n    width: 200px;\r\n    height: 200px;\r\n    border-radius: 50%;\r\n    background-color: green;\n}\n#total-products[data-v-2d7a1e39]{\r\n    width: 200px;\r\n    height: 200px;\r\n    background-color: coral;\n}\n#total-categories[data-v-2d7a1e39]{\r\n    width: 200px;\r\n    height: 200px;\r\n    background-color: pink;\n}\n.cart-height[data-v-2d7a1e39]{\r\n        min-height: 50vh;\n}\n.cart-image-size[data-v-2d7a1e39]{\r\n        width: 150px;\r\n        height: 150px;\n}\n.cart-bg-color[data-v-2d7a1e39]{\r\n        background-color: rgb(70,70,109);\n}\n.cart-qty-height[data-v-2d7a1e39]{\r\n        height: 100px;\n}\n.cart-order-summary[data-v-2d7a1e39]{\r\n        float: left;\r\n        right: 0;\n}\n.cart-items[data-v-2d7a1e39]{\r\n        left: 0;\n}\n.Theme-light[data-v-2d7a1e39]{\r\n      background-color: rgb(78, 78, 126);\n}\n.Theme-light-2[data-v-2d7a1e39]{\r\n      background-color: rgb(71, 71, 138);\n}\n.cart-products-width[data-v-2d7a1e39]{\r\n        width: 800px;\r\n        left: 10px;\n}\r\n", ""]);
 
 // exports
 
@@ -10258,7 +10311,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#panel, #flip {\n    padding: 5px;\n    text-align: center;\n    background-color: #e5eecc;\n    border: solid 1px #c3c3c3;\n}\n#panel {\n    padding: 50px;\n}\n", ""]);
+exports.push([module.i, "\n#panel, #flip {\r\n    padding: 5px;\r\n    text-align: center;\r\n    background-color: #e5eecc;\r\n    border: solid 1px #c3c3c3;\n}\n#panel {\r\n    padding: 50px;\n}\r\n", ""]);
 
 // exports
 
@@ -10277,7 +10330,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.main[data-v-7ce48b33]{\n     background-color:#242323 ;\n     margin: 0px;\n     padding: 0px;\n     height: 100vh;\n}\n.load-circle[data-v-7ce48b33]{\n position: absolute;\n top: calc(25% - 24px);\n left: calc(50% - 54px);\n transform: translate(-50%,-50%);\n width: 100px;\n height: 100px;\n border: 4px solid transparent;\n border-bottom: 4px solid #fff958;\n border-top: 4px solid #b858ff;\n border-radius: 50%;\n -webkit-animation: animate-circ-data-v-7ce48b33 2s linear infinite;\n         animation: animate-circ-data-v-7ce48b33 2s linear infinite;\n}\n.load-circle[data-v-7ce48b33]::before{\n    content: '';\n    position: absolute;\n    top: 10px;\n    left: 10px;\n    bottom:10px;\n    right: 10px;\n    border: 4px solid transparent;\n    border-bottom: 4px solid #e74c3c;\n    border-top: 4px solid #3ce7d8;\n    border-radius: 50%;\n    -webkit-animation: animate-circ-data-v-7ce48b33 2s linear infinite;\n            animation: animate-circ-data-v-7ce48b33 2s linear infinite;\n}\n.load-circle[data-v-7ce48b33]::after{\n    content: '';\n    position: absolute;\n    top: 24px;\n    left: 24px;\n    bottom: 24px;\n    right: 24px;\n    border: 4px solid transparent;\n    border-bottom: 4px solid #39ff8d;\n    border-top: 4px solid #ff67ad;\n    border-radius: 50%;\n    -webkit-animation: animate-circ-data-v-7ce48b33 4s linear infinite;\n            animation: animate-circ-data-v-7ce48b33 4s linear infinite;\n}\n@-webkit-keyframes animate-circ-data-v-7ce48b33 {\n0%{\n        transform: rotate(0deg);\n}\n100%{\n        transform: rotate(360deg);\n}\n}\n@keyframes animate-circ-data-v-7ce48b33 {\n0%{\n        transform: rotate(0deg);\n}\n100%{\n        transform: rotate(360deg);\n}\n}\nul[data-v-7ce48b33]{\n     position: absolute;\n     top: 50%;\n     left: 50%;\n     transform: translate(-50%,-50%);\n     margin: 0 ;\n     padding: 0;\n     display: flex;\n}\nul li[data-v-7ce48b33]{\n     list-style: none;\n     font-family: 'Times New Roman', Times, serif;\n     font-size: 5em;\n     letter-spacing: 15px;\n     color:#484848;\n     text-shadow: none;\n     -webkit-animation: animate-data-v-7ce48b33 1s infinite linear;\n             animation: animate-data-v-7ce48b33 1s infinite linear;\n}\n@-webkit-keyframes animate-data-v-7ce48b33{\n0%{\n      transform: rotate(0deg);\n}\n100%{\n      transform: rotate(360deg);\n}\n}\n@keyframes animate-data-v-7ce48b33{\n0%{\n      transform: rotate(0deg);\n}\n100%{\n      transform: rotate(360deg);\n}\n}\n@keyframes animate-data-v-7ce48b33{\n0%{\n        color:#484848;\n        text-shadow: none;\n}\n18%{\n        color:#484848;\n        text-shadow: none;\n}\n20%{\n        color:#484848;\n        text-shadow: none;\n}\n20%{\n        color:#fff900;\n        text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;\n}\n30%{\n        color:#484848;\n        text-shadow: none;\n}\n35%{\n        color:#fff900;\n        text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;\n}\n70%{\n        color:#484848;\n        text-shadow: none;\n}\n85%{\n        color:#fff900;\n        text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;\n}\n90%{\n        color:#484848;\n        text-shadow: none;\n}\n100%{\n        color:#484848;\n        text-shadow: none;\n}\n}\nul li[data-v-7ce48b33]:nth-child(1){\n     -webkit-animation-delay: .2s;\n             animation-delay: .2s;\n}\nul li[data-v-7ce48b33]:nth-child(2){\n     -webkit-animation-delay: .2s;\n             animation-delay: .2s;\n}\nul li[data-v-7ce48b33]:nth-child(3){\n     -webkit-animation-delay: .4s;\n             animation-delay: .4s;\n}\nul li[data-v-7ce48b33]:nth-child(4){\n     -webkit-animation-delay: .6s;\n             animation-delay: .6s;\n}\nul li[data-v-7ce48b33]:nth-child(5){\n     -webkit-animation-delay: .8s;\n             animation-delay: .8s;\n}\nul li[data-v-7ce48b33]:nth-child(6){\n     -webkit-animation-delay: .10s;\n             animation-delay: .10s;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*center logo*/\n.logo-pos-center[data-v-7ce48b33]{\r\n    position: absolute;\r\n    top: calc(25% - 24px);\r\n    left: calc(50% - 66px);\n}\r\n/*e-shop logo*/\n#e-shop-logo[data-v-7ce48b33]{\r\n   height: 100px;\r\n   width: 100px;\n}\n.main[data-v-7ce48b33]{\r\n        background-color:rgba(0, 0, 0, 0.4);\r\n        margin: 0px;\r\n        padding: 0px;\r\n        height: 100vh;\n}\n.load-circle[data-v-7ce48b33]{\r\n    position: absolute;\r\n    top: calc(25% - 24px);\r\n    left: calc(50% - 54px);\r\n    transform: translate(-50%,-50%);\r\n    width: 100px;\r\n    height: 100px;\r\n    border: 4px solid transparent;\r\n    border-bottom: 4px solid #fff958;\r\n    border-top: 4px solid #b858ff;\r\n    border-radius: 50%;\r\n    -webkit-animation: animate-circ-data-v-7ce48b33 2s linear infinite;\r\n            animation: animate-circ-data-v-7ce48b33 2s linear infinite;\n}\n.load-circle[data-v-7ce48b33]::before{\r\n       content: '';\r\n       position: absolute;\r\n       top: 10px;\r\n       left: 10px;\r\n       bottom:10px;\r\n       right: 10px;\r\n       border: 4px solid transparent;\r\n       border-bottom: 4px solid #e74c3c;\r\n       border-top: 4px solid #3ce7d8;\r\n       border-radius: 50%;\r\n       -webkit-animation: animate-circ-data-v-7ce48b33 2s linear infinite;\r\n               animation: animate-circ-data-v-7ce48b33 2s linear infinite;\n}\n.load-circle[data-v-7ce48b33]::after{\r\n       content: '';\r\n       position: absolute;\r\n       top: 24px;\r\n       left: 24px;\r\n       bottom: 24px;\r\n       right: 24px;\r\n       border: 4px solid transparent;\r\n       border-bottom: 4px solid #39ff8d;\r\n       border-top: 4px solid #ff67ad;\r\n       border-radius: 50%;\r\n       -webkit-animation: animate-circ-data-v-7ce48b33 4s linear infinite;\r\n               animation: animate-circ-data-v-7ce48b33 4s linear infinite;\n}\n@-webkit-keyframes animate-circ-data-v-7ce48b33 {\n0%{\r\n           transform: rotate(0deg);\n}\n100%{\r\n           transform: rotate(360deg);\n}\n}\n@keyframes animate-circ-data-v-7ce48b33 {\n0%{\r\n           transform: rotate(0deg);\n}\n100%{\r\n           transform: rotate(360deg);\n}\n}\nul[data-v-7ce48b33]{\r\n        position: absolute;\r\n        top: 50%;\r\n        left: 50%;\r\n        transform: translate(-50%,-50%);\r\n        margin: 0 ;\r\n        padding: 0;\r\n        display: flex;\n}\nul li[data-v-7ce48b33]{\r\n        list-style: none;\r\n        font-family: 'Times New Roman', Times, serif;\r\n        font-size: 5em;\r\n        letter-spacing: 15px;\r\n        color:#484848;\r\n        text-shadow: none;\r\n        -webkit-animation: animate-data-v-7ce48b33 1s infinite linear;\r\n                animation: animate-data-v-7ce48b33 1s infinite linear;\n}\n@-webkit-keyframes animate-data-v-7ce48b33{\n0%{\r\n         transform: rotate(0deg);\n}\n100%{\r\n         transform: rotate(360deg);\n}\n}\n@keyframes animate-data-v-7ce48b33{\n0%{\r\n         transform: rotate(0deg);\n}\n100%{\r\n         transform: rotate(360deg);\n}\n}\n@keyframes animate-data-v-7ce48b33{\n0%{\r\n           color:#484848;\r\n           text-shadow: none;\n}\n18%{\r\n           color:#484848;\r\n           text-shadow: none;\n}\n20%{\r\n           color:#484848;\r\n           text-shadow: none;\n}\n20%{\r\n           color:#fff900;\r\n           text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;\n}\n30%{\r\n           color:#484848;\r\n           text-shadow: none;\n}\n35%{\r\n           color:#fff900;\r\n           text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;\n}\n70%{\r\n           color:#484848;\r\n           text-shadow: none;\n}\n85%{\r\n           color:#fff900;\r\n           text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;\n}\n90%{\r\n           color:#484848;\r\n           text-shadow: none;\n}\n100%{\r\n           color:#484848;\r\n           text-shadow: none;\n}\n}\nul li[data-v-7ce48b33]:nth-child(1){\r\n        -webkit-animation-delay: .2s;\r\n                animation-delay: .2s;\n}\nul li[data-v-7ce48b33]:nth-child(2){\r\n        -webkit-animation-delay: .2s;\r\n                animation-delay: .2s;\n}\nul li[data-v-7ce48b33]:nth-child(3){\r\n        -webkit-animation-delay: .4s;\r\n                animation-delay: .4s;\n}\nul li[data-v-7ce48b33]:nth-child(4){\r\n        -webkit-animation-delay: .6s;\r\n                animation-delay: .6s;\n}\nul li[data-v-7ce48b33]:nth-child(5){\r\n        -webkit-animation-delay: .8s;\r\n                animation-delay: .8s;\n}\nul li[data-v-7ce48b33]:nth-child(6){\r\n        -webkit-animation-delay: .10s;\r\n                animation-delay: .10s;\n}\r\n", ""]);
 
 // exports
 
@@ -48129,7 +48182,7 @@ var staticRenderFns = [
       {
         staticClass: "modal main fade",
         attrs: {
-          id: "load-app",
+          id: "loader",
           "data-backdrop": "static",
           tabindex: "-1",
           role: "dialog",
@@ -48139,6 +48192,20 @@ var staticRenderFns = [
       },
       [
         _c("div", { staticClass: "main m-0" }, [
+          _c("div", { staticClass: "row " }, [
+            _c("div", { staticClass: "col-12 logo-pos-center" }, [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: {
+                  id: "e-shop-logo",
+                  src: "/Images/e-shop.png",
+                  alt: "",
+                  srcset: ""
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "load-circle" }),
           _vm._v(" "),
           _c("ul", [
@@ -71991,8 +72058,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Bitnami\wampstack-7.4.9-0\frameworks\Business\e-shop\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Bitnami\wampstack-7.4.9-0\frameworks\Business\e-shop\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Bitnami\wampstack-7.4.6-1\frameworks\e-shop\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Bitnami\wampstack-7.4.6-1\frameworks\e-shop\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
