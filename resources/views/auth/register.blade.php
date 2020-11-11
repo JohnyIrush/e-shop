@@ -82,16 +82,16 @@
                     <hr class="bg-white">
                     <div class="row justify-content-around">
                         <div class="col-3">
-                            <a href="{{route('github')}}" class=""><i class="fab fa-github fa-3x "></i></a>
+                            <a href="{{route('github')}}" class=""><i class="fab text-dark fa-github fa-3x "></i></a>
                         </div>
                         <div class="col-3">
-                         <a href="{{route('google')}}" class=""><i class="fab fa-google fa-3x "></i></a>
+                         <a href="{{route('google')}}" class=""><i class="fab text-danger fa-google fa-3x "></i></a>
                         </div>
                         <div class="col-3">
-                            <a href="{{route('linkedin')}}" class=""><i class="fab fa-linkedin fa-3x "></i></a>
+                            <a href="{{route('linkedin')}}" class=""><i class="fab text-primary fa-linkedin fa-3x "></i></a>
                         </div>
                        <div class="col-3">
-                           <a href="{{route('pinterest')}}" class=""><i class="fab fa-pinterest fa-3x "></i></a>
+                           <a href="{{route('pinterest')}}" class=""><i class="fab text-danger fa-pinterest fa-3x "></i></a>
                        </div>
                      </div>
                     <!--
