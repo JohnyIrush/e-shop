@@ -20,8 +20,6 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" >
 
     <script src="https://www.paypal.com/sdk/js?client-id=AfVKNAYNs6zXEJVdvm2t3Kw7GsU31Tjp_jy9dDl3m2KafGcu2yB6pS2XCjqsZ78KERE3IBVqUdf5fnzZ"></script>
-
-
 </head>
 <body>
       <div id="app" >

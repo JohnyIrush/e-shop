@@ -30,6 +30,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    /**
+     * OAuth Intergration
+     * Socialite Package
+    */
+
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
@@ -53,5 +58,6 @@ return [
         'client_secret' => env('PINTEREST_CLIENT_SECRET'),
         'redirect' => env('PINTEREST_REDIRECT_URL'),
     ],
+
 
 ];

@@ -38,11 +38,10 @@
       21 => 'Illuminate\\View\\ViewServiceProvider',
       22 => 'Intervention\\Image\\ImageServiceProvider',
       23 => 'Srmklive\\PayPal\\Providers\\PayPalServiceProvider',
-      24 => 'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider',
-      25 => 'App\\Providers\\AppServiceProvider',
-      26 => 'App\\Providers\\AuthServiceProvider',
-      27 => 'App\\Providers\\EventServiceProvider',
-      28 => 'App\\Providers\\RouteServiceProvider',
+      24 => 'App\\Providers\\AppServiceProvider',
+      25 => 'App\\Providers\\AuthServiceProvider',
+      26 => 'App\\Providers\\EventServiceProvider',
+      27 => 'App\\Providers\\RouteServiceProvider',
     ),
     'aliases' => 
     array (
@@ -83,7 +82,6 @@
       'Validator' => 'Illuminate\\Support\\Facades\\Validator',
       'View' => 'Illuminate\\Support\\Facades\\View',
       'Image' => 'Intervention\\Image\\Facades\\Image',
-      'NoCaptcha' => 'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha',
     ),
   ),
   'auth' => 
@@ -601,6 +599,31 @@
       'table' => 'failed_jobs',
     ),
   ),
+  'recaptcha' => 
+  array (
+    'api_site_key' => '',
+    'api_secret_key' => '',
+    'version' => 'v3',
+    'curl_timeout' => 10,
+    'skip_ip' => 
+    array (
+    ),
+    'default_validation_route' => 'biscolab-recaptcha/validate',
+    'default_token_parameter_name' => 'token',
+    'default_language' => NULL,
+    'default_form_id' => 'biscolab-recaptcha-invisible-form',
+    'explicit' => false,
+    'api_domain' => 'www.google.com',
+    'tag_attributes' => 
+    array (
+      'theme' => 'light',
+      'size' => 'normal',
+      'tabindex' => 0,
+      'callback' => NULL,
+      'expired-callback' => NULL,
+      'error-callback' => NULL,
+    ),
+  ),
   'services' => 
   array (
     'mailgun' => 
@@ -642,6 +665,11 @@
       'client_id' => NULL,
       'client_secret' => NULL,
       'redirect' => NULL,
+    ),
+    'recaptcha' => 
+    array (
+      'sitekey' => '6LdGAeEZAAAAABFO-wSJFeF2XkrlLPG6Pv6NKbfk',
+      'secret' => '6LdGAeEZAAAAAKDo71xRJqELyTDuWh2asE_JOapB',
     ),
   ),
   'session' => 
@@ -792,8 +820,8 @@
   ),
   'captcha' => 
   array (
-    'secret' => '6LdGAeEZAAAAABFO-wSJFeF2XkrlLPG6Pv6NKbfk',
-    'sitekey' => '6LdGAeEZAAAAAKDo71xRJqELyTDuWh2asE_JOapB',
+    'secret' => NULL,
+    'sitekey' => NULL,
     'options' => 
     array (
       'timeout' => 30,
