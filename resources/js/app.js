@@ -19,6 +19,8 @@ Vue.component('shoporcheckout', require('./components/purchase/shoporcheckout.vu
 Vue.component('autosignin', require('./components/customer/autosignin.vue').default); //payment page
 Vue.component('logo_load', require('./components/App/logo_load.vue').default); //Inner Logo Component
 Vue.component('learn-jq', require('./components/App/learn-jq.vue').default); //learn jq
+Vue.component('learn-jq', require('./components/App/learn-jq.vue').default); //Rich text editor for e-shop, for PRODUCTS SEO
+
 //Admin Dashboard
 Vue.component('admindashboard', require('./components/Admin/dashboard.vue').default); //Admin Dashboard
 

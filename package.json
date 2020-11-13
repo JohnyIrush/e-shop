@@ -35,6 +35,7 @@
         "stream-chat": "^2.1.1",
         "sweetalert2": "^9.17.1",
         "tiptap": "^1.30.0",
+        "tiptap-extensions": "^1.33.2",
         "vue-editor-js": "^2.0.1",
         "vue-loading-spinner": "^1.0.11",
         "vue-progressbar": "^0.7.5",
