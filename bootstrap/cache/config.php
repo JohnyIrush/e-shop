@@ -599,31 +599,6 @@
       'table' => 'failed_jobs',
     ),
   ),
-  'recaptcha' => 
-  array (
-    'api_site_key' => '',
-    'api_secret_key' => '',
-    'version' => 'v3',
-    'curl_timeout' => 10,
-    'skip_ip' => 
-    array (
-    ),
-    'default_validation_route' => 'biscolab-recaptcha/validate',
-    'default_token_parameter_name' => 'token',
-    'default_language' => NULL,
-    'default_form_id' => 'biscolab-recaptcha-invisible-form',
-    'explicit' => false,
-    'api_domain' => 'www.google.com',
-    'tag_attributes' => 
-    array (
-      'theme' => 'light',
-      'size' => 'normal',
-      'tabindex' => 0,
-      'callback' => NULL,
-      'expired-callback' => NULL,
-      'error-callback' => NULL,
-    ),
-  ),
   'services' => 
   array (
     'mailgun' => 
@@ -665,11 +640,6 @@
       'client_id' => NULL,
       'client_secret' => NULL,
       'redirect' => NULL,
-    ),
-    'recaptcha' => 
-    array (
-      'sitekey' => '6LdGAeEZAAAAABFO-wSJFeF2XkrlLPG6Pv6NKbfk',
-      'secret' => '6LdGAeEZAAAAAKDo71xRJqELyTDuWh2asE_JOapB',
     ),
   ),
   'session' => 
@@ -752,6 +722,31 @@
       'boolean' => 'bool',
     ),
     'include_class_docblocks' => false,
+  ),
+  'recaptcha' => 
+  array (
+    'api_site_key' => 'ADD_YOUR_SITE_KEY',
+    'api_secret_key' => 'ADD_YOUR_SECRET_KEY',
+    'version' => 'v2',
+    'curl_timeout' => 10,
+    'skip_ip' => 
+    array (
+    ),
+    'default_validation_route' => 'biscolab-recaptcha/validate',
+    'default_token_parameter_name' => 'token',
+    'default_language' => NULL,
+    'default_form_id' => 'biscolab-recaptcha-invisible-form',
+    'explicit' => false,
+    'api_domain' => 'www.google.com',
+    'tag_attributes' => 
+    array (
+      'theme' => 'light',
+      'size' => 'normal',
+      'tabindex' => 0,
+      'callback' => NULL,
+      'expired-callback' => NULL,
+      'error-callback' => NULL,
+    ),
   ),
   'flare' => 
   array (

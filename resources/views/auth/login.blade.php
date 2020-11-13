@@ -76,28 +76,18 @@
                 <hr class="bg-white">
                 <div class="row justify-content-around">
                    <div class="col-3">
-                       <a href="{{route('github')}}" class=""><i class="fab fa-github fa-3x "></i></a>
+                       <a href="{{route('github')}}" class=""><i class="fab fa-github fa-3x text-dark"></i></a>
                    </div>
                    <div class="col-3">
-                    <a href="{{route('google')}}" class=""><i class="fab fa-google fa-3x "></i></a>
+                    <a href="{{route('google')}}" class=""><i class="fab fa-google fa-3x text-danger"></i></a>
                    </div>
                    <div class="col-3">
-                       <a href="{{route('linkedin')}}" class=""><i class="fab fa-linkedin fa-3x "></i></a>
+                       <a href="{{route('linkedin')}}" class=""><i class="fab fa-linkedin fa-3x text-primary"></i></a>
                    </div>
                   <div class="col-3">
-                      <a href="{{route('pinterest')}}" class=""><i class="fab fa-pinterest fa-3x "></i></a>
+                      <a href="{{route('facebook')}}" class=""> <i class="fab fa-facebook fa-3x" aria-hidden="true"></i> </a>
                   </div>
                 </div>
-                <!--
-                <div class="row justify-content-center m-1 mt-1">
-                      <a href=" {{route('github')}} " type="button" class="btn mr-1 btn-lg btn-secondary col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-github    "></i> Sign in With Github </a>
-                      <a href=" {{route('google')}} " type="button" class="btn mt-1  btn-lg btn-primary col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-google    "></i> Sign in With Google </a>
-                </div>
-                <div class="row justify-content-center m-1 mt-1">
-                      <a href=" {{route('linkedin')}} " type="button" class="btn mr-1  btn-lg btn-danger col-xs col-sm col-md-5 col-lg-5"> <i class="fab fa-linkedin    "></i> Sign in With Linkedin </a>
-                      <a href=" {{route('pinterest')}} " type="button" class="btn mt-1 btn-lg btn-success col-xs col-sm col-md-5 col-lg-5" disabled> <i class="fab fa-pinterest    "></i> Sign in With Pinterest </a>
-                </div>
-                 -->
                 </div>
             </div>
         </div>

@@ -103,9 +103,9 @@ class SocialMediaSigninController extends Controller
       }
 
       //Redirect To Pinterest to Sign In
-      public function pinterest()
+      public function facebook()
       {
-         return Socialite::driver('pinterest')->redirect();
+         return Socialite::driver('facebook')->redirect();
       } 
   
       /**
@@ -114,9 +114,9 @@ class SocialMediaSigninController extends Controller
         * with
        */
   
-      public function pinterestRedirect()
+      public function facebookRedirect()
       {
-          $user = Socialite::driver('pinterest')->user();
+          $user = Socialite::driver('facebook')->user();
           $user = User::firstOrCreate([
              'email'=> $user->email,
           ],

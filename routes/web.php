@@ -131,9 +131,9 @@ Route::namespace('Social')->group(function(){
     //linkedin Sign In
     Route::get('linkedin','SocialMediaSigninController@linkedin')->name('linkedin');
     Route::get('linkedinredirect','SocialMediaSigninController@linkedinRedirect')->name('linkedinredirect');
-    //pinterest Sign In
-    Route::get('pinterest','SocialMediaSigninController@pinterest')->name('pinterest');
-    Route::get('pinterestredirect','SocialMediaSigninController@pinterestRedirect')->name('pinterestredirect');
+    //facebook Sign In
+    Route::get('facebook','SocialMediaSigninController@facebook')->name('facebook');
+    Route::get('facebookredirect','SocialMediaSigninController@facebookRedirect')->name('facebookredirect');
 });
 
 //forgot password reset

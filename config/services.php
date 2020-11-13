@@ -52,11 +52,10 @@ return [
         'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
         'redirect' => env('LINKEDIN_REDIRECT_URL'),
     ],
-
-    'pinterest' => [
-        'client_id' => env('PINTEREST_CLIENT_ID'),
-        'client_secret' => env('PINTEREST_CLIENT_SECRET'),
-        'redirect' => env('PINTEREST_REDIRECT_URL'),
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('FACEBOOK_CALLBACK_URL'),
     ],
 
 
