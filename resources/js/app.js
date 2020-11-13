@@ -19,7 +19,9 @@ Vue.component('shoporcheckout', require('./components/purchase/shoporcheckout.vu
 Vue.component('autosignin', require('./components/customer/autosignin.vue').default); //payment page
 Vue.component('logo_load', require('./components/App/logo_load.vue').default); //Inner Logo Component
 Vue.component('learn-jq', require('./components/App/learn-jq.vue').default); //learn jq
-Vue.component('learn-jq', require('./components/App/learn-jq.vue').default); //Rich text editor for e-shop, for PRODUCTS SEO
+Vue.component('editor', require('./components/Products/Editor.vue').default); //Rich text editor for e-shop, for PRODUCTS SEO
+Vue.component('about', require('./components/Products/about.vue').default); //Products About Data
+
 
 //Admin Dashboard
 Vue.component('admindashboard', require('./components/Admin/dashboard.vue').default); //Admin Dashboard
@@ -45,7 +47,7 @@ Vue.use(VueToast, {
 //let instance = Vue.$toast.open('You did it!');
 
 //import vuex
-//import {store} from './store/store.js';
+import {store} from './store/store.js';
 
 //Global class
 import global from "./Global/gloabal.js";
@@ -67,11 +69,17 @@ const router = new VueRouter({
 var Event = new Vue();
 window.Event = Event;
 
+//Rich Text Editor Imports
+import Editor from './components/Products/Editor/Editor'
+Vue.prototype.$Editor = new Editor();
+
+
 
 //chart app event bus
 Vue.prototype.EventBus = new Vue();
 
 const app = new Vue({
+    store: store,
     router,
     el: '#app',
 });

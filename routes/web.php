@@ -32,10 +32,9 @@ Route::namespace('Web')->group(function(){
     Route::get('searchedproducts','WebController@searchedProducts')->name('searchedproducts');
     //Route::any('{slug}','WebController@pageNotFound');
     Route::get('/categoryproducts/{id}','WebController@productsBycategory')->name('categoryproducts');
-    Route::get('/product/{id}','WebController@product')->name('product');
+    Route::get('/product/{id}','WebController@product')->name('product'); //view Product Description
     Route::get('autosignin','WebController@AutoSignIn'); //signed in User Automatically as admin
     Route::get('/checkifsignedIn','WebController@checkIfSignedIn'); //check if user is signed in
-    Route::get('/help','WebController@help')->name('help'); //Help and support on how to get started
 });
 
 
@@ -78,6 +77,8 @@ Route::namespace('Products')->group(function(){
     Route::post('/createproduct','ProductsController@store')->name('createproduct');
     Route::post('/editproduct/{id}','ProductsController@update')->name('editproduct');
     Route::get('/deleteproduct/{id}','ProductsController@deleteProduct')->name('deleteproduct');
+    Route::get('/showproductdata/{id}','ProductsController@showProductData')->name('showproductdata'); //return Product Data to be passed to the editor
+    Route::post('/saveproductabout/{id}','ProductsController@saveProductAbout')->name('saveproductabout'); //return Product Data to be passed to the editor
 
     Route::namespace('Categories')->group(function(){
         Route::get('/getcategories','CategoriesController@index'); //fetch categories for consumption by vuejs
@@ -114,6 +115,7 @@ Route::namespace('Products\Management')->group(function(){
     Route::get('getallorders','ManagementController@allOrders')->name('getallorders'); //fetch all the orders
     Route::get('getbuyerdetails/{id}','ManagementController@getBuyerDetails')->name('getbuyerdetails'); //get buyer details
     Route::get('getorderitems/{id}','ManagementController@getOrderItems')->name('getorderitems'); //get order items
+    Route::get('Editor','ManagementController@Editor')->name('Editor'); //rich text editor for Product Editting
 });
 
 

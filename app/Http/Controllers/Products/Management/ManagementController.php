@@ -71,4 +71,12 @@ class ManagementController extends Controller
 
         return response()->json($orders,200);
     }
+
+    /**
+     * Rich Text editor for products
+    */
+    public function Editor(){
+        //dd('works');
+       return view('shop.cpanel.Editor');
+    }
 }

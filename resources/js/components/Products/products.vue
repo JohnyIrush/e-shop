@@ -59,6 +59,7 @@
                     <td class=""> 
                         <a href="#" @click="editProduct(product)" type="button" class="btn btn-info float-left mb-1 mr-1 text-white"  data-toggle="modal" data-target="#edit-tag"> <i class="fa fa-edit" aria-hidden="true"></i> Edit</a> 
                         <button @click="deleteProduct(product,product.id)" class="btn btn-danger text-white float-left" > Delete</button>  
+                        <button @click="editProductAbout(product.id)" class="btn mt-2 btn-success text-white float-left" > Edit About</button>  
                      </td> 
                 </tr>    
                </tbody>
@@ -200,6 +201,17 @@ export default {
         }
     },
     methods: {
+      /**
+     * Launch Rich Text-editor
+     * and Edit Product About
+    */
+   editProductAbout(id){
+      this.$Editor.setCurrentProductid(id);
+
+      setTimeout(() => {
+        window.location.assign('/Editor')
+      }, 3000);
+   },
  /**
   * Create Product
  */

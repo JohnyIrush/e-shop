@@ -133,7 +133,26 @@ class ProductsController extends Controller
         $categories = Category::all();
         return view('shop.productsearch')->with(['products'=>$products,'categories'=>$categories]);
     }
+    
+    /**
+     * show Product About
+     * Seo Content
+    */
+    public function showProductData($id){
+        dd($id);
+          $Product = Product::find($id);
+           return response()->json($Product,200);
+    }
 
+    /**
+     * Edit Product About Seo Content
+     * using
+    */
+    public function saveProductAbout(Request $request, $id){
+          $Product = Product::find($id);
+          $Product->about = $request->about;
+          $Product->save();
+    }
 
 
 }

@@ -23,8 +23,13 @@
                     </div>
                </div>
             </div>
-          </div>
-          <div class="col-sm-3 Theme products-sidebar ml-0 mb-0">
+            <div class="card Theme">
+                <div class="card-body mb-3">
+                   <about></about>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 Theme products-sidebar ml-0 mb-0">
             <div class="card Theme">
               <ul class="nav flex-column">
                   <div class="nav-item heading-style heading-color">You May Want</div>
@@ -38,7 +43,7 @@
                 @endforeach
               </ul>
             </div>
-          </div>
+        </div>
     </div>
 </div>
 <shoporcheckout></shoporcheckout>
