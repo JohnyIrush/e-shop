@@ -147,7 +147,8 @@
          </div>
          <!--editor Body-->
          <div class="card-body text-window-color">
-            <editor-content id="editor"  class="editor bg-white Ta-hieght editor__content col-sm-12" :editor="editor" />                                                                          
+            <editor-content id="editor"  class="editor bg-white Ta-hieght editor__content col-sm-12" :editor="editor" />      
+            <Uploader></Uploader>                                                                    
          </div> 
          <!--editor Footer-->
          <div class="card-footer text-center bg-primary">
@@ -168,12 +169,10 @@
    </div> 
   </div>
 </template>
-
-
 <script>
 
-
-
+//Media Uploader
+import Uploader from './Editor/MediaUpload/Upload'
 import { Editor, EditorContent, EditorMenuBar, EditorMenuBubble } from 'tiptap'
 import {
   Blockquote,
@@ -204,6 +203,7 @@ export default {
     EditorMenuBar,
     EditorContent,
     EditorMenuBubble,
+    Uploader
   },
   data() {
     return {
