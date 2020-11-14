@@ -73,7 +73,10 @@ window.Event = Event;
 import Editor from './components/Products/Editor/Editor'
 Vue.prototype.$Editor = new Editor();
 
+//Media Uploader
 
+import Uploader from './components/Products/Editor/MediaUpload/Uploader';
+Vue.prototype.$Uploader = new Uploader();
 
 //chart app event bus
 Vue.prototype.EventBus = new Vue();

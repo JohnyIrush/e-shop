@@ -266,7 +266,10 @@ export default {
      * Image Insertion
     */
     showImagePrompt(command) {
-      const src = prompt('Enter the url of your image here')
+      //const src = prompt('Enter the url of your image here')
+      //Launch Uploader
+      const src = null;
+      this.$Uploader.launchUploader();
       if (src !== null) {
         command({ src })
       }
