@@ -25,7 +25,7 @@
             </div>
             <div class="card Theme">
                 <div class="card-body mb-3">
-                   <about></about>
+                   <about :aboutid="{{$product->id}}" ></about>
                 </div>
             </div>
         </div>

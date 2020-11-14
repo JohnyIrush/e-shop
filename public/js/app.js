@@ -2669,40 +2669,142 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     EditorMenuBar: tiptap__WEBPACK_IMPORTED_MODULE_0__["EditorMenuBar"],
-    EditorContent: tiptap__WEBPACK_IMPORTED_MODULE_0__["EditorContent"]
+    EditorContent: tiptap__WEBPACK_IMPORTED_MODULE_0__["EditorContent"],
+    EditorMenuBubble: tiptap__WEBPACK_IMPORTED_MODULE_0__["EditorMenuBubble"]
   },
   data: function data() {
     return {
       editor: new tiptap__WEBPACK_IMPORTED_MODULE_0__["Editor"]({
         extensions: [new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Blockquote"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["CodeBlock"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["HardBreak"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Heading"]({
           levels: [1, 2, 3]
-        }), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["BulletList"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["OrderedList"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["ListItem"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["TodoItem"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["TodoList"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Bold"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Code"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Italic"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Link"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Strike"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Underline"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["History"]()],
+        }), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["BulletList"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["OrderedList"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["ListItem"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["TodoItem"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["TodoList"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Bold"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Code"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Italic"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Link"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Strike"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Underline"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["History"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Image"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["Table"]({
+          resizable: true
+        }), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["TableHeader"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["TableCell"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_1__["TableRow"]()],
         content: ''
-      })
+      }),
+      linkUrl: null,
+      linkMenuIsActive: false
     };
   },
   beforeDestroy: function beforeDestroy() {
     this.editor.destroy();
   },
   methods: {
+    /**Link*/
+    showLinkMenu: function showLinkMenu(attrs) {
+      var _this = this;
+
+      this.linkUrl = attrs.href;
+      this.linkMenuIsActive = true;
+      this.$nextTick(function () {
+        _this.$refs.linkInput.focus();
+      });
+    },
+    hideLinkMenu: function hideLinkMenu() {
+      this.linkUrl = null;
+      this.linkMenuIsActive = false;
+    },
+    setLinkUrl: function setLinkUrl(command, url) {
+      command({
+        href: url
+      });
+      this.hideLinkMenu();
+    },
+
+    /**Link */
+
+    /**
+     * Image Insertion
+    */
+    showImagePrompt: function showImagePrompt(command) {
+      var src = prompt('Enter the url of your image here');
+
+      if (src !== null) {
+        command({
+          src: src
+        });
+      }
+    },
+
     /**
      * Fetch Product about
      * and pass to editor 
      * for editting
     */
     fetchAbout: function fetchAbout() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get('/showproductdata/' + Number(localStorage.currentProductId)).then(function (data) {
-        alert('Data was fetched successfully in the database');
-        console.log(data);
-
-        _this.editor.setContent('<p>Fuck you</p>', true, null);
+        //alert('Data was fetched successfully in the database');
+        //console.log(data.data.about);
+        _this2.editor.setContent(data.data.about, true, true);
       })["catch"](function () {
         alert('There was an error fetching Data from the database');
       });
@@ -2763,7 +2865,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['aboutid'],
+  data: function data() {
+    return {
+      about: null
+    };
+  },
+  methods: {
+    fetchAbout: function fetchAbout() {
+      var _this = this;
+
+      axios.get('/showproductdata/' + this.aboutid).then(function (data) {
+        _this.about = data.data.about;
+        console.log(_this.about);
+      })["catch"](function () {
+        alert('problem fetching about');
+      });
+    }
+  },
+  mounted: function mounted() {
+    alert('Showing about');
+    console.log(Number(this.aboutid));
+    this.fetchAbout();
+  }
+});
 
 /***/ }),
 
@@ -10618,7 +10744,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.editor\r\n    {\r\n\tborder:solid 1px #ccc;\r\n\tpadding: 20px;\r\n    min-height: 60vh;\n}\n#Toolbars{\r\n    position: fixed;\r\n    z-index: 1;\n}\r\n/**Toolbar Color*/\n.toolbar-bg-color{\r\n  background-color: rgb(204, 65, 88);\n}\n.text-window-color{\r\n    background-color: rgb(12, 12, 22);\n}\r\n/**Toolbar Size*/\n.toolbar-size{\r\n    min-height: 20vh;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.editor\r\n    {\r\n\tborder:solid 1px #ccc;\r\n\tpadding: 20px;\r\n    min-height: 60vh;\n}\n#Toolbars{\r\n    position: fixed;\r\n    z-index: 1;\n}\r\n/**Toolbar Color*/\n.toolbar-bg-color{\r\n  background-color: rgb(204, 65, 88);\n}\n.text-window-color{\r\n    background-color: rgb(12, 12, 22);\n}\r\n/**Toolbar Size*/\n.toolbar-size{\r\n    min-height: 20vh;\n}\r\n\r\n/**Table Styling*/\n.editor__content table td, .editor__content table th { \r\n  min-width: 1em; \r\n  border: 2px solid #ddd; \r\n  padding: 3px 5px; \r\n  vertical-align: top;\r\n   box-sizing: border-box; \r\n    position: relative;\n}\r\n", ""]);
 
 // exports
 
@@ -74500,9 +74626,38 @@ var render = function() {
                               [
                                 _c("li", { staticClass: "nav-item" }),
                                 _vm._v(" "),
-                                _c("li", { staticClass: "nav-item" }),
+                                _c("li", { staticClass: "nav-item" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "bg-primary text-white",
+                                      class: {
+                                        "is-active": isActive.ordered_list()
+                                      },
+                                      on: { click: commands.ordered_list }
+                                    },
+                                    [_vm._v("Orderred List")]
+                                  )
+                                ]),
                                 _vm._v(" "),
-                                _c("li", { staticClass: "nav-item" })
+                                _c("li", { staticClass: "nav-item" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "bg-primary text-white",
+                                      class: {
+                                        "is-active": isActive.bullet_list()
+                                      },
+                                      on: { click: commands.bullet_list }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-list-alt    "
+                                      }),
+                                      _vm._v(" Bullet List")
+                                    ]
+                                  )
+                                ])
                               ]
                             )
                           ]),
@@ -74533,13 +74688,10 @@ var render = function() {
                             _c(
                               "button",
                               {
-                                staticClass: "bg-primary text-white",
-                                class: { "is-active": isActive.italic() },
-                                on: {
-                                  click: function($event) {
-                                    return commands.italic()
-                                  }
-                                }
+                                staticClass:
+                                  "menubar__button bg-primary text-white",
+                                class: { "is-active": isActive.paragraph() },
+                                on: { click: commands.paragraph }
                               },
                               [
                                 _c("i", {
@@ -74593,6 +74745,47 @@ var render = function() {
                                 _vm._v(" strike ")
                               ]
                             )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "nav-item m-1" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "bg-primary text-white",
+                                class: { "is-active": isActive.blockquote() },
+                                on: {
+                                  click: function($event) {
+                                    return commands.blockquote()
+                                  }
+                                }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "fa fa-quote-right",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" Blockquote ")
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "nav-item m-1" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "menubar__button bg-primary text-white",
+                                on: {
+                                  click: function($event) {
+                                    return _vm.showImagePrompt(commands.image)
+                                  }
+                                }
+                              },
+                              [
+                                _c("i", { staticClass: "fas fa-image    " }),
+                                _vm._v("Image ")
+                              ]
+                            )
                           ])
                         ])
                       ]
@@ -74615,20 +74808,387 @@ var render = function() {
                             _c(
                               "button",
                               {
-                                class: { "is-active": isActive.bold() },
-                                on: { click: commands.bold }
+                                staticClass: "bg-primary text-white",
+                                on: {
+                                  click: function($event) {
+                                    return commands.createTable({
+                                      rowsCount: 3,
+                                      colsCount: 3,
+                                      withHeaderRow: false
+                                    })
+                                  }
+                                }
                               },
-                              [_vm._v("Bold")]
-                            )
+                              [
+                                _c("i", {
+                                  staticClass: "fa fa-table",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" Table ")
+                              ]
+                            ),
+                            _vm._v(" "),
+                            isActive.table()
+                              ? _c("span", [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "menubar__button bg-primary text-danger",
+                                      on: { click: commands.deleteTable }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fa  fa-trash",
+                                        attrs: { "aria-hidden": "true" }
+                                      }),
+                                      _vm._v("tabel ")
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "menubar__button bg-primary text-success ",
+                                      on: { click: commands.addColumnBefore }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fa fa-plus  ",
+                                        attrs: { "aria-hidden": "true" }
+                                      }),
+                                      _vm._v("Col Before ")
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "menubar__button bg-primary text-success ",
+                                      on: { click: commands.addColumnAfter }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fa fa-plus ",
+                                        attrs: { "aria-hidden": "true" }
+                                      }),
+                                      _vm._v("Col After")
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "menubar__button bg-primary text-danger ",
+                                      on: { click: commands.deleteColumn }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fa fa-trash",
+                                        attrs: { "aria-hidden": "true" }
+                                      }),
+                                      _vm._v("Col")
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "menubar__button bg-primary text-success ",
+                                      on: { click: commands.addRowBefore }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fa fa-plus",
+                                        attrs: { "aria-hidden": "true" }
+                                      }),
+                                      _vm._v("Row Before  ")
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "menubar__button bg-primary text-success ",
+                                      on: { click: commands.addRowAfter }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fa fa-plus",
+                                        attrs: { "aria-hidden": "true" }
+                                      }),
+                                      _vm._v("Row After ")
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "menubar__button bg-primary text-danger ",
+                                      on: { click: commands.deleteRow }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass:
+                                          "fa fa-trash bg-primary text-danger",
+                                        attrs: { "aria-hidden": "true" }
+                                      }),
+                                      _vm._v("Row ")
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "menubar__button bg-primary text-white",
+                                      on: { click: commands.toggleCellMerge }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fa fa-toggle-on ",
+                                        attrs: { "aria-hidden": "true" }
+                                      }),
+                                      _vm._v("Cell Merge ")
+                                    ]
+                                  )
+                                ])
+                              : _vm._e()
                           ]),
                           _vm._v(" "),
                           _c("li", { staticClass: "nav-item" }, [
-                            _c(
-                              "a",
-                              { staticClass: "nav-link", attrs: { href: "#" } },
-                              [_vm._v("Link")]
-                            )
-                          ])
+                            _c("div", { staticClass: "menubar" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "menubar__button bg-primary text-white",
+                                  on: { click: commands.undo }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-undo",
+                                    attrs: { "aria-hidden": "true" }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "menubar__button bg-primary text-white",
+                                  on: { click: commands.redo }
+                                },
+                                [_c("i", { staticClass: "fas fa-redo    " })]
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item" },
+                            [
+                              _c("editor-menu-bubble", {
+                                staticClass: "menububble",
+                                attrs: { editor: _vm.editor },
+                                on: { hide: _vm.hideLinkMenu },
+                                scopedSlots: _vm._u(
+                                  [
+                                    {
+                                      key: "default",
+                                      fn: function(ref) {
+                                        var commands = ref.commands
+                                        var isActive = ref.isActive
+                                        var getMarkAttrs = ref.getMarkAttrs
+                                        var menu = ref.menu
+                                        return [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass: "menububble",
+                                              class: {
+                                                "is-active": menu.isActive
+                                              },
+                                              style:
+                                                "left: " +
+                                                menu.left +
+                                                "px; bottom: " +
+                                                menu.bottom +
+                                                "px;"
+                                            },
+                                            [
+                                              _vm.linkMenuIsActive
+                                                ? _c(
+                                                    "form",
+                                                    {
+                                                      staticClass:
+                                                        "menububble__form",
+                                                      on: {
+                                                        submit: function(
+                                                          $event
+                                                        ) {
+                                                          $event.preventDefault()
+                                                          return _vm.setLinkUrl(
+                                                            commands.link,
+                                                            _vm.linkUrl
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("input", {
+                                                        directives: [
+                                                          {
+                                                            name: "model",
+                                                            rawName: "v-model",
+                                                            value: _vm.linkUrl,
+                                                            expression:
+                                                              "linkUrl"
+                                                          }
+                                                        ],
+                                                        ref: "linkInput",
+                                                        staticClass:
+                                                          "menububble__input",
+                                                        attrs: {
+                                                          type: "text",
+                                                          placeholder:
+                                                            "https://"
+                                                        },
+                                                        domProps: {
+                                                          value: _vm.linkUrl
+                                                        },
+                                                        on: {
+                                                          keydown: function(
+                                                            $event
+                                                          ) {
+                                                            if (
+                                                              !$event.type.indexOf(
+                                                                "key"
+                                                              ) &&
+                                                              _vm._k(
+                                                                $event.keyCode,
+                                                                "esc",
+                                                                27,
+                                                                $event.key,
+                                                                [
+                                                                  "Esc",
+                                                                  "Escape"
+                                                                ]
+                                                              )
+                                                            ) {
+                                                              return null
+                                                            }
+                                                            return _vm.hideLinkMenu(
+                                                              $event
+                                                            )
+                                                          },
+                                                          input: function(
+                                                            $event
+                                                          ) {
+                                                            if (
+                                                              $event.target
+                                                                .composing
+                                                            ) {
+                                                              return
+                                                            }
+                                                            _vm.linkUrl =
+                                                              $event.target.value
+                                                          }
+                                                        }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "button",
+                                                        {
+                                                          staticClass:
+                                                            "menububble__button text-danger bg-primary",
+                                                          attrs: {
+                                                            type: "button"
+                                                          },
+                                                          on: {
+                                                            click: function(
+                                                              $event
+                                                            ) {
+                                                              return _vm.setLinkUrl(
+                                                                commands.link,
+                                                                null
+                                                              )
+                                                            }
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fas fa-trash    "
+                                                          })
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                : [
+                                                    _c(
+                                                      "button",
+                                                      {
+                                                        staticClass:
+                                                          "menububble__button text-success bg-primary",
+                                                        class: {
+                                                          "is-active": isActive.link()
+                                                        },
+                                                        on: {
+                                                          click: function(
+                                                            $event
+                                                          ) {
+                                                            _vm.showLinkMenu(
+                                                              getMarkAttrs(
+                                                                "link"
+                                                              )
+                                                            )
+                                                          }
+                                                        }
+                                                      },
+                                                      [
+                                                        _c("span", [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              isActive.link()
+                                                                ? "Update Link"
+                                                                : "Add Link"
+                                                            )
+                                                          )
+                                                        ]),
+                                                        _vm._v(" "),
+                                                        _c("i", {
+                                                          staticClass:
+                                                            "fa fa-link",
+                                                          attrs: {
+                                                            "aria-hidden":
+                                                              "true"
+                                                          }
+                                                        })
+                                                      ]
+                                                    )
+                                                  ]
+                                            ],
+                                            2
+                                          )
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  null,
+                                  true
+                                )
+                              })
+                            ],
+                            1
+                          )
                         ])
                       ]
                     }
@@ -74644,7 +75204,8 @@ var render = function() {
             { staticClass: "card-body text-window-color" },
             [
               _c("editor-content", {
-                staticClass: "editor bg-white Ta-hieght   col-sm-12",
+                staticClass:
+                  "editor bg-white Ta-hieght editor__content col-sm-12",
                 attrs: { id: "editor", editor: _vm.editor }
               })
             ],
@@ -74721,7 +75282,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", { domProps: { innerHTML: _vm._s(_vm.about) } })
 }
 var staticRenderFns = []
 render._withStripped = true

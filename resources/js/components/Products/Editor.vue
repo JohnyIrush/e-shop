@@ -42,11 +42,11 @@
                   </li>
                   <!--Orderlist-->
                   <li class="nav-item">
-                    <!--<button class="bg-primary text-white" :class="{ 'is-active': isActive.OrderedList() }" @click="commands.OrderedList()">Orderred List</button>--->
+                    <button class="bg-primary text-white" :class="{ 'is-active': isActive.ordered_list() }" @click="commands.ordered_list" >Orderred List</button>
                   </li>
                   <!--Bullet List-->
                   <li class="nav-item">
-                    <!--<button class="bg-primary text-white" :class="{ 'is-active': isActive.BulletList() }" @click="commands.BulletList()">Bullet List</button>-->
+                    <button class="bg-primary text-white" :class="{ 'is-active': isActive.bullet_list() }" @click="commands.bullet_list"><i class="fas fa-list-alt    "></i> Bullet List</button>
                   </li>
                </ul>
              </li>
@@ -58,7 +58,7 @@
 
              <!--Paragraph-->
              <li class="nav-item m-1">
-               <button class="bg-primary text-white" :class="{ 'is-active': isActive.italic() }" @click="commands.italic()"> <i class="fa fa-paragraph" aria-hidden="true"></i> Paragraph </button>
+               <button class="menubar__button bg-primary text-white" :class="{ 'is-active': isActive.paragraph() }" @click="commands.paragraph"> <i class="fa fa-paragraph" aria-hidden="true"></i> Paragraph </button>
              </li>
 
              <!--underline-->
@@ -70,22 +70,84 @@
              <li class="nav-item m-1">
                <button class="bg-primary text-white" :class="{ 'is-active': isActive.strike() }" @click="commands.strike()"> <i class="fa fa-strikethrough" aria-hidden="true"></i> strike </button>
              </li>
-           </ul>
-         </editor-menu-bar>
-                  <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
-           <ul class="nav">
-             <li class="nav-item">
-              <button :class="{ 'is-active': isActive.bold() }" @click="commands.bold">Bold</button>
-             </li>  
-             <li class="nav-item">
-               <a class="nav-link" href="#">Link</a>
+
+             <!--Blockquote-->
+             <li class="nav-item m-1">
+               <button class="bg-primary text-white" :class="{ 'is-active': isActive.blockquote() }" @click="commands.blockquote()"> <i class="fa fa-quote-right" aria-hidden="true"></i> Blockquote </button>
+             </li>
+
+             <!--Image-->
+             <li class="nav-item m-1">
+              <button class="menubar__button bg-primary text-white" @click="showImagePrompt(commands.image)"><i class="fas fa-image    "></i>Image </button>
              </li>
            </ul>
          </editor-menu-bar>
+         <!--Second Toolbar -->
+          <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
+           <ul class="nav">
+             <li class="nav-item">
+               <!--Table Creation Button-->
+					     <button class="bg-primary text-white" @click="commands.createTable({rowsCount: 3, colsCount: 3, withHeaderRow: false })"> <i class="fa fa-table" aria-hidden="true"></i> Table </button>
+					       <span v-if="isActive.table()">
+					       	<button class="menubar__button bg-primary text-danger" @click="commands.deleteTable"> <i class="fa  fa-trash" aria-hidden="true"></i>tabel </button>
+
+					       	<button class="menubar__button bg-primary text-success " @click="commands.addColumnBefore"> <i class="fa fa-plus  " aria-hidden="true"></i>Col Before </button>
+
+					       	<button class="menubar__button bg-primary text-success " @click="commands.addColumnAfter"> <i class="fa fa-plus " aria-hidden="true"></i>Col After</button>
+
+					        <button class="menubar__button bg-primary text-danger " @click="commands.deleteColumn"> <i class="fa fa-trash" aria-hidden="true"></i>Col</button>
+
+					       	<button class="menubar__button bg-primary text-success " @click="commands.addRowBefore"> <i class="fa fa-plus" aria-hidden="true"></i>Row Before  </button>
+                   
+					       	<button class="menubar__button bg-primary text-success "	@click="commands.addRowAfter"> <i class="fa fa-plus" aria-hidden="true"></i>Row After </button>
+
+                   <button class="menubar__button bg-primary text-danger " @click="commands.deleteRow">  <i class="fa fa-trash bg-primary text-danger" aria-hidden="true"></i>Row </button>
+
+					       	<button class="menubar__button bg-primary text-white"	@click="commands.toggleCellMerge">  <i class="fa fa-toggle-on " aria-hidden="true"></i>Cell Merge </button>
+					       </span>
+             </li>  
+             <li class="nav-item">
+              <div class="menubar">
+                <button class="menubar__button bg-primary text-white" @click="commands.undo"> <i class="fa fa-undo" aria-hidden="true"></i> </button>
+                <button class="menubar__button bg-primary text-white" @click="commands.redo"> <i class="fas fa-redo    "></i> </button>
+              </div>
+             </li>
+             <li class="nav-item">
+                        <!--Link Generator-->
+         <editor-menu-bubble class="menububble" :editor="editor" @hide="hideLinkMenu" v-slot="{ commands, isActive, getMarkAttrs, menu }">
+               <div
+                 class="menububble"
+                 :class="{ 'is-active': menu.isActive }"
+                 :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`"
+               >
+
+                 <form class="menububble__form" v-if="linkMenuIsActive" @submit.prevent="setLinkUrl(commands.link, linkUrl)">
+                   <input class="menububble__input" type="text" v-model="linkUrl" placeholder="https://" ref="linkInput" @keydown.esc="hideLinkMenu"/>
+                   <button class="menububble__button text-danger bg-primary" @click="setLinkUrl(commands.link, null)" type="button">
+                     <i class="fas fa-trash    "></i>
+                   </button>
+                 </form>
+
+                 <template v-else>
+                   <button 
+                     class="menububble__button text-success bg-primary"
+                     @click="showLinkMenu(getMarkAttrs('link'))"
+                     :class="{ 'is-active': isActive.link() }"
+                   >
+                     <span>{{ isActive.link() ? 'Update Link' : 'Add Link'}}</span>
+                     <i class="fa fa-link" aria-hidden="true"></i>
+                   </button>
+                 </template>
+
+               </div>
+         </editor-menu-bubble>  
+             </li>
+           </ul>
+         </editor-menu-bar>  
          </div>
          <!--editor Body-->
          <div class="card-body text-window-color">
-            <editor-content id="editor"  class="editor bg-white Ta-hieght   col-sm-12" :editor="editor" />                                                                          
+            <editor-content id="editor"  class="editor bg-white Ta-hieght editor__content col-sm-12" :editor="editor" />                                                                          
          </div> 
          <!--editor Footer-->
          <div class="card-footer text-center bg-primary">
@@ -109,12 +171,16 @@
 
 
 <script>
-import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
+
+
+
+import { Editor, EditorContent, EditorMenuBar, EditorMenuBubble } from 'tiptap'
 import {
   Blockquote,
   CodeBlock,
   HardBreak,
   Heading,
+  Image,
   OrderedList,
   BulletList,
   ListItem,
@@ -127,12 +193,17 @@ import {
   Strike,
   Underline,
   History,
+  Table,
+	TableHeader,
+	TableCell,
+	TableRow,
 } from 'tiptap-extensions'
 
 export default {
   components: {
     EditorMenuBar,
     EditorContent,
+    EditorMenuBubble,
   },
   data() {
     return {
@@ -154,15 +225,52 @@ export default {
           new Strike(),
           new Underline(),
           new History(),
+          new Image(),
+					new Table({
+						resizable: true,
+					}),
+					new TableHeader(),
+					new TableCell(),
+          new TableRow(),
         ],
         content: ''
       }),
+      linkUrl: null,
+      linkMenuIsActive: false,
     }
   },
   beforeDestroy() {
     this.editor.destroy()
   },
   methods: {
+     /**Link*/
+    showLinkMenu(attrs) {
+      this.linkUrl = attrs.href
+      this.linkMenuIsActive = true
+      this.$nextTick(() => {
+        this.$refs.linkInput.focus()
+      })
+    },
+    hideLinkMenu() {
+      this.linkUrl = null
+      this.linkMenuIsActive = false
+    },
+    setLinkUrl(command, url) {
+      command({ href: url })
+      this.hideLinkMenu()
+    },
+     /**Link */
+
+
+    /**
+     * Image Insertion
+    */
+    showImagePrompt(command) {
+      const src = prompt('Enter the url of your image here')
+      if (src !== null) {
+        command({ src })
+      }
+    },
     /**
      * Fetch Product about
      * and pass to editor 
@@ -171,9 +279,9 @@ export default {
       fetchAbout(){
          axios.get('/showproductdata/' + Number(localStorage.currentProductId))
          .then((data)=>{
-            alert('Data was fetched successfully in the database');
-            console.log(data);
-            this.editor.setContent('<p>Fuck you</p>',true,null);
+            //alert('Data was fetched successfully in the database');
+            //console.log(data.data.about);
+            this.editor.setContent(data.data.about,true,true);
          })
          .catch(()=>{
             alert('There was an error fetching Data from the database')
@@ -243,4 +351,13 @@ export default {
     min-height: 20vh;
 }
 
+/**Table Styling*/
+.editor__content table td, .editor__content table th { 
+  min-width: 1em; 
+  border: 2px solid #ddd; 
+  padding: 3px 5px; 
+  vertical-align: top;
+   -webkit-box-sizing: border-box;
+    box-sizing: border-box; 
+    position: relative; }
 </style>

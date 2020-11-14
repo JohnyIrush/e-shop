@@ -22,6 +22,8 @@ use App\Cart;
 
 class WebController extends Controller
 {
+    public $current_id;
+
     public function products(){
         $products = DB::table('products')->paginate(6);
         $categories = Category::all();
@@ -113,8 +115,9 @@ class WebController extends Controller
             ->inRandomOrder()
             ->limit(6)
             ->get();
+        $about = Product::select('about')->where('id', $id)->get();
 
-         return view('shop.pages.product')->with(['product'=>$product,'otherproducts'=>$otherproducts]);
+         return view('shop.pages.product')->with(['product'=>$product,'otherproducts'=>$otherproducts,'about'=>$about->toJson()]);
     }
 
    /**

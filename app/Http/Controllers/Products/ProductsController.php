@@ -139,7 +139,6 @@ class ProductsController extends Controller
      * Seo Content
     */
     public function showProductData($id){
-        dd($id);
           $Product = Product::find($id);
            return response()->json($Product,200);
     }
