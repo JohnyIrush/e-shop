@@ -243,6 +243,18 @@ export default {
     this.editor.destroy()
   },
   methods: {
+    /**
+     * Reading Media
+    */
+   readMedia(){
+       axios.get('/media')
+       .then((data)=>{
+          console.log(data);
+       })
+       .catch(()=>{
+         alert('problem reading Media');
+       })
+   },
      /**Link*/
     showLinkMenu(attrs) {
       this.linkUrl = attrs.href
@@ -261,18 +273,18 @@ export default {
     },
      /**Link */
 
-
     /**
      * Image Insertion
     */
     showImagePrompt(command) {
       //const src = prompt('Enter the url of your image here')
       //Launch Uploader
-      const src = null;
       this.$Uploader.launchUploader();
+      const src = '/Images/' + this.$Uploader.getUploadedImage();
       if (src !== null) {
         command({ src })
       }
+      
     },
     /**
      * Fetch Product about
@@ -323,6 +335,11 @@ export default {
   mounted() {
       //alert(this.editor.getHTML())
       this.fetchAbout();
+      this.readMedia()
+
+      Event.$on('img_uploaded',()=>{
+        this.showImagePrompt();
+      })
   },
 }
 </script>

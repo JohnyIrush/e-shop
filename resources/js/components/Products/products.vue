@@ -272,8 +272,6 @@ export default {
  */
 uploadImage(e){
   try {
- 
-
   // console.log(event);
 
   if (document.getElementById("img-upload").value) {

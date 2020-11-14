@@ -2760,6 +2760,17 @@ __webpack_require__.r(__webpack_exports__);
     this.editor.destroy();
   },
   methods: {
+    /**
+     * Reading Media
+    */
+    readMedia: function readMedia() {
+      axios.get('/media').then(function (data) {
+        console.log(data);
+      })["catch"](function () {
+        alert('problem reading Media');
+      });
+    },
+
     /**Link*/
     showLinkMenu: function showLinkMenu(attrs) {
       var _this = this;
@@ -2789,8 +2800,8 @@ __webpack_require__.r(__webpack_exports__);
     showImagePrompt: function showImagePrompt(command) {
       //const src = prompt('Enter the url of your image here')
       //Launch Uploader
-      var src = null;
       this.$Uploader.launchUploader();
+      var src = '/Images/' + this.$Uploader.getUploadedImage();
 
       if (src !== null) {
         command({
@@ -2845,8 +2856,14 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    var _this3 = this;
+
     //alert(this.editor.getHTML())
     this.fetchAbout();
+    this.readMedia();
+    Event.$on('img_uploaded', function () {
+      _this3.showImagePrompt();
+    });
   }
 });
 
@@ -2861,6 +2878,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2912,13 +2931,74 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    var _ref;
+
+    return _ref = {
+      image: '',
+
+      /**
+       * Display Upload
+       * msg while image
+       * is not uploaded
+      */
+      img_uploaded: false
+    }, _defineProperty(_ref, "img_uploaded", false), _defineProperty(_ref, "img_upload", [{
+      image: ''
+    }]), _defineProperty(_ref, "imgShow", ''), _ref;
+  },
+  methods: {
+    /**
+      * updates the image
+      * in image upload 
+      * container
+     */
+    uploadImage: function uploadImage(e) {
+      try {
+        // console.log(event);
+        this.$Uploader.setUploadedImage(null);
+
+        if (document.getElementById("img-upload").value) {
+          var files = e.target.files || e.dataTransfer.files;
+          if (!files.length) return;
+          this.createImage(files[0]);
+        }
+
+        if (this.editmode == true) {
+          this.img_upload.pop();
+          this.img_upload.unshift({
+            image: this.createProduct.imagePath
+          });
+        } else {
+          this.img_upload.pop();
+          this.img_upload.unshift({
+            image: document.getElementById("img-upload").value.replace("C:\\fakepath\\", "")
+          });
+          this.$Uploader.setUploadedImage(document.getElementById("img-upload").value.replace("C:\\fakepath\\", "")); //alert(document.getElementById("img-upload").value)
+
+          Event.$emit('img_uploaded');
+        }
+
+        this.img_uploaded = true;
+      } catch (error) {}
+    },
+    //create image
+    createImage: function createImage(file) {
+      console.log(file);
+      var reader = new FileReader();
+      var vm = this;
+
+      reader.onload = function (e) {
+        vm.image = e.target.result;
+        console.log(vm.image);
+      }; //alert(vm.image)
+
+
+      reader.readAsDataURL(file);
+    }
+  }
+});
 
 /***/ }),
 
@@ -75409,146 +75489,154 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c(
+          "div",
+          {
+            staticClass: "modal fade ",
+            attrs: {
+              id: "uploader",
+              "data-backdrop": "static",
+              tabindex: "-1",
+              role: "dialog",
+              "aria-labelledby": "exampleModalLongTitle",
+              "aria-hidden": "true"
+            }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "modal-dialog ", attrs: { role: "document" } },
+              [
+                _c("div", { staticClass: "modal-content Theme " }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "modal-body Theme" }, [
+                    _c(
+                      "div",
+                      { staticClass: "card text-center ml-5 mr-5 m-2 row" },
+                      [
+                        _c("div", { staticClass: "card-body" }, [
+                          _vm.img_uploaded
+                            ? _c(
+                                "div",
+                                { staticClass: " img-cont-el col-sm-12" },
+                                _vm._l(_vm.img_upload, function(image, index) {
+                                  return _c("img", {
+                                    key: index,
+                                    staticClass: "img-fluid",
+                                    attrs: { src: "/Images/" + image.image }
+                                  })
+                                }),
+                                0
+                              )
+                            : !_vm.img_uploaded
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "card-text text-center col-sm-12 img-cont-el"
+                                },
+                                [
+                                  _vm._m(1),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "text-primary" }, [
+                                    _vm._v(" Upload Your image")
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-footer bg-success" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("input", {
+                              attrs: {
+                                id: "img-upload",
+                                type: "file",
+                                name: "imagePath"
+                              },
+                              on: { change: _vm.uploadImage }
+                            })
+                          ])
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ])
+              ]
+            )
+          ]
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
+    return _c("div", { staticClass: "modal-header Theme" }, [
+      _c("h5", { staticClass: "modal-title" }, [
+        _vm._v("Select Image To upload "),
+        _c("i", { staticClass: "fas fa-upload    " })
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [
           _c(
-            "div",
-            {
-              staticClass: "modal fade ",
-              attrs: {
-                id: "uploader",
-                "data-backdrop": "static",
-                tabindex: "-1",
-                role: "dialog",
-                "aria-labelledby": "exampleModalLongTitle",
-                "aria-hidden": "true"
-              }
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "modal-dialog  modal-xl",
-                  attrs: { role: "document" }
-                },
-                [
-                  _c("div", { staticClass: "modal-content Theme " }, [
-                    _c("div", { staticClass: "modal-header Theme" }, [
-                      _c("h5", { staticClass: "modal-title" }, [
-                        _vm._v("Select Image To upload "),
-                        _c("i", { staticClass: "fas fa-upload    " })
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "close",
-                          attrs: {
-                            type: "button",
-                            "data-dismiss": "modal",
-                            "aria-label": "Close"
-                          }
-                        },
-                        [
-                          _c(
-                            "span",
-                            {
-                              staticClass: "text-danger",
-                              attrs: { "aria-hidden": "true" }
-                            },
-                            [_vm._v("×")]
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "modal-body Theme" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-3" }, [
-                          _c("img", {
-                            staticClass: "img-thumbnail",
-                            attrs: { src: "/Images/8Pad.jpg" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-3" }, [
-                          _c("img", {
-                            staticClass: "img-thumbnail",
-                            attrs: { src: "/Images/Ball.jpg" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-3" }, [
-                          _c("img", {
-                            staticClass: "img-thumbnail",
-                            attrs: { src: "/Images/Ball.jpg" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-3" }, [
-                          _c("img", {
-                            staticClass: "img-thumbnail",
-                            attrs: { src: "/Images/Ball.jpg" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-3" }, [
-                          _c("img", {
-                            staticClass: "img-thumbnail",
-                            attrs: { src: "/Images/Ball.jpg" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-3" }, [
-                          _c("img", {
-                            staticClass: "img-thumbnail",
-                            attrs: { src: "/Images/Ball.jpg" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-3" }, [
-                          _c("img", {
-                            staticClass: "img-thumbnail",
-                            attrs: { src: "/Images/Ball.jpg" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "modal-footer cTheme" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-secondary",
-                          attrs: { type: "button", "data-dismiss": "modal" }
-                        },
-                        [_vm._v("Close")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-primary",
-                          attrs: { type: "button" }
-                        },
-                        [_vm._v("Save changes")]
-                      )
-                    ])
-                  ])
-                ]
-              )
-            ]
+            "span",
+            { staticClass: "text-danger", attrs: { "aria-hidden": "true" } },
+            [_vm._v("×")]
           )
-        ])
-      ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", {
+        staticClass: "fa fa-upload display-4  text-primary",
+        attrs: { "aria-hidden": "true" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer cTheme" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "button" } },
+        [_vm._v("Save changes")]
+      )
     ])
   }
 ]
@@ -98665,6 +98753,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Uploader = /*#__PURE__*/function () {
   function Uploader() {
     _classCallCheck(this, Uploader);
+
+    this.uploaded_image = localStorage.getItem("uploaded_image") ? localStorage.getItem("uploaded_image") : '';
   } //Launch the Uploader
 
 
@@ -98672,6 +98762,22 @@ var Uploader = /*#__PURE__*/function () {
     key: "launchUploader",
     value: function launchUploader() {
       $('#uploader').modal('show');
+    } //Read media to be displayed
+
+  }, {
+    key: "readMedia",
+    value: function readMedia() {} //set Uploaded image
+
+  }, {
+    key: "setUploadedImage",
+    value: function setUploadedImage(image) {
+      localStorage.setItem("uploaded_image", image);
+    } //get Uploaded image
+
+  }, {
+    key: "getUploadedImage",
+    value: function getUploadedImage() {
+      return this.uploaded_image;
     }
   }]);
 

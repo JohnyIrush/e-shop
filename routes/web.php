@@ -116,6 +116,7 @@ Route::namespace('Products\Management')->group(function(){
     Route::get('getbuyerdetails/{id}','ManagementController@getBuyerDetails')->name('getbuyerdetails'); //get buyer details
     Route::get('getorderitems/{id}','ManagementController@getOrderItems')->name('getorderitems'); //get order items
     Route::get('Editor','ManagementController@Editor')->name('Editor'); //rich text editor for Product Editting
+    Route::get('media','EditorController@readMedia')->name('media'); //Read Media
 });
 
 
