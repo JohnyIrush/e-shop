@@ -148,7 +148,8 @@
          <!--editor Body-->
          <div class="card-body text-window-color">
             <editor-content id="editor"  class="editor bg-white Ta-hieght editor__content col-sm-12" :editor="editor" />      
-            <Uploader></Uploader>                                                                    
+            <Uploader></Uploader>  
+            <editorview></editorview>                                                                  
          </div> 
          <!--editor Footer-->
          <div class="card-footer text-center bg-primary">
@@ -157,10 +158,10 @@
                  <p class="text-white">editting....</p>
              </div>
              <div class="col">
-                 <button @click="saveData()" class="btn btn-success text-white">Save</button>
+                
              </div> 
              <div class="col">
-                 <button  class="btn btn-danger text-white">Save Change</button>
+                <button @click="saveData()" class="btn btn-success text-white">Save Changes</button>
              </div>
              <div class="#editor" ></div> 
             </div> 
@@ -171,6 +172,7 @@
 </template>
 <script>
 
+import editorview from './Editor/editorview'
 //Media Uploader
 import Uploader from './Editor/MediaUpload/Upload'
 import { Editor, EditorContent, EditorMenuBar, EditorMenuBubble } from 'tiptap'
@@ -203,7 +205,8 @@ export default {
     EditorMenuBar,
     EditorContent,
     EditorMenuBubble,
-    Uploader
+    Uploader,
+    editorview
   },
   data() {
     return {
@@ -314,7 +317,16 @@ export default {
           
          axios.post('/saveproductabout/' + data.id,data)
          .then(()=>{
-            alert('Data was saved successfully in the database');
+              this.$swal({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              setTimeout(() => {
+                $('#edit-view').modal('show');
+              }, 1500);
          })
          .catch(()=>{
             alert('There was an error Saving Data to the database')

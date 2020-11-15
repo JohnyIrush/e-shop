@@ -30,7 +30,6 @@ export default {
         }
     },
     mounted() {
-        alert('Showing about');
         console.log(Number(this.aboutid))
         this.fetchAbout();
     },

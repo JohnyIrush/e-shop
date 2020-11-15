@@ -23,6 +23,11 @@
      <!--Products-->
      <div class="col-xs-12 col-sm-9 mt-2 col-md-12 col-lg-9">
       <div class="row content-justify-center mt-1 ">
+        @if (session()->has('message'))
+        <div class="alert alert-success alert-dismissible fade show col-12 " role="alert">
+          {{session()->get('message')}}
+        </div> 
+        @endif
         <!--Search Bar-->
           <div class="card Theme col-sm-12">
               <div class="row justify-content-center">

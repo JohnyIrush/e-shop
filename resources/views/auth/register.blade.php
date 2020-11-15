@@ -91,19 +91,9 @@
                             <a href="{{route('linkedin')}}" class=""><i class="fab text-primary fa-linkedin fa-3x "></i></a>
                         </div>
                         <div class="col-3">
-                            <a href="{{route('facebook')}}" class=""> <i class="fa fa-facebook text-primary aria-hidden="true"></i> </a>
+                            <a href="{{route('facebook')}}" class=""> <i class="fab fa-facebook text-primary fa-3x" aria-hidden="true"></i> </a>
                         </div>
                      </div>
-                    <!--
-                    <div class="row justify-content-center mt-2">
-                      <a href=" {{route('github')}} " type="button" class="btn mr-1 col-sm col-xs col-lg-5 col-md-5 btn-lg btn-secondary"> <i class="fab fa-github    "></i> Sign up With Github </a>
-                      <a href=" {{route('google')}} " type="button" class="btn btn-lg col-sm col-xs col-lg-5 col-md-5 btn-primary"> <i class="fab fa-google    "></i> Sign up With Google </a>
-                    </div>
-                    <div class="row justify-content-center mt-2">
-                      <a href=" {{route('linkedin')}} " type="button" class="btn mr-1 col-sm col-xs col-lg-5 col-md-5 btn-lg btn-danger"> <i class="fab fa-linkedin    "></i> Sign up With Linkedin </a>
-                      <button  href=" {{route('pinterest')}} " type="button" class="btn col-sm col-xs col-lg-5 col-md-5 btn-lg btn-success" disabled> <i class="fab fa-pinterest    "></i> Sign up With Pinterest </button>
-                    </div>
-                     -->
                 </div>
             </div>
         </div>

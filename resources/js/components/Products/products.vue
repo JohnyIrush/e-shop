@@ -206,11 +206,43 @@ export default {
      * and Edit Product About
     */
    editProductAbout(id){
+this.$swal
+      let timerInterval
+      this.$swal({
+        html: '<p class="text-success">Launching Editor in <b></b> seconds.</p>',
+        timer: 5000,
+        timerProgressBar: true,
+
+        onBeforeOpen: () => {
+          this.$swal.showLoading()
+                     setTimeout(() => {
+            window.location.assign('/Editor')
+          }, 5000);
+
+          timerInterval = setInterval(() => {
+            const content = this.$swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = this.$swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        },
+        onClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === this.$swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+      })
       this.$Editor.setCurrentProductid(id);
 
       setTimeout(() => {
-        window.location.assign('/Editor')
-      }, 3000);
+        //window.location.assign('/Editor')
+      }, 5000);
    },
  /**
   * Create Product

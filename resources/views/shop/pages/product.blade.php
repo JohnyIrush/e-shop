@@ -27,6 +27,9 @@
                 <div class="card-body mb-3">
                    <about :aboutid="{{$product->id}}" ></about>
                 </div>
+             <div class="card-footer">
+                 <a type="button"  href="/Editor" class="btn-success text-white">Edit About</a>
+             </div>
             </div>
         </div>
         <div class="col-sm-3 Theme products-sidebar ml-0 mb-0">

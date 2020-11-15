@@ -80,7 +80,7 @@ class RegisterController extends Controller
             */
             $role = Role::select('id')->where('name','admin')->first();
             $user->roles()->attach($role);
-
+            session()->flash('message', 'You Are Signed Up Successfully');
             return $user;
 
     }
