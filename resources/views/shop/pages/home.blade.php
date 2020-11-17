@@ -56,6 +56,7 @@
                      <h3 class="price text-white"> <sup> <i class="fas fa-dollar-sign    "></i> </sup> {{$data->price}} </h3>
                    <div class="col-sm-12 mt-1 mb-1">
                        <button onclick="shopOrCheckout({{$data->id}})"  class="btn btn-success text-secondary mt-1 mb-1"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+                       <a href="{{route('product',['id'=>$data->id])}}"  class="btn btn-warning text-white mt-1 mb-1">View</a>
                    </div>
                    </div>
                    </div>

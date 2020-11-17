@@ -360,3 +360,15 @@ table td,th {
      -webkit-box-sizing: border-box;
       box-sizing: border-box; 
       position: relative; }
+
+
+      p{
+          color: aliceblue;
+      }
+
+      h1, h2, h3{
+        color: turquoise;
+        font-size: 28px;
+        font-weight: 900;
+        font-family: Algerian;
+      }
