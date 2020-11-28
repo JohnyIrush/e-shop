@@ -17,6 +17,7 @@
             <a class="nav-link link-color" href="#">  Other Categories </a>
           </li>
         </ul>
+        <logo_load ></logo_load> 
       </div>
     </div>
 

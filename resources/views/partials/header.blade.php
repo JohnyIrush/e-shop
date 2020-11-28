@@ -9,7 +9,6 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"> <i class="fa text-white fa-list" aria-hidden="true"></i> </span>
   </button>
-  <a href="{{route('/')}}" class="nav-link ml-2 link-color"> <logo_load></logo_load> </a>
   <div  class="collapse mr-1 justify-content-end navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ">
       <li class="nav-item">
