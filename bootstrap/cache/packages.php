@@ -1,31 +1,9 @@
 <?php return array (
-  'anhskohbo/no-captcha' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'NoCaptcha' => 'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha',
-    ),
-  ),
   'barryvdh/laravel-ide-helper' => 
   array (
     'providers' => 
     array (
       0 => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
-    ),
-  ),
-  'biscolab/laravel-recaptcha' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Biscolab\\ReCaptcha\\ReCaptchaServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'ReCaptcha' => 'Biscolab\\ReCaptcha\\Facades\\ReCaptcha',
     ),
   ),
   'facade/ignition' => 
@@ -101,6 +79,13 @@
     'providers' => 
     array (
       0 => 'Laravel\\Ui\\UiServiceProvider',
+    ),
+  ),
+  'lorisleiva/laravel-deployer' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Lorisleiva\\LaravelDeployer\\LaravelDeployerServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
