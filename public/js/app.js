@@ -6444,9 +6444,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     goToRequest: function goToRequest(request) {
       if (request == 1) {
-        window.location.assign('http://127.0.0.1:8000/shop');
+        window.location.assign('/shop');
       } else {
-        window.location.assign('http://127.0.0.1:8000/cart');
+        window.location.assign('/cart');
       }
     }
   },
