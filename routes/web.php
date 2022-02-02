@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -159,3 +161,27 @@ return view('shop.pages.jquery');
 });
 
 
+Route::get("cache", function()
+{
+    Cache::flush();
+});
+
+
+Route::get('/clear-cache', function() {
+    # $exitCode = Artisan::call('cache:clear');
+    # $exitCode2 = Artisan::call('config:clear');
+    # $exitCode3 = Artisan::call('config:cache');
+
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('key:generate');
+    // return what you want
+
+    // if($exitCode)
+       //echo "cache cleard successfully!-> $exitCode \n";
+    // if($exitCode2)
+       //echo "config cleard successfully!-> $exitCode2 \n";
+    // if($exitCode3)
+       //echo "config cached successfully!-> $exitCode3 \n";
+});
